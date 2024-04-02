@@ -1,4 +1,4 @@
-package theJoeunUniversity;
+package Calendar;
 
 public class MyCalendar {
 	
