@@ -8,68 +8,68 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-	<title>학사 일정</title>
-	<jsp:include page="/layout/link.jsp"/>
-	<link href="<%= request.getContextPath()%>/schedule/css/style.css" rel="stylesheet">
+<title>학사 일정</title>
+<jsp:include page="/layout/link.jsp" />
+<link href="<%=request.getContextPath()%>/schedule/css/style.css"
+	rel="stylesheet">
 </head>
 <body>
-<%
+	<%
 	// 년, 월 받아오기
 	Date date = new Date();
-	int year = date.getYear() +1900;
-	int month = date.getMonth() +1;
-				
+	int year = date.getYear() + 1900;
+	int month = date.getMonth() + 1;
+
 	//	오류사항 걸러주기	
-	try{
+	try {
 		year = Integer.parseInt(request.getParameter("year"));
 		month = Integer.parseInt(request.getParameter("month"));
-						
-		if(month>=13){
+
+		if (month >= 13) {
 			year++;
-			month =1;
-		}else if(month <=0){
+			month = 1;
+		} else if (month <= 0) {
 			year--;
-			month =12;
+			month = 12;
 		}
-	}catch(Exception e){
+	} catch (Exception e) {
 		e.printStackTrace();
 	}
-	
+
 	// 날짜 데이터 불러오기
 	CalendarService calendarService = new CalendarServiceImpl();
 	List<Calendar> calendarList = calendarService.list();
-	
+
 	// 날짜 포맷
 	SimpleDateFormat sdf = new SimpleDateFormat("MM-dd");
-	
-%>
+	%>
 	<!-- 헤더 -->
-	<jsp:include page="/layout/header.jsp"/>
+	<jsp:include page="/layout/header.jsp" />
 
 	<!-- 컨텐츠 -->
 	<div class="container">
 		<h1>학사 일정</h1>
 		<div class="months">
 			<div class="select">
-				<input type="button" value="이전 달" class="selectbtn" onclick="location.href='?year=<%=year%>&month=<%=month-1%>'">
-					<span id="year"><%=year%>년 학사일정</span>
-				<input type="button" value="다음 달" class="selectbtn" onclick="location.href='?year=<%=year%>&month=<%=month+1%>'">
+				<input type="button" value="이전 달" class="selectbtn"
+					onclick="location.href='?year=<%=year%>&month=<%=month - 1%>'">
+				<span id="year"><%=year%>년 학사일정</span> <input type="button"
+					value="다음 달" class="selectbtn"
+					onclick="location.href='?year=<%=year%>&month=<%=month + 1%>'">
 			</div>
 		</div>
 		<div class="calendar">
 			<!-- 달력 출력 -->
 			<table width="700" align="center" cellpadding="5" cellspacing="0">
 				<tr>
-					<th id="title" colspan="7">
-						<%=month%>월
-					</th>
+					<th id="title" colspan="7"><%=month%>월</th>
 				</tr>
 				<!-- 요일 표시 -->
 				<tr id="weekend">
@@ -82,47 +82,71 @@
 					<td class="saturday">토</td>
 				</tr>
 				<tr>
-				<%
+					<%
 					//	1일의 요일을 계산
 					int first = MyCalendar.weekDay(year, month, 1);
 					// 해당 월의 전 달의 마지막 날짜의 시작일 계산
-					int start = month == 1? MyCalendar.lastDay(year-1, 12)- first : MyCalendar.lastDay(year, month-1)- first;
-			
+					int start = month == 1 ? MyCalendar.lastDay(year - 1, 12) - first : MyCalendar.lastDay(year, month - 1) - first;
+
 					// 1일 출력 위치를 맞추기
-					for(int i= 1; i<= first; i++){
-						if(i==1){
+					for (int i = 1; i <= first; i++) {
+						if (i == 1) {
 							out.println("<td></td>");
-						}else{
+						} else {
 							out.println("<td></td>");
 						}
 					}
-			
+
 					// 1일부터 마지막 날까지 반복해 날짜 출력
-					for(int i = 1; i <= MyCalendar.lastDay(year, month); i++){
+					for (int day = 1; day <= MyCalendar.lastDay(year, month); day++) {
+						// if문으로 감아서 DB를 subString으로 잘라서 월과 일을 검사
+						// 							for(Calendar calendar : calendarList) {
+						// 								SimpleDateFormat monthSdf = new SimpleDateFormat("MM");
+						// 								SimpleDateFormat daySdf = new SimpleDateFormat("dd");
+						// 								//  월 추출
+						// 								String SstrMonth = monthSdf.format(calendar.getStrDate());	
+						// 								String SendMonth = monthSdf.format(calendar.getEndDate());
+						// 								// int 변환
+						// 								int strMonth = Integer.parseInt(SstrMonth);
+						// 								int endMonth = Integer.parseInt(SendMonth);
+						// 								// 일 추출
+						// 								String SstrDay = daySdf.format(calendar.getStrDate());
+						// 								String SendDay = daySdf.format(calendar.getEndDate());
+						// 								int strDay = Integer.parseInt(SstrDay);
+						// 								int endDay = Integer.parseInt(SendDay);
+
+						// 시작 날 조건에 맞을 경우 color 클래스에 속함
+						// 								if(strMonth == month && strDay == day){
+						// 									out.println("<td class=color>" + day +"</td>");
+						// 								}else{
+						// 									out.println("<td>" + day +"</td>");
+						// 								}
+						//							}
 						// 요일 출력
-						switch(MyCalendar.weekDay(year, month, i)){
-							case 0 :
-								// 일요일
-								out.println("<td class='sun'>" +i +"</td>");
-								break;
-							case 6 :
-								// 토요일
-								out.println("<td class='sat'>" +i +"</td>");
-								break;
-							default :
-								// 평일
-								out.println("<td>" + i +"</td>");
-								break;
+						switch (MyCalendar.weekDay(year, month, day)) {
+						case 0:
+							// 일요일
+							out.println("<td class='sun'>" + day + "</td>");
+							break;
+						case 6:
+							// 토요일
+							out.println("<td class='sat'>" + day + "</td>");
+							break;
+						default:
+							// 평일
+							out.println("<td>" + day + "</td>");
+							break;
 						}
 						// 출력한 날짜가 토요일이면서 마지막 달이면 줄바꿈
-						if(MyCalendar.weekDay(year, month, i) == 6 && i != MyCalendar.lastDay(year, month)){
-							out.println("</tr><tr>");			
+						if (MyCalendar.weekDay(year, month, day) == 6 && day != MyCalendar.lastDay(year, month)) {
+							out.println("</tr><tr>");
 						}
 					}
-				%>
+					%>
 				</tr>
 			</table>
-		</div><!-- 캘린터 끝 -->
+		</div>
+		<!-- 캘린터 끝 -->
 		<div class="info">
 			<h1>상세 일정</h1>
 			<table>
@@ -131,37 +155,43 @@
 					<th>일정</th>
 					<th>내용</th>
 				</tr>
-				<% if( calendarList == null || calendarList.size() == 0 ) { %>
+				<%
+				if (calendarList == null || calendarList.size() == 0) {
+				%>
 				<tr>
 					<td colspan="5">해당 월의 행사는 아직 정해지지 않았습니다.</td>
 				</tr>
-				<% } else {
-						for(Calendar calendar : calendarList) {
+				<%
+				} else {
+				for (Calendar calendar : calendarList) {
 				%>
-							<tr>
-								<td><a href="<%= request.getContextPath()%>/schedule/schedule_read.jsp?no=<%= calendar.getNo()%>"><%= calendar.getNo()%></a></td>
-								<td>
-									<%
-										// 시작월 종료월 확인 후 출력
-										if(sdf.format(calendar.getStrDate()) == sdf.format(calendar.getEndDate())){
-											out.print(sdf.format(calendar.getStrDate()));
-										}else{
-											out.print(sdf.format(calendar.getStrDate()));
-											out.print(" ~ "); 
-											out.print(sdf.format(calendar.getEndDate()));
-										}
-									%>
-								</td>
-								<td><%= calendar.getContent() %></td>
-							</tr>
-				<%		}
-					}
+				<tr>
+					<td><a
+						href="<%=request.getContextPath()%>/schedule/schedule_read.jsp?no=<%=calendar.getNo()%>"><%=calendar.getNo()%></a></td>
+					<td>
+						<%
+						// 시작월 종료월 확인 후 출력
+						if (sdf.format(calendar.getStrDate()) == sdf.format(calendar.getEndDate())) {
+							out.print(sdf.format(calendar.getStrDate()));
+						} else {
+							out.print(sdf.format(calendar.getStrDate()));
+							out.print(" ~ ");
+							out.print(sdf.format(calendar.getEndDate()));
+						}
+						%>
+					</td>
+					<td><%=calendar.getContent()%></td>
+				</tr>
+				<%
+				}
+				}
 				%>
 			</table>
-		</div><!-- info 끝 -->
+		</div>
+		<!-- info 끝 -->
 	</div>
 	<!-- 푸터 -->
-	<jsp:include page="/layout/footer.jsp"/>
+	<jsp:include page="/layout/footer.jsp" />
 
 	<!-- 스크립트 -->
 </body>

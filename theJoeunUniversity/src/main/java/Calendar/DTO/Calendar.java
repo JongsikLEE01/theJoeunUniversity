@@ -5,7 +5,7 @@ import java.util.Date;
 public class Calendar {
 	private int no;
 	private Date strDate;
-	private Date endDate;
+	private Date endDate; 
 	private String content;
 	
 	public Calendar() {
@@ -54,4 +54,5 @@ public class Calendar {
 	public String toString() {
 		return "Calendar [no=" + no + ", strDate=" + strDate + ", endDate=" + endDate + ", content=" + content + "]";
 	}
+
 }

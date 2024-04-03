@@ -27,7 +27,7 @@
 		int no = Integer.parseInt(request.getParameter("no"));
 		Calendar calendar = calendarService.select(no);
 	%>
-	<h1>게시글 조회</h1>
+	<h1>일정 조회</h1>
 	<% if(calendar != null && calendar.getNo() > 0){ %>
 	<table border="1">
 		<tr>
@@ -36,7 +36,7 @@
 		</tr>
 		<tr>
 			<th>종료일</th>
-			<td><%= calendar.getEndDate()%></td>
+			<td><%= calendar.getEndDate() %></td>
 		</tr>
 		<tr>
 			<th>내용</th>
@@ -48,6 +48,7 @@
 	<% } %>
 	<div>
 		<a href="<%= request.getContextPath() %>/schedule/schedule.jsp">목록</a>
+		<a href="<%= request.getContextPath() %>/schedule/schedule_insert.jsp?no=<%= calendar.getNo() %>">추가</a>
 		<a href="<%= request.getContextPath() %>/schedule/schedule_update.jsp?no=<%= calendar.getNo() %>">수정</a>
 		<a href="<%= request.getContextPath() %>/schedule/schedule_delete.jsp?no=<%= calendar.getNo() %>">삭제</a>
 	</div>

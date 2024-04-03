@@ -1,6 +1,5 @@
 package Calendar.DAO;
 
-import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +20,8 @@ public class CalendarDAO extends JDBConnection {
 		
 		// SQL 작성
 		String sql = " SELECT * "
-				   + " FROM CALENDAR ";
+				   + " FROM CALENDAR"
+				   + " ORDER BY STRDATE ASC ";
 		try {
 			// 쿼리(SQL) 실행 객체 생성 - Statement (stmt)
 			stmt = con.createStatement();
@@ -45,7 +45,7 @@ public class CalendarDAO extends JDBConnection {
 				calList.add(cal);
 			}
 		} catch(SQLException e) {
-			System.err.println("게시글 목록 조회 시, 예외 발생");
+			System.err.println("일정 목록 조회 시, 예외 발생");
 			e.printStackTrace();
 		}
 		// 게시글 목록 반환
@@ -84,7 +84,7 @@ public class CalendarDAO extends JDBConnection {
 				
 			}
 		} catch(SQLException e) {
-			System.err.println("게시글 조회 시, 예외 발생");
+			System.err.println("일정 조회 시, 예외 발생");
 			e.printStackTrace();
 		}
 		// 게시글 정보 1건 반환
@@ -101,8 +101,8 @@ public class CalendarDAO extends JDBConnection {
 		
 		try {
 			psmt = con.prepareStatement(sql);			// 쿼리 실행 객체 생성
-			psmt.setDate( 1, (Date) cal.getStrDate() );		// 1번 ? 에 제목 매핑
-			psmt.setDate( 2, (Date) cal.getEndDate() );		// 2번 ? 에 작성자 매핑
+			psmt.setDate( 1, new java.sql.Date( cal.getStrDate().getTime() ) );		// 1번 ? 에 제목 매핑
+			psmt.setDate( 2, new java.sql.Date( cal.getEndDate().getTime() ) );		// 2번 ? 에 작성자 매핑
 			psmt.setString( 3, cal.getContent() );	// 3번 ? 에 내용을 매핑
 			
 			result = psmt.executeUpdate();		// SQL 실행 요청, 적용된 데이터 개수를 받아온다.
@@ -111,7 +111,7 @@ public class CalendarDAO extends JDBConnection {
 			// executeUpdate()
 			// : SQL (INSERT, UPDATE, DELETE)을 실행하고 적용된 데이터 개수를 int 타입으로 반환
 		} catch (SQLException e) {
-			System.err.println("게시글 등록 시, 예외 발생");
+			System.err.println("일정 등록 시, 예외 발생");
 			e.printStackTrace();
 		}
 		return result;
@@ -129,18 +129,19 @@ public class CalendarDAO extends JDBConnection {
 		
 		try {
 			psmt = con.prepareStatement(sql);			// 쿼리 실행 객체 생성
-			psmt.setDate( 1, (Date) cal.getStrDate() );		// 1번 ? 에 제목 매핑
-			psmt.setDate( 2, (Date) cal.getEndDate() );		// 2번 ? 에 작성자 매핑
+			psmt.setDate( 1, new java.sql.Date( cal.getStrDate().getTime() )  );		// 1번 ? 에 제목 매핑
+			psmt.setDate( 2, new java.sql.Date( cal.getEndDate().getTime() )  );		// 2번 ? 에 작성자 매핑
 			psmt.setString( 3, cal.getContent() );	// 3번 ? 에 내용을 매핑
 			psmt.setInt( 4, cal.getNo() );			// 4번 ? 에 게시글 번호를 매핑
 			
 			result = psmt.executeUpdate();		// SQL 실행 요청, 적용된 데이터 개수를 받아온다.
 												// 게시글 1개 적용 성공 시, result : 1
 												// 				실패 시, result : 0
-			// executeUpdate()
+			System.out.println("일정 수정 성공 : " + result);
+			// executeUpdate()  
 			// : SQL (INSERT, UPDATE, DELETE)을 실행하고 적용된 데이터 개수를 int 타입으로 반환
 		} catch (SQLException e) {
-			System.err.println("게시글 수정 시, 예외 발생");
+			System.err.println("일정 수정 시, 예외 발생");
 			e.printStackTrace();
 		}
 		return result;
@@ -163,7 +164,7 @@ public class CalendarDAO extends JDBConnection {
 			// executeUpdate()
 			// : SQL (INSERT, UPDATE, DELETE)을 실행하고 적용된 데이터 개수를 int 타입으로 반환
 		} catch (SQLException e) {
-			System.err.println("게시글 삭제 시, 예외 발생");
+			System.err.println("일정 삭제 시, 예외 발생");
 			e.printStackTrace();
 		}
 		return result;
