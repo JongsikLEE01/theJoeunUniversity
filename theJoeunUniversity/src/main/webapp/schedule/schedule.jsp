@@ -55,7 +55,7 @@
 
 	<!-- 컨텐츠 -->
 	<div class="container">
-		<h1>학사 일정</h1>
+		<span>학사 일정</span>
 		<div class="months">
 			<div class="select">
 				<input type="button" value="이전 달" class="selectbtn"
@@ -141,15 +141,19 @@
 						<%
 						SimpleDateFormat yearSdf = new SimpleDateFormat("YYYY");
 						SimpleDateFormat monthSdf = new SimpleDateFormat("MM");
-						// 년도 출력
+						SimpleDateFormat daySdf = new SimpleDateFormat("DD");
+						// 년도,달 저장
 						int DateYear = Integer.valueOf(yearSdf.format(calendar.getStrDate() ) );
-						// 달 출력
 						int DateMonth = Integer.valueOf(monthSdf.format(calendar.getStrDate() ) );
+						
+						// 시작일, 종료일 확인
+						int strDay = Integer.valueOf(daySdf.format(calendar.getStrDate() ) );
+						int endDay = Integer.valueOf(daySdf.format(calendar.getEndDate() ) );
 						
 						// 해당 년도와 달을 검사
 						if(DateYear == year && DateMonth == month){
 							// 시작월 종료월 확인 후 출력
-							if (sdf.format(calendar.getStrDate()) == sdf.format(calendar.getEndDate())) {
+							if ( strDay == endDay ) {
 								// 번호
 								out.print("<td>");
 								out.print("<a href=" + request.getContextPath() + "/schedule/schedule_read.jsp?no=" + calendar.getNo() + ">" + calendar.getNo() + "</a>");
@@ -169,7 +173,7 @@
 								out.print("</td>");
 								// 날짜
 								out.print("<td>");
-								out.print(sdf.format(calendar.getStrDate()));
+								out.print(sdf.format(calendar.getStrDate()) + " ~ " + sdf.format(calendar.getEndDate() ) );
 								out.print("</td>");
 								// 내용
 								out.print("<td>");

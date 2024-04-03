@@ -27,30 +27,32 @@
 		int no = Integer.parseInt(request.getParameter("no"));
 		Calendar calendar = calendarService.select(no);
 	%>
-	<h1>일정 조회</h1>
-	<% if(calendar != null && calendar.getNo() > 0){ %>
-	<table border="1">
-		<tr>
-			<th>시작일</th>
-			<td><%= calendar.getStrDate() %></td>
-		</tr>
-		<tr>
-			<th>종료일</th>
-			<td><%= calendar.getEndDate() %></td>
-		</tr>
-		<tr>
-			<th>내용</th>
-			<td><%= calendar.getContent() %></td>
-		</tr>
-	</table>
-	<% }else{ %>
-		<h3>조회된 일정이 없습니다.</h3>
-	<% } %>
-	<div>
-		<a href="<%= request.getContextPath() %>/schedule/schedule.jsp">목록</a>
-		<a href="<%= request.getContextPath() %>/schedule/schedule_insert.jsp?no=<%= calendar.getNo() %>">추가</a>
-		<a href="<%= request.getContextPath() %>/schedule/schedule_update.jsp?no=<%= calendar.getNo() %>">수정</a>
-		<a href="<%= request.getContextPath() %>/schedule/schedule_delete.jsp?no=<%= calendar.getNo() %>">삭제</a>
+	<div class="container">		
+		<h1>일정 조회</h1>
+		<% if(calendar != null && calendar.getNo() > 0){ %>
+		<table border="1">
+			<tr>
+				<th>시작일</th>
+				<td><%= calendar.getStrDate() %></td>
+			</tr>
+			<tr>
+				<th>종료일</th>
+				<td><%= calendar.getEndDate() %></td>
+			</tr>
+			<tr>
+				<th>내용</th>
+				<td><%= calendar.getContent() %></td>
+			</tr>
+		</table>
+		<% }else{ %>
+			<h3>조회된 일정이 없습니다.</h3>
+		<% } %>
+		<div>
+			<a href="<%= request.getContextPath() %>/schedule/schedule.jsp">목록</a>
+			<a href="<%= request.getContextPath() %>/schedule/schedule_insert.jsp?no=<%= calendar.getNo() %>">추가</a>
+			<a href="<%= request.getContextPath() %>/schedule/schedule_update.jsp?no=<%= calendar.getNo() %>">수정</a>
+			<a href="<%= request.getContextPath() %>/schedule/schedule_delete.jsp?no=<%= calendar.getNo() %>">삭제</a>
+		</div>
 	</div>
 	
 	
