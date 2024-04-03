@@ -1,3 +1,8 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="Calendar.DTO.Calendar"%>
+<%@page import="java.util.List"%>
+<%@page import="Calendar.Service.CalendarServiceImpl"%>
+<%@page import="Calendar.Service.CalendarService"%>
 <%@page import="Calendar.MyCalendar"%>
 <%@page import="java.util.Date"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -36,6 +41,14 @@
 	}catch(Exception e){
 		e.printStackTrace();
 	}
+	
+	// 날짜 데이터 불러오기
+	CalendarService calendarService = new CalendarServiceImpl();
+	List<Calendar> calendarList = calendarService.list();
+	
+	// 날짜 포맷
+	SimpleDateFormat sdf = new SimpleDateFormat("MM-dd");
+	
 %>
 	<!-- 헤더 -->
 	<jsp:include page="/layout/header.jsp"/>
@@ -45,9 +58,9 @@
 		<h1>학사 일정</h1>
 		<div class="months">
 			<div class="select">
-				<input type="button" value="이전 달" id="before" onclick="location.href='?year=<%=year%>&month=<%=month-1%>'">
+				<input type="button" value="이전 달" class="selectbtn" onclick="location.href='?year=<%=year%>&month=<%=month-1%>'">
 					<span id="year"><%=year%>년 학사일정</span>
-				<input type="button" value="다음 달" id="next" onclick="location.href='?year=<%=year%>&month=<%=month+1%>'">
+				<input type="button" value="다음 달" class="selectbtn" onclick="location.href='?year=<%=year%>&month=<%=month+1%>'">
 			</div>
 		</div>
 		<div class="calendar">
@@ -73,9 +86,9 @@
 					//	1일의 요일을 계산
 					int first = MyCalendar.weekDay(year, month, 1);
 					// 해당 월의 전 달의 마지막 날짜의 시작일 계산
-					int start = month ==1? MyCalendar.lastDay(year-1, 12)- first : MyCalendar.lastDay(year, month-1)- first;
+					int start = month == 1? MyCalendar.lastDay(year-1, 12)- first : MyCalendar.lastDay(year, month-1)- first;
 			
-					// 1일 출력 위치를 맞추기 위해 위치 만큼 빈칸을 반복
+					// 1일 출력 위치를 맞추기
 					for(int i= 1; i<= first; i++){
 						if(i==1){
 							out.println("<td></td>");
@@ -89,12 +102,15 @@
 						// 요일 출력
 						switch(MyCalendar.weekDay(year, month, i)){
 							case 0 :
+								// 일요일
 								out.println("<td class='sun'>" +i +"</td>");
 								break;
 							case 6 :
+								// 토요일
 								out.println("<td class='sat'>" +i +"</td>");
 								break;
 							default :
+								// 평일
 								out.println("<td>" + i +"</td>");
 								break;
 						}
@@ -103,19 +119,47 @@
 							out.println("</tr><tr>");			
 						}
 					}
-					if(MyCalendar.weekDay(year, month, MyCalendar.lastDay(year, month)) !=6){
-						for(int i = MyCalendar.weekDay(year, month, MyCalendar.lastDay(year, month))+1; i < 7; i++){
-							out.println("<td></td>");	
-						}
-					}
 				%>
 				</tr>
 			</table>
-		</div>
+		</div><!-- 캘린터 끝 -->
+		<div class="info">
+			<h1>상세 일정</h1>
+			<table>
+				<tr>
+					<th>번호</th>
+					<th>일정</th>
+					<th>내용</th>
+				</tr>
+				<% if( calendarList == null || calendarList.size() == 0 ) { %>
+				<tr>
+					<td colspan="5">해당 월의 행사는 아직 정해지지 않았습니다.</td>
+				</tr>
+				<% } else {
+						for(Calendar calendar : calendarList) {
+				%>
+							<tr>
+								<td><a href="<%= request.getContextPath()%>/schedule/schedule_read.jsp?no=<%= calendar.getNo()%>"><%= calendar.getNo()%></a></td>
+								<td>
+									<%
+										// 시작월 종료월 확인 후 출력
+										if(sdf.format(calendar.getStrDate()) == sdf.format(calendar.getEndDate())){
+											out.print(sdf.format(calendar.getStrDate()));
+										}else{
+											out.print(sdf.format(calendar.getStrDate()));
+											out.print(" ~ "); 
+											out.print(sdf.format(calendar.getEndDate()));
+										}
+									%>
+								</td>
+								<td><%= calendar.getContent() %></td>
+							</tr>
+				<%		}
+					}
+				%>
+			</table>
+		</div><!-- info 끝 -->
 	</div>
-	<div class="info">
-	</div>
-	
 	<!-- 푸터 -->
 	<jsp:include page="/layout/footer.jsp"/>
 
