@@ -114,6 +114,16 @@
 		</div>
 	</div>
 	<div class="info">
+		<p>상세 일정</p>
+		<div class="info_line">
+
+			<div id="info_months">
+				
+			</div>
+			<div id="info_day">
+				
+			</div>
+		</div>
 	</div>
 	
 	<!-- 푸터 -->
