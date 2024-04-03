@@ -1,14 +1,21 @@
-table{ 
+calendar table{ 
 	background-color: white;
 	border: 0px
 }
 	
-tr{
+calendar table tr{
 	height: 40px;
 	width: 40px;
 }
-td{
+calendar table td{
 	width: 40px;
 	text-align: center;
-	font-size: 15pt;
+	font-size: 15px;
+}
+calendar .weekend{
+	background: blue;
+}
+
+.months .select input{
+	border: 0px
 }

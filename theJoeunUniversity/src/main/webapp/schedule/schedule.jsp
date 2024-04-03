@@ -43,25 +43,11 @@
 	<!-- 컨텐츠 -->
 	<div class="container">
 		<h1>학사 일정</h1>
-		<div class="month">
-			<div class="top">
+		<div class="months">
+			<div class="select">
 				<input type="button" value="이전 달" id="before" onclick="location.href='?year=<%=year%>&month=<%=month-1%>'">
-				<a>전체</a>
+					<span id="year"><%=year%>년 학사일정</span>
 				<input type="button" value="다음 달" id="next" onclick="location.href='?year=<%=year%>&month=<%=month+1%>'">
-			</div>
-			<div class="bottom">
-				<a>1월</a>
-				<a>2월</a>
-				<a>3월</a>
-				<a>4월</a>
-				<a>5월</a>
-				<a>6월</a>
-				<a>7월</a>
-				<a>8월</a>
-				<a>9월</a>
-				<a>10월</a>
-				<a>11월</a>
-				<a>12월</a>
 			</div>
 		</div>
 		<div class="calendar">
@@ -109,7 +95,7 @@
 								out.println("<td class='sat'>" +i +"</td>");
 								break;
 							default :
-								out.println("<td>" +i +"</td>");
+								out.println("<td>" + i +"</td>");
 								break;
 						}
 						// 출력한 날짜가 토요일이면서 마지막 달이면 줄바꿈
@@ -126,8 +112,8 @@
 				</tr>
 			</table>
 		</div>
-		<div class="info">
-		</div>
+	</div>
+	<div class="info">
 	</div>
 	
 	<!-- 푸터 -->
