@@ -99,29 +99,6 @@
 
 					// 1일부터 마지막 날까지 반복해 날짜 출력
 					for (int day = 1; day <= MyCalendar.lastDay(year, month); day++) {
-						// if문으로 감아서 DB를 subString으로 잘라서 월과 일을 검사
-						// 							for(Calendar calendar : calendarList) {
-						// 								SimpleDateFormat monthSdf = new SimpleDateFormat("MM");
-						// 								SimpleDateFormat daySdf = new SimpleDateFormat("dd");
-						// 								//  월 추출
-						// 								String SstrMonth = monthSdf.format(calendar.getStrDate());	
-						// 								String SendMonth = monthSdf.format(calendar.getEndDate());
-						// 								// int 변환
-						// 								int strMonth = Integer.parseInt(SstrMonth);
-						// 								int endMonth = Integer.parseInt(SendMonth);
-						// 								// 일 추출
-						// 								String SstrDay = daySdf.format(calendar.getStrDate());
-						// 								String SendDay = daySdf.format(calendar.getEndDate());
-						// 								int strDay = Integer.parseInt(SstrDay);
-						// 								int endDay = Integer.parseInt(SendDay);
-
-						// 시작 날 조건에 맞을 경우 color 클래스에 속함
-						// 								if(strMonth == month && strDay == day){
-						// 									out.println("<td class=color>" + day +"</td>");
-						// 								}else{
-						// 									out.println("<td>" + day +"</td>");
-						// 								}
-						//							}
 						// 요일 출력
 						switch (MyCalendar.weekDay(year, month, day)) {
 						case 0:
@@ -148,13 +125,8 @@
 		</div>
 		<!-- 캘린터 끝 -->
 		<div class="info">
-			<h1>상세 일정</h1>
+			<span>상세 일정</span>
 			<table>
-				<tr>
-					<th>번호</th>
-					<th>일정</th>
-					<th>내용</th>
-				</tr>
 				<%
 				if (calendarList == null || calendarList.size() == 0) {
 				%>
@@ -165,25 +137,52 @@
 				} else {
 				for (Calendar calendar : calendarList) {
 				%>
-				<tr>
-					<td><a
-						href="<%=request.getContextPath()%>/schedule/schedule_read.jsp?no=<%=calendar.getNo()%>"><%=calendar.getNo()%></a></td>
-					<td>
+				<tr><!-- 번호 -->
 						<%
-						// 시작월 종료월 확인 후 출력
-						if (sdf.format(calendar.getStrDate()) == sdf.format(calendar.getEndDate())) {
-							out.print(sdf.format(calendar.getStrDate()));
-						} else {
-							out.print(sdf.format(calendar.getStrDate()));
-							out.print(" ~ ");
-							out.print(sdf.format(calendar.getEndDate()));
+						SimpleDateFormat yearSdf = new SimpleDateFormat("YYYY");
+						SimpleDateFormat monthSdf = new SimpleDateFormat("MM");
+						// 년도 출력
+						int DateYear = Integer.valueOf(yearSdf.format(calendar.getStrDate() ) );
+						// 달 출력
+						int DateMonth = Integer.valueOf(monthSdf.format(calendar.getStrDate() ) );
+						
+						// 해당 년도와 달을 검사
+						if(DateYear == year && DateMonth == month){
+							// 시작월 종료월 확인 후 출력
+							if (sdf.format(calendar.getStrDate()) == sdf.format(calendar.getEndDate())) {
+								// 번호
+								out.print("<td>");
+								out.print("<a href=" + request.getContextPath() + "/schedule/schedule_read.jsp?no=" + calendar.getNo() + ">" + calendar.getNo() + "</a>");
+								out.print("</td>");
+								// 날짜
+								out.print("<td>");
+								out.print(sdf.format(calendar.getStrDate()));
+								out.print("</td>");
+								// 내용
+								out.print("<td>");
+								out.print(calendar.getContent());
+								out.print("</td>");
+							} else {
+								// 번호
+								out.print("<td>");
+								out.print("<a href=" + request.getContextPath() + "/schedule/schedule_read.jsp?no=" + calendar.getNo() + ">" + calendar.getNo() + "</a>");
+								out.print("</td>");
+								// 날짜
+								out.print("<td>");
+								out.print(sdf.format(calendar.getStrDate()));
+								out.print("</td>");
+								// 내용
+								out.print("<td>");
+								out.print(calendar.getContent());
+								out.print("</td>");
+							}							
+						}else{
 						}
-						%>
-					</td>
-					<td><%=calendar.getContent()%></td>
+						%><!-- 년도와 달 검사 else문 종료-->
 				</tr>
+				
 				<%
-				}
+					}
 				}
 				%>
 			</table>
