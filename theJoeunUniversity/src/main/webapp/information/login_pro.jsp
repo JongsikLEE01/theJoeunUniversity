@@ -1,8 +1,8 @@
-<%@page import="kiosk.DTO.Users"%>
+<%@page import="information.DTO.Users"%>
 <%@page import="com.oreilly.servlet.CookieNotFoundException"%>
 <%@page import="java.net.URLEncoder"%>
-<%@page import="kiosk.Service.UserServiceImpl"%>
-<%@page import="kiosk.Service.UserService"%>
+<%@page import="information.Service.UserServiceImpl"%>
+<%@page import="information.Service.UserService"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>

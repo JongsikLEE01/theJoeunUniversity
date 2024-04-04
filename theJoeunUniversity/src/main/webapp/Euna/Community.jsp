@@ -15,6 +15,9 @@
 <jsp:include page="/layout/link.jsp" />
 </head>
 <body>
+	<!-- 헤더 -->
+	<jsp:include page="/layout/header.jsp" />
+	
 	<div class="container txt-center">
 		<h1 class="title">더조은 대학교</h1>
 		<h2 class="title">커뮤니티</h2>
@@ -32,6 +35,7 @@
 		</div>
 	</div>
 
-
+	<!-- 푸터 -->
+	<jsp:include page="/layout/footer.jsp" />
 </body>
 </html>

@@ -8,13 +8,12 @@
 // request.getContextPath() -> /shop 즉, 최상위 경로를 지정
 String root = request.getContextPath();
 %>
-<header>
+<header class="header">
 	<nav>
 		<ul>
-            <li><a href="<%= root%>/index.jsp">Home</a></li>
-			<li><a href="<%= root%>/about.jsp">학교 소개</a></li>
-			<li><a href="<%= root%>/board/list.jsp">공지 사항</a></li>
-			<li><a href="<%= root%>/schedule/schedule.jsp">학사 일정</a></li>
+            <li><a onclick="">햄버거</a></li>
+            <li><a href="<%= root%>/index.jsp">더조은대학교</a></li>
+            <li><a href="<%= root%>/admin.jsp">어드민페이지</a></li>
 		</ul>
 	</nav>
 </header>

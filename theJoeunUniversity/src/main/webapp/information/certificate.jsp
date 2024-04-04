@@ -10,9 +10,11 @@
 <meta charset="UTF-8">
 <title>증명서 발행 페이지</title>
 	
+<jsp:include page="/layout/link.jsp" />
 </head>
 <body>
-
+	<!-- 헤더 -->
+	<jsp:include page="/layout/header.jsp" />
 	
 	<!-- 컨텐츠 -->
 	<div class="container">
@@ -49,7 +51,9 @@
 		
 	
 	</div>
-	
+		
+	<!-- 푸터 -->
+	<jsp:include page="/layout/footer.jsp" />
 	
 </body>
 </html>

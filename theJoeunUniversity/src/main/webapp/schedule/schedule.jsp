@@ -17,9 +17,10 @@
 <meta charset="UTF-8">
 <title>학사 일정</title>
 	<jsp:include page="/layout/link.jsp" />
-	<link href="<%= request.getContextPath()%>/schedule/css/schedule_style.css" rel="stylesheet">
+	<link href="<%= request.getContextPath()%>/schedule/css/style.css" rel="stylesheet">
 </head>
 <body>
+<!-- 어드민 페이지 -->
 	<%
 	// 년, 월 받아오기
 	Date date = new Date();
@@ -54,7 +55,7 @@
 
 	<!-- 컨텐츠 -->
 	<div class="container">
-		<span id="main">학사 일정</span>
+		<span class="title">학사 일정</span>
 		<div class="months">
 			<div class="select">
 				<input type="button" value="&lt;" class="selectbtn"
@@ -126,7 +127,8 @@
 			</div>
 			<!-- 캘린터 끝 -->
 			<div class="info">
-				<span id="infocal">상세 일정</span>
+				<span class="infocal">상세 일정</span>
+				<span class="infocal_no">번호를 누르면 해당 일정을 조회합니다.</span>
 				<table>
 					<%
 					if (calendarList == null || calendarList.size() == 0) {

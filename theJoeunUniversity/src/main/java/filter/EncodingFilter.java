@@ -9,9 +9,6 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
-
-// web.xml 설정할 filter 등록을 어노테이션으로 대신 할 수 있다.
-//@WebFilter(description = "인코딩 필터", urlPatterns = {"/*"})
 public class EncodingFilter implements Filter {
 	
 	private String encoding;
@@ -22,7 +19,7 @@ public class EncodingFilter implements Filter {
 		// 초기 파라미터로 등록한 UTF-8 가져옴
 		encoding = filterConfig.getInitParameter("encoding");
 	}
-  
+	
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
@@ -34,8 +31,12 @@ public class EncodingFilter implements Filter {
 		// 다음 필터로 요청/응답 전달
 		chain.doFilter(request, response);
 	}
+	
 	@Override
 	public void destroy() {
 		// 필터가 소멸될 때 실행되는 메소드
 	}
+
+	
+
 }

@@ -1,9 +1,9 @@
-<%@page import="kiosk.DTO.Department"%>
-<%@page import="kiosk.DTO.Course"%>
-<%@page import="kiosk.DTO.Score"%>
-<%@page import="kiosk.DTO.Users"%>
-<%@page import="kiosk.Service.UserServiceImpl"%>
-<%@page import="kiosk.Service.UserService"%>
+<%@page import="information.DTO.Department"%>
+<%@page import="information.DTO.Course"%>
+<%@page import="information.DTO.Score"%>
+<%@page import="information.DTO.Users"%>
+<%@page import="information.Service.UserServiceImpl"%>
+<%@page import="information.Service.UserService"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
@@ -15,8 +15,11 @@
 <head>
 <meta charset="UTF-8">
 <title>졸업 증명서</title>
+<jsp:include page="/layout/link.jsp" />
 </head>
 <body>
+	<!-- 헤더 -->
+	<jsp:include page="/layout/header.jsp" />
 	<%
 		UserService userService = new UserServiceImpl();
 		Users users = new Users();
@@ -55,6 +58,9 @@
 		</tr>		
 	</table>
 	<a href="<%= request.getContextPath() %>/index.jsp">로그아웃</a>
+		
+	<!-- 푸터 -->
+	<jsp:include page="/layout/footer.jsp" />
 </body>
 
 

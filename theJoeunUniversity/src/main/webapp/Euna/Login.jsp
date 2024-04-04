@@ -11,8 +11,11 @@
 <title>Insert title here</title>
 <jsp:include page="/layout/loginlink.jsp" />
 <link  href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+<jsp:include page="/layout/link.jsp" />
 </head>
 <body>
+	<!-- 헤더 -->
+	<jsp:include page="/layout/header.jsp" />
 	
 	<div class="wrapper">
 		<form action="">
@@ -31,6 +34,7 @@
 
 		</form>
 	</div>
-
+	<!-- 푸터 -->
+	<jsp:include page="/layout/footer.jsp" />
 </body>
 </html>

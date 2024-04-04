@@ -10,10 +10,12 @@
 <head>
 <meta charset="UTF-8">
 <title>로그인</title>
-
+<jsp:include page="/layout/link.jsp" />
 </head>
 <body>
-
+	<!-- 헤더 -->
+	<jsp:include page="/layout/header.jsp" />
+	
 	<h1>로그인</h1>
 	<form action="login_pro.jsp" method="post">
 		<p>
@@ -31,6 +33,9 @@
 			<input type="submit" value="로그인">
 		</p>
 	</form>
+	
+	<!-- 푸터 -->
+	<jsp:include page="/layout/footer.jsp" />
 </body>
 </html>
 

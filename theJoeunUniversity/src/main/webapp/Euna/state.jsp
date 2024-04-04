@@ -13,6 +13,9 @@
 <jsp:include page="/layout/link.jsp" />
 </head>
 <body>
+	<!-- 헤더 -->
+	<jsp:include page="/layout/header.jsp" />
+	
 	<h1 class="title">학교 현황</h1>
 	<h3 class="title">2023년 4월 1일 기준 더조은대학교의 학교 현황입니다.</h3>
 	<br><br><br>
@@ -437,6 +440,7 @@
 	</table>
 	</div>
 
-
+	<!-- 푸터 -->
+	<jsp:include page="/layout/footer.jsp" />
 </body>
 </html>
