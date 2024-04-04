@@ -22,41 +22,29 @@
 	<jsp:include page="/layout/header.jsp"/>
 
 	<!-- 컨텐츠 -->
-	<h1>일정 추가</h1>
-	<form action="<%= request.getContextPath() %>/schedule/schedule_insert_pro.jsp" method="post">
+	<div class="container">
+		<form name="dateForm" id="dateForm" onsubmit="return checkDate()" action="<%= request.getContextPath() %>/schedule/schedule_insert_pro.jsp" method="post">
+			<span class="main">일정 추가</span>
 			<!-- type를 hidden으로 설정하면 화면에 표시하지않고 값을 넘겨줄 수 있음 -->
 			<input type="hidden" name="no" value="">
-			<table border="1">
-				<tr>
-					<th>시작일</th>
-					<td>
-						<input type="text" name="strDate" value="">
-					</td>
-				</tr>
-				<tr>
-					<th>종료일</th>
-					<td>
-						<input type="text" name="endDate" value="">
-					</td>
-				</tr>
-				<tr>
-					<th>내용</th>
-					<td>
-						<textarea rows="5" cols="40" name="content">					
-						</textarea>
-					</td>
-				</tr>
-			</table>
-		<input type="submit" value="등록"/>
-	</form>
-	<div>
-		<a href="<%= request.getContextPath() %>/schedule/schedule.jsp">목록</a>
+			<p class="strDay">시작일 <input class="inputStrday" type="text" name="strDate" id="strDate" maxlength="10" size="10"></p>
+			<p class="endDay">종료일 <input class="inputEndday" type="text" name="endDate" id="endDate" maxlength="10" size="10"></p>
+			<p class="content">내용 <textarea class="inputTa" rows="5" cols="40" name="content" id="content" maxlength="500"></textarea> </p>
+			<input class="submit" type="submit" value="등록">
+		</form>
+		<div class ="list">
+			<a class ="list_a" href="<%= request.getContextPath() %>/schedule/schedule.jsp">목록</a>
+		</div>
 	</div>
-	
 	
 	<!-- 푸터 -->
 	<jsp:include page="/layout/footer.jsp"/>
 
 	<!-- 스크립트 -->
-</body>
+	<script src="<%= request.getContextPath()%>/static/js/schedule.js"></script> 
+<%-- 	<jsp:include page="/schedule/js/schedule.js"/> --%>
 </html>
+
+
+
+
