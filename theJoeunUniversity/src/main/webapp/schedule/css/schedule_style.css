@@ -1,0 +1,64 @@
+@charset "UTF-8";
+calendar table{ 
+	background-color: white;
+	border: 0px
+}
+table .sunday{
+	color: red;
+}
+table .satday{
+	color: blue;
+}
+
+.container #main{
+	font-size: 2rem;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 50px;
+}
+
+
+.container .months .select{
+	font-size: 1.5rem;
+	display: flex;
+	justify-content: space-around;
+}
+.container .months .select .selectbtn{
+	border: none;
+	background-color: blue;
+	width : 40px;
+	height : 40px;
+	border-radius: 50%;
+	font-size: 1.5rem;
+	color: white;
+}
+
+
+.calendar table tr{
+	height: 20px;
+	width: 20px;
+}
+.calendar table td{
+	width: 40px;
+	text-align: center;
+	font-size: 15px;
+}
+.calendar .weekend{
+	background: blue;
+}
+
+.months .select input{
+	border: 0px
+}
+
+.container .content{
+	display: flex;
+	justify-content: space-around;
+}
+.container .content .calendar{
+	
+}
+.container .content .calendar #title{
+	font-size: 1.5rem;
+	margin: 20px;
+}
