@@ -36,7 +36,6 @@
 			<p class="strDay">시작일 <span class="inputStrday"><%= calendar.getStrDate() %></span></p>
 			<p class="endDay">종료일 <span class="inputStrday"><%= calendar.getEndDate() %></span></p>
 			<p class="content">내용 <textarea class="inputTa" rows="5" cols="40" name="content" id="content" maxlength="500"><%= calendar.getContent() %></textarea> </p>
-			<input class="submit" type="submit" value="수정"/>
 		<% }else{ %>
 		<div class="flase">
 			<h3>조회된 일정이 없습니다.</h3>
