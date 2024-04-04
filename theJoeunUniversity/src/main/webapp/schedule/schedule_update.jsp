@@ -37,7 +37,6 @@
 			<p class="endDay">종료일 <input class="inputEndday" type="text" name="endDate" id="endDate" maxlength="10" size="10" value="<%= cal.getEndDate() %>"></p>
 			<p class="content">내용 <textarea class="inputTa" rows="5" cols="40" name="content" id="content" maxlength="500"><%= cal.getContent() %></textarea> </p>
 			<input class="submit" type="submit" value="수정"/>
-			<!-- <button type="button" onclick="deletePro()">삭제</button> -->
 		</form>
 		<% }else{ %>
 			<div class="flase">
@@ -48,7 +47,6 @@
 			<a class ="list_a" href="<%= request.getContextPath() %>/schedule/schedule.jsp">목록</a>
 		</div>
 	</div>
-	
 	
 	<!-- 푸터 -->
 	<jsp:include page="/layout/footer.jsp"/>

@@ -34,7 +34,7 @@
 		</form>
 		<div class ="list">
 			<a class ="list_a" href="<%= request.getContextPath() %>/schedule/schedule.jsp">목록</a>
-		</div>
+		</div>	
 	</div>
 	
 	<!-- 푸터 -->

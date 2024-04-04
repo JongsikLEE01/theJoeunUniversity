@@ -21,14 +21,9 @@
 	
 	// 2024-01-01
 	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-	
 	Date sDate = sdf.parse(reStrDate);
 	Date eDate = sdf.parse(reEndDate);
 	
-	
-	out.println("sDate : " + sDate );
-	out.println("eDate : " + eDate  );
-	 
 	Calendar cal = new Calendar(sDate, eDate, content);
 	cal.setNo(no);
 	

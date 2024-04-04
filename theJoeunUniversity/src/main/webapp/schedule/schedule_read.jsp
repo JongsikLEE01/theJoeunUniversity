@@ -27,7 +27,7 @@
 		int no = Integer.parseInt(request.getParameter("no"));
 		Calendar calendar = calendarService.select(no);
 	%>
-	
+
 	<% if(calendar != null && calendar.getNo() > 0){ %>
 	<div class="container">
 		<span class="main">일정 조회</span>
@@ -37,20 +37,18 @@
 			<p class="endDay">종료일 <span class="inputStrday"><%= calendar.getEndDate() %></span></p>
 			<p class="content">내용 <textarea class="inputTa" rows="5" cols="40" name="content" id="content" maxlength="500"><%= calendar.getContent() %></textarea> </p>
 			<input class="submit" type="submit" value="수정"/>
-	</div>
-	<span class="main">일정 조회</span>
-	<% }else{ %>
+		<% }else{ %>
 		<div class="flase">
 			<h3>조회된 일정이 없습니다.</h3>
 		</div>
-	<% } %>
+		<% } %>
 		<div class="list">
 			<a class ="list_a" href="<%= request.getContextPath() %>/schedule/schedule.jsp">목록</a>
 			<a class ="list_add" href="<%= request.getContextPath() %>/schedule/schedule_insert.jsp">추가</a>
 			<a class ="list_update" href="<%= request.getContextPath() %>/schedule/schedule_update.jsp?no=<%= calendar.getNo() %>">수정</a>
 			<a class ="list_remove" href="<%= request.getContextPath() %>/schedule/schedule_delete.jsp?no=<%= calendar.getNo() %>">삭제</a>
 		</div>
-	
+	</div>
 	
 	<!-- 푸터 -->
 	<jsp:include page="/layout/footer.jsp"/>
