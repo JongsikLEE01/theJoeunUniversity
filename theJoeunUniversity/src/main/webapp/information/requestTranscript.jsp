@@ -70,7 +70,7 @@
         </tr>
 		
 	</table>
-	
+	<a href="<%= request.getContextPath() %>/index.jsp">로그아웃</a>
 </body>
 
 
