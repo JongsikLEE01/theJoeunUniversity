@@ -14,7 +14,7 @@ String root = request.getContextPath();
             <li><a href="<%= root%>/index.jsp">Home</a></li>
 			<li><a href="<%= root%>/about.jsp">학교 소개</a></li>
 			<li><a href="<%= root%>/board/list.jsp">공지 사항</a></li>
-			<li><a href="<%= root%>/gallery/list.jsp">학사 일정</a></li>
+			<li><a href="<%= root%>/schedule/schedule.jsp">학사 일정</a></li>
 		</ul>
 	</nav>
 </header>
