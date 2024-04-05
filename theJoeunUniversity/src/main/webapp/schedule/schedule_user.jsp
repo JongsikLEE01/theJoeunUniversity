@@ -5,6 +5,7 @@
 <%@page import="Calendar.Service.CalendarService"%>
 <%@page import="Calendar.MyCalendar"%>
 <%@page import="java.util.Date"%>
+<%@page import="java.util.Locale"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
@@ -17,7 +18,7 @@
 <meta charset="UTF-8">
 <title>학사 일정</title>
 	<jsp:include page="/layout/link.jsp" />
-	<link href="<%= request.getContextPath()%>/schedule/css/style.css" rel="stylesheet">
+	<jsp:include page="/layout/schedule_link.jsp" />
 </head>
 <body>
 <!-- 	유저페이지 -->
@@ -49,18 +50,27 @@
 
 	// 날짜 포맷
 	SimpleDateFormat sdf = new SimpleDateFormat("MM-dd");
+// 	SimpleDateFormat sdfMonth = new SimpleDateFormat("MMM", Locale.ENGLISH);
+		
+// 	int myday = date.getDay();
+// 	String checkMonth = sdfMonth.format(date);
+// 	String myMonth = sdfMonth.format(month);
 	%>
 	<!-- 헤더 -->
 	<jsp:include page="/layout/header.jsp" />
 
 	<!-- 컨텐츠 -->
 	<div class="container">
-		<span id="main">학사 일정</span>
+		<ul class="mainTitle">
+			<li class="Line"></li>
+			<li class="title">학사 일정</li>
+			<li class="Line"></li>
+		</ul>
 		<div class="months">
 			<div class="select">
 				<input type="button" value="&lt;" class="selectbtn"
 					onclick="location.href='?year=<%=year%>&month=<%=month - 1%>'">
-				<span id="year"><%=year%>년 학사일정</span>
+				<span class="year"><%=year%>년 학사일정</span>
 				<input type="button"
 					value="&gt;" class="selectbtn"
 					onclick="location.href='?year=<%=year%>&month=<%=month + 1%>'">
@@ -68,20 +78,19 @@
 		</div>
 		<div class="content">
 			<div class="calendar">
+				<span class="titleMonth"><%=month%>월</span>
+			<%-- <span class="myMonth"><%= checkMonth %></span> --%>
 				<!-- 달력 출력 -->
-				<table width="700" align="center" cellpadding="5" cellspacing="0">
-					<tr>
-						<th id="title" colspan="7"><%=month%>월</th>
-					</tr>
+				<table class="Tcalendar" align="center" cellpadding="5" cellspacing="0">
 					<!-- 요일 표시 -->
-					<tr>
-						<td class="sunday">일</td>
-						<td class="etcday">월</td>
-						<td class="etcday">화</td>
-						<td class="etcday">수</td>
-						<td class="etcday">목</td>
-						<td class="etcday">금</td>
-						<td class="satday">토</td>
+					<tr class="week">
+						<td >S</td>
+						<td >M</td>
+						<td >T</td>
+						<td >W</td>
+						<td >T</td>
+						<td >F</td>
+						<td >S</td>
 					</tr>
 					<tr>
 						<%
@@ -127,13 +136,13 @@
 			</div>
 			<!-- 캘린터 끝 -->
 			<div class="info">
-				<span id="infocal">상세 일정</span>
-				<table>
+				<p class="infoTitle">상세 일정</p>
+				<table class="Tinfo">
 					<%
 					if (calendarList == null || calendarList.size() == 0) {
 					%>
 					<tr>
-						<td colspan="5">해당 월의 행사는 아직 정해지지 않았습니다.</td>
+						<td colspan="2">해당 월의 행사는 아직 정해지지 않았습니다.</td>
 					</tr>
 					<%
 					} else {
@@ -157,20 +166,20 @@
 								// 시작월 종료월 확인 후 출력
 								if ( strDay == endDay ) {
 									// 날짜
-									out.print("<td>");
+									out.print("<td class='infoDay'>");
 									out.print(sdf.format(calendar.getStrDate()));
 									out.print("</td>");
 									// 내용
-									out.print("<td>");
+									out.print("<td class='infoContent'>");
 									out.print(calendar.getContent());
 									out.print("</td>");
 								} else {
 									// 날짜
-									out.print("<td>");
+									out.print("<td class='infoDay'>");
 									out.print(sdf.format(calendar.getStrDate()) + " ~ " + sdf.format(calendar.getEndDate() ) );
 									out.print("</td>");
 									// 내용
-									out.print("<td>");
+									out.print("<td class='infoContent'>");
 									out.print(calendar.getContent());
 									out.print("</td>");
 								}							

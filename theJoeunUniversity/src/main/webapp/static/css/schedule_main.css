@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+/* 상위 영역 */
+.container .mainTitle{
+    list-style-type: none;
+	display: flex;
+}
+.container .mainTitle .Line {
+	height : 0.5px;
+	width: 30%;
+    background-color : lightgray;
+    margin-top: 3%;
+}
+.container .mainTitle .title {
+    font-size: 3rem;
+    font-weight: bold;
+    width: 40%;
+}
+
+/* 이동버튼 */
+.container .months { }
+.container .months .select{
+	height : 20%;
+	display: flex;
+	justify-content: center;
+    border: 5px solid gray;
+    margin: 50px 0 30px;
+    padding: 50px;
+    column-gap: 280px;
+    border-radius: 10px
+}
+.container .months .select .selectbtn{
+	border: none;
+	color: white;
+	background-color: #4D8FC3;  /* 메인 컬러로 지정 */
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	font-size: 2rem;
+}
+.container .months .select .year{
+	font-size: 1.4rem;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+/* 컨텐츠 위치 지정 */
+.container .content{
+/* 	height : 60%; */
+	display: flex;
+	justify-content: space-around;
+	padding: 0 25px 0 25px;
+}
+
+/* 달력 */
+.container .content .calendar{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	padding: 10px;
+	border: 1px soild black;
+}
+.container .content .calendar .titleMonth{
+	font-size: 2rem;
+	text-align: center;
+	color: #4D8FC3;
+	font-weight: bold;
+	margin-bottom: 30px;
+}
+.container .content .calendar .myMonth{
+	font-size: 1.3rem;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.container .content .calendar .Tcalendar{
+	width: 400px;
+	height: 400px;
+	text-align: center;
+	font-size: 1.3rem;
+}
+.container .content .calendar .Tcalendar .week{
+	background-color: #4D8FC3;
+	color: white;
+	font-weight: bold;
+}
+.container .content .calendar .Tcalendar .sunday{
+	color: red;
+}
+.container .content .calendar .Tcalendar .satday{
+	color: blue;
+}
+
+/* 일정 */
+.container .content .info{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	width: 400px;
+}
+.container .content .info .infoTitle{
+	margin-bottom: 20px;
+	font-size: 1.2rem;
+	width: 120px;
+	height: 40px;
+	border: 1px solid #4D8FC3;
+	color: #4D8FC3;
+	border-radius: 20px;
+	text-align: center;
+	padding: 5px;
+}
+
+.container .content .info .Tinfo{
+	font-size: 1.2rem;
+	width: 400px;
+}
+.container .content .info .Tinfo .infoDay{
+	width: 200px;
+	text-align: center;
+	font-weight: bold;
+}
+.container .content .info .Tinfo .infoContent{
+	width: 250px;
+	text-align: left;
+	margin: 50px;
+}
+.Tinfo tr td{
+	padding: 20px;
+	margin-bottom: 50px;
+}
