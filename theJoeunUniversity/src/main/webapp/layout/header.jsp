@@ -12,7 +12,7 @@ String root = request.getContextPath();
 	<nav>
 		<ul>
             <li><a onclick="">햄버거</a></li>
-            <li><a href="<%= root%>/index.jsp">더조은대학교</a></li>
+            <li><a href="<%= root%>/index.jsp"><img src="<%= root %>/static/img/main_logo.png" ></a></li>
             <li><a href="<%= root%>/admin.jsp">어드민페이지</a></li>
 		</ul>
 	</nav>

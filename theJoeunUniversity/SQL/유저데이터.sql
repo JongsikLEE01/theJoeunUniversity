@@ -80,7 +80,7 @@ ALTER TABLE calendar ADD CONSTRAINT PK_CALENDAR PRIMARY KEY (NO);
 				   JOIN Users u ON sc.uNo = u.uNo 
 				   WHERE u.StudentID = '20220001';
                    
--- 학과데이터       
+                   
 INSERT INTO department (Dno, majorname)
 VALUES	(1, '컴퓨터 공학');
 INSERT INTO department (Dno, majorname)
