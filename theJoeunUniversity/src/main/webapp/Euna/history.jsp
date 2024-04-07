@@ -13,6 +13,9 @@
 <jsp:include page="/layout/link.jsp" />
 </head>
 <body>
+	<!-- 헤더 -->
+	<jsp:include page="/layout/header.jsp" />
+	
 	<h1 class="title">더조은 정신</h1>
 
 	<div class="his">
@@ -36,6 +39,7 @@
 		</p>
 	</div>
 	
-
+	<!-- 푸터 -->
+	<jsp:include page="/layout/footer.jsp" />
 </body>
 </html>

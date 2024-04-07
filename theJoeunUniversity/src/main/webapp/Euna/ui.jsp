@@ -15,6 +15,9 @@
 <jsp:include page="/layout/link.jsp" />
 </head>
 <body>
+	<!-- 헤더 -->
+	<jsp:include page="/layout/header.jsp" />
+	
 	<h1 class="title">UI</h1>
 	<div id="jwxe_main_content">
 		<div class="article intro">
@@ -70,7 +73,9 @@
 		</div>
 	</div>
 
-
+	
+	<!-- 푸터 -->
+	<jsp:include page="/layout/footer.jsp" />
 
 </body>
 </html>

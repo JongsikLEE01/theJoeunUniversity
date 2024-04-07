@@ -74,6 +74,7 @@ input {
 
 	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 	mapOption = {
+		// 에러
 		center : new kakao.maps.LatLng(lat, lon), // 지도의 중심좌표
 		level : 1, // 지도의 확대 레벨
 		mapTypeId : kakao.maps.MapTypeId.ROADMAP
@@ -106,6 +107,7 @@ input {
 	});
 
 	// 커스텀 오버레이를 생성하고 지도에 표시한다
+	// 에러
 	var customOverlay = new kakao.maps.CustomOverlay({
 		map : map,
 		content : '<div class="my-place">더조은학교</div>',

@@ -13,6 +13,10 @@
 <jsp:include page="/layout/link.jsp" />
 </head>
 <body>
+	<!-- 헤더 -->
+	<jsp:include page="/layout/header.jsp" />
+	
+	
 	<h1 class="title">서울 캠퍼스</h1>
 	<br><br><br>
 	<div class="flex j-center">
@@ -24,7 +28,8 @@
 
 	</div>
 
-
+	<!-- 푸터 -->
+	<jsp:include page="/layout/footer.jsp" />
 
 
 </body>

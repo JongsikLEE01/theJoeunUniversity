@@ -1,0 +1,49 @@
+/* 헤더 */
+header{
+	height: 90px;
+	width: 100%;
+	background-color: #4D8FC3;
+}
+header .top{
+	display: flex;
+	justify-content: space-around;
+}
+header .top a{
+	font-size: 3rem;
+	color: #FFF3EB;
+	margin-top: 10px;
+}
+header .top .cog:hover{
+	animation: cogRotation 5s infinite;
+	transition: infinite;
+}
+@keyframes cogRotation{
+	100%{ transform: rotate(360deg); }
+}
+
+
+/* 푸터 */
+footer{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 400px;
+}
+footer .underbar{
+	display: flex;
+	justify-content: space-around;
+	height: 100px;
+	background-color: #4D8FC3;
+}
+footer .underbar a{
+	color: #FFF3EB;
+	font-size: 3rem;
+	text-align: center;
+	margin: 20px 0 20px;
+}
+footer .banne{
+	height: 300px;
+	background-color: black;
+}
+footer .banner p{
+}
