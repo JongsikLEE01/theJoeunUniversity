@@ -202,5 +202,7 @@
 	<jsp:include page="/layout/footer.jsp" />
 
 	<!-- 스크립트 -->
+<script>
+</script>
 </body>
 </html>
