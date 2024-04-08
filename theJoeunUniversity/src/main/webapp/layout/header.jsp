@@ -14,8 +14,8 @@ String root = request.getContextPath();
 	height: 90px;
 	border: 0;
 }
-header{ background-color: white; }
-header .top a{ margin: 0; color: #081012}
+header{ background-color: #4D8FC3; }
+header .top a{ margin: 0; color: white;}
 #admin{ margin-top: 23px;}
 </style>
 
