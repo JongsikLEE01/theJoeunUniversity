@@ -1,9 +1,8 @@
 @charset "UTF-8";
 
+/* 공통 레이아웃 */
 a {text-decoration: none; color: black;}
 a:hover {font-weight: bold; }
-
-/* 공통 레이아웃 */
 *{
 	margin: 0;
 	padding: 0;
@@ -98,4 +97,4 @@ thead tr th {
 /* 	margin: 300px; */
 /* 	border: 1px solid black; */
 /* } */
-/* 공통 레이아웃 */
+

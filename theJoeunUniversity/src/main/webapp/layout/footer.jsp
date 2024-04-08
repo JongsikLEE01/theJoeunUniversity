@@ -4,11 +4,20 @@
 // request.getContextPath() -> /shop 즉, 최상위 경로를 지정
 String root = request.getContextPath();
 %>
+<style>
+.footerLogo{
+	width: 160px;
+	height: 60px
+}
+footer .underbar{ background-color: white;}
+footer .underbar a{ color: #081012 }
+
+</style>
 
 <footer>	
 	<div class="underbar">
 		<a id="previous" ><i class="fa fa-arrow-left"></i></a>
-		<a href="<%= root%>/index.jsp"><i class="fa fa-university"></i></a>
+		<a href="<%= root%>/index.jsp"><img class="footerLogo" src="<%=root%>/static/img/푸터로고.png"></a>
 		<a id="next"><i class="fa fa-arrow-right"></i></a>
 	</div>
 	<div class="banner">

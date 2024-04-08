@@ -1,26 +1,36 @@
+*{
+	margin: 0;
+	padding: 0;
+}
 /* 헤더 */
 header{
-	height: 90px;
 	width: 100%;
-	background-color: #4D8FC3;
+	height: 90px;
+	background-color: white;
 }
 header .top{
 	display: flex;
 	justify-content: space-around;
+	height: 90px;
 }
 header .top a{
 	font-size: 3rem;
-	color: #FFF3EB;
-	margin-top: 10px;
+	color: #081012;
+	margin: 0;
 }
-header .top .cog:hover{
-	animation: cogRotation 5s infinite;
-	transition: infinite;
+header .top .cog { display: inline-block; }
+#admin{
+	margin-top: 10px;
+	position: relative;
+}
+header .top .cog #admin:hover{
+/* 	transform-origin: 50% 50%; */
+	animation: cogRotation 8s linear infinite;
 }
 @keyframes cogRotation{
-	100%{ transform: rotate(360deg); }
+	0% { transform: translate(-50%, -50%) rotate(0deg); }
+	100%{ transform: translate(-50%, -50%) rotate(360deg); }
 }
-
 
 /* 푸터 */
 footer{
@@ -33,10 +43,10 @@ footer .underbar{
 	display: flex;
 	justify-content: space-around;
 	height: 100px;
-	background-color: #4D8FC3;
+	background-color: white;
 }
 footer .underbar a{
-	color: #FFF3EB;
+	color: #081012;
 	font-size: 3rem;
 	text-align: center;
 	margin: 20px 0 20px;
@@ -45,5 +55,4 @@ footer .banne{
 	height: 300px;
 	background-color: black;
 }
-footer .banner p{
-}
+footer .banner p{}

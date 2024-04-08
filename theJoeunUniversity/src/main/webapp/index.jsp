@@ -15,20 +15,12 @@
 
 <!-- css -->
 <jsp:include page="/layout/link.jsp" />
-<%-- <jsp:include page="/layout/mainLink.jsp" /> --%>
 <link href="<%= request.getContextPath()%>/Euna/css/style.css" rel="stylesheet">
-<style type="text/css">
-	.container{
-		width: 1024px;
-		height: 1440px;
-		background-color: #4D8FC3;
-	}
-	a{ color: #FFF3EB; }
-</style>
+<jsp:include page="/layout/mainLink.jsp" />
 </head>
 <body>
 	<!-- 헤더 -->
-<%-- 	<jsp:include page="/layout/header.jsp" /> --%>
+	<jsp:include page="/layout/header.jsp" />
 
 	<!-- 컨텐츠 -->
 	<div class="container txt-center">	
@@ -57,6 +49,6 @@
 	</div>
 	
 	<!-- 푸터 -->
-<%-- 	<jsp:include page="/layout/footer.jsp" /> --%>
+	<jsp:include page="/layout/footer.jsp" />
 </body>
 </html>
