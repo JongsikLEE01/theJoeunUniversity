@@ -202,7 +202,10 @@
 	<jsp:include page="/layout/footer.jsp" />
 
 	<!-- 스크립트 -->
+<<<<<<< HEAD
 <script>
 </script>
+=======
+>>>>>>> b5ad8201fa077d5c564350f1915961c4b0c94449
 </body>
 </html>

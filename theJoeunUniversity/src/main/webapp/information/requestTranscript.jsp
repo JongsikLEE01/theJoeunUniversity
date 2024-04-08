@@ -15,7 +15,10 @@
 <meta charset="UTF-8">
 <title>성적 증명서</title>
 <jsp:include page="/layout/link.jsp" />
+<<<<<<< HEAD
 <jsp:include page="/layout/mainLink.jsp" />
+=======
+>>>>>>> b5ad8201fa077d5c564350f1915961c4b0c94449
 </head>
 <body>
 	<!-- 헤더 -->

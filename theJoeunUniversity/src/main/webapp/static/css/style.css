@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 /* 공통 레이아웃 */
 a {text-decoration: none; color: black;}
 a:hover {font-weight: bold; }
@@ -16,7 +15,6 @@ a:hover {font-weight: bold; }
 	padding: 50px 20px;
 	border: 1px solid black;
 }
-
 .flex{display:flex}
 .flex.j-start{justify-content:flex-start}
 .flex.j-end{justify-content:flex-end}
@@ -91,10 +89,3 @@ thead tr th {
 .title{
 	text-align: center; 
 }
-
-/* .indexContent{ */
-/* 	padding: 100px; */
-/* 	margin: 300px; */
-/* 	border: 1px solid black; */
-/* } */
-
