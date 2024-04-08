@@ -19,6 +19,10 @@
 <title>학사 일정</title>
 	<jsp:include page="/layout/link.jsp" />
 	<jsp:include page="/layout/schedule_link.jsp" />
+<style>
+	header{ background-color: white; }
+	footer .underbar{ background-color: #4D8FC3; }
+</style>
 </head>
 <body>
 <!-- 어드민 페이지 -->
@@ -52,11 +56,10 @@
 	SimpleDateFormat sdf = new SimpleDateFormat("MM-dd");
 	SimpleDateFormat sdfMonth = new SimpleDateFormat("MMMMM", Locale.ENGLISH);
 	
-	out.print("<a>"+month+"</a>");
 	String myMonth = sdfMonth.format(month);
 %>
 	<!-- 헤더 -->
-	<jsp:include page="/layout/header.jsp" />
+<%-- 	<jsp:include page="/layout/header.jsp" /> --%>
 
 	<!-- 컨텐츠 -->
 	<div class="container">
@@ -211,7 +214,7 @@
 		<!-- info 끝 -->
 	</div>
 	<!-- 푸터 -->
-	<jsp:include page="/layout/footer.jsp" />
+<%-- 	<jsp:include page="/layout/footer.jsp" /> --%>
 
 	<!-- 스크립트 -->
 </body>

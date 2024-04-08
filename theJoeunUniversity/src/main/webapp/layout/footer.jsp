@@ -5,12 +5,8 @@
 String root = request.getContextPath();
 %>
 <style>
-.footerLogo{
-	width: 160px;
-	height: 60px
-}
-footer .underbar{ background-color: white;}
-footer .underbar a{ color: #081012 }
+footer .underbar{ background-color: #4D8FC3;}
+footer .underbar a{ color: w }
 
 </style>
 
