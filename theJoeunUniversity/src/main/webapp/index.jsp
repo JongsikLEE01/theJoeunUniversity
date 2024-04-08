@@ -17,6 +17,7 @@
 <jsp:include page="/layout/link.jsp" />
 <link href="<%= request.getContextPath()%>/Euna/css/style.css" rel="stylesheet">
 <jsp:include page="/layout/mainLink.jsp" />
+
 </head>
 <body>
 	<!-- 헤더 -->
@@ -30,6 +31,7 @@
 		            <img src="<%= root %>/static/img/대학로고.png" >
 		    </figure>
 		</div>
+
 		<div class="flex j-space-around">
 		    <figure class="figure2">
 		    	<a class="indexContent" href="<%= root %>/Euna/Info.jsp"><figcaption>학교 소개</figcaption></a>
