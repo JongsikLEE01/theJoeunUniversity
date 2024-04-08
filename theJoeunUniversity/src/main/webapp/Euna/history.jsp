@@ -11,6 +11,7 @@
 <title>더조은대학교 역사</title>
 
 <jsp:include page="/layout/link.jsp" />
+<jsp:include page="/layout/mainLink.jsp" />
 </head>
 <body>
 	<!-- 헤더 -->

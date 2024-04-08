@@ -11,6 +11,7 @@
 <meta charset="UTF-8">
 <title>로그인</title>
 <jsp:include page="/layout/link.jsp" />
+<jsp:include page="/layout/mainLink.jsp" />
 </head>
 <body>
 	<!-- 헤더 -->

@@ -19,6 +19,7 @@
 <title>학사 일정</title>
 	<jsp:include page="/layout/link.jsp" />
 	<jsp:include page="/layout/schedule_link.jsp" />
+	<jsp:include page="/layout/mainLink.jsp" />
 </head>
 <body>
 <!-- 	유저페이지 -->
@@ -201,5 +202,10 @@
 	<jsp:include page="/layout/footer.jsp" />
 
 	<!-- 스크립트 -->
+<<<<<<< HEAD
+<script>
+</script>
+=======
+>>>>>>> b5ad8201fa077d5c564350f1915961c4b0c94449
 </body>
 </html>

@@ -11,6 +11,7 @@
 <title>증명서 발행 페이지</title>
 	
 <jsp:include page="/layout/link.jsp" />
+<jsp:include page="/layout/mainLink.jsp" />
 </head>
 <body>
 	<!-- 헤더 -->

@@ -1,0 +1,58 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+/* 헤더 */
+header{
+	width: 100%;
+	height: 90px;
+	background-color: white;
+}
+header .top{
+	display: flex;
+	justify-content: space-around;
+	height: 90px;
+}
+header .top a{
+	font-size: 3rem;
+	color: #081012;
+	margin: 0;
+}
+header .top .cog { display: inline-block; }
+#admin{
+	margin-top: 10px;
+	position: relative;
+}
+header .top .cog #admin:hover{
+/* 	transform-origin: 50% 50%; */
+	animation: cogRotation 8s linear infinite;
+}
+@keyframes cogRotation{
+	0% { transform: translate(-50%, -50%) rotate(0deg); }
+	100%{ transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* 푸터 */
+footer{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 400px;
+}
+footer .underbar{
+	display: flex;
+	justify-content: space-around;
+	height: 100px;
+	background-color: white;
+}
+footer .underbar a{
+	color: #081012;
+	font-size: 3rem;
+	text-align: center;
+	margin: 20px 0 20px;
+}
+footer .banne{
+	height: 300px;
+	background-color: black;
+}
+footer .banner p{}
