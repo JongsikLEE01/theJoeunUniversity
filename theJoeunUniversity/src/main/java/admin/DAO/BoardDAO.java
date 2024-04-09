@@ -26,7 +26,8 @@ public class BoardDAO extends JDBConnection {
 		
 		// SQL 작성
 		String sql = " SELECT * "
-				   + " FROM board ";
+				   + " FROM board "
+				   + " ORDER BY NO DESC ";
 		try {
 			// 쿼리(SQL) 실행 객체 생성 - Statement (stmt)
 			stmt = con.createStatement();
@@ -181,4 +182,6 @@ public class BoardDAO extends JDBConnection {
 		}
 		return result;
 	}
+
+	
 }

@@ -125,6 +125,7 @@ public class UserDAO extends JDBConnection {
 		
 	// 데이터 수정
 		public int update(Users user) {
+			System.out.println("실행됨:" + user.getdNo());
 			int result = 0;		// 결과 : 적용된 데이터 건수
 			
 			String sql = " UPDATE users "
@@ -133,6 +134,7 @@ public class UserDAO extends JDBConnection {
 					   + "   , birth = ? "
 					   + "   , mail = ? "
 					   + "   , academicstatus = ? "
+					   + "   , dno = ? "
 					   + " WHERE uno = ? ";
 			
 			try {
@@ -141,8 +143,9 @@ public class UserDAO extends JDBConnection {
 				psmt.setString( 2, user.getStudentId() );		
 				psmt.setString( 3, user.getBirth() );		
 				psmt.setString( 4, user.getMail() );		
-				psmt.setString( 5, user.getAcademicStatus() );		
-				psmt.setInt( 6, user.getUno() );			
+				psmt.setString( 5, user.getAcademicStatus() );
+				psmt.setInt( 6, user.getdNo() );
+				psmt.setInt( 7, user.getUno() );			
 				
 				result = psmt.executeUpdate();		// SQL 실행 요청, 적용된 데이터 개수를 받아온다.
 													// 게시글 1개 적용 성공 시, result : 1

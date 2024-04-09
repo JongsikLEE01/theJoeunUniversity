@@ -10,7 +10,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>학사일정조회</title>
+<title>학사일정 조회</title>
+<link rel="stylesheet" href="../static/css/adminLogin.css">
 </head>
 <body>
 	<%
@@ -20,43 +21,75 @@
 	int no = Integer.parseInt(request.getParameter("no"));
 	Calendar calendar = calendarService.select(no);
 	%>
-	<h1>학사일정조회</h1>
-	<%
-	if (calendar != null) {
-	%>
-	<table border="1">
-		<tr>
-			<th>시작일</th>
-			<td><%=calendar.getStrDate()%></td>
-		</tr>
-		<tr>
-			<th>종료일</th>
-			<td><%=calendar.getEndDate()%></td>
-		</tr>
-		<tr>
-			<th>일정내용</th>
-			<td><%=calendar.getContent()%></td>
-		</tr>
-	</table>
-	<%
-	} else {
-	%>
-	<h3>조회된 게시글이 없습니다.</h3>
-	<%
-	}
-	%>
 
-	<div>
-		<a href="<%=request.getContextPath()%>/calendar/calendarlist.jsp">
-			닫기 </a> <a
-			href="<%=request.getContextPath()%>/calendar/update.jsp?no=<%=no%>">
-			수정 </a>
-		<form action="<%=request.getContextPath()%>/calendar/delete_pro.jsp"
-			method="post">
-			<input type="hidden" name="no" value="<%=no%>" /> <input
-				type="submit" value="삭제" />
-		</form>
-
+	<div class="container">
+		<div class="container-head">
+			<div class="item">
+				<img src="../static/img/adminLogo.png" alt="로고">
+			</div>
+			<div class="item">
+				<p>
+					THEJOEUN University Kiosk <br> Management System
+				</p>
+			</div>
+		</div>
+		<div class="container-insertForm">
+			<%
+			if (calendar != null) {
+			%>
+			<table>
+				<tr>
+					<th>시작일</th>
+					<td><%=calendar.getStrDate()%></td>
+				</tr>
+				<tr>
+					<th>종료일</th>
+					<td><%=calendar.getEndDate()%></td>
+				</tr>
+				<tr>
+					<th>일정내용</th>
+					<td><%=calendar.getContent()%></td>
+				</tr>
+			</table>
+			<div class="container-insertFt">
+				<div class="insertBtn">
+					<table>
+						<tr>
+							<td>
+								<form
+									action="<%=request.getContextPath()%>/calendar/calendarlist.jsp"
+									method="GET">
+									<input type="submit" value="닫기" />
+								</form>
+							</td>
+							<td>
+								<form
+									action="<%=request.getContextPath()%>/calendar/update.jsp?"
+									method="post">
+									<input type="hidden" name="no" value="<%=no%>" /><input
+										type="submit" value="수정" />
+								</form>
+							</td>
+							<td>
+								<form
+									action="<%=request.getContextPath()%>/calendar/delete_pro.jsp"
+									method="post">
+									<input type="hidden" name="no" value="<%=no%>" />
+									<input type="submit" value="삭제" />
+								</form>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<%
+			} else {
+			%>
+			<h3>조회된 일정이 없습니다.</h3>
+			<%
+			}
+			%>
+		</div>
 	</div>
 </body>
 </html>

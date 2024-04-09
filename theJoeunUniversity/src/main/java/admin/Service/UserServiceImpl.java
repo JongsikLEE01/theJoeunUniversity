@@ -50,6 +50,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public int update(Users user) {
 		// 1. 게시글 정보를 전달하여 게시글 데이터 수정 요청
+			System.out.println("실행됨 impl:" + user.getdNo());
 			int result = userDAO.update(user);
 			// 2. 적용된 데이터 건수를 반환
 			//   - 결과 : 0 --> 데이터 수정 실패

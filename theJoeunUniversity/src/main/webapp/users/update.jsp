@@ -1,3 +1,4 @@
+
 <%@page import="admin.DTO.Users"%>
 <%@page import="admin.Service.UserServiceImpl"%>
 <%@page import="admin.Service.UserService"%>
@@ -10,7 +11,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>게시글 수정</title>
+<title>학사정보 수정</title>
+<link rel="stylesheet" href="../static/css/adminLogin.css">
 </head>
 <body>
 	<%
@@ -18,15 +20,36 @@
 	int no = Integer.parseInt(request.getParameter("no"));
 	Users user = userService.select(no);
 	%>
-	<h1>게시글 수정</h1>
-	<%
-	if (user != null) {
-	%>
-	<form action="<%=request.getContextPath()%>/users/update_pro.jsp"
-		method="post">
-		<input type="hidden" name="no" value="<%=user.getUno()%>" />
-		<table border="1">
-			<tr>
+	<div class="container">
+		<div class="container-head">
+			<div class="item">
+				<img src="../static/img/adminLogo.png" alt="로고">
+			</div>
+			<div class="item">
+				<p>
+					THEJOEUN University Kiosk <br> Management System
+				</p>
+			</div>
+		</div>
+		<%
+		if (user != null) {
+		%>
+		<div class="u-u-body">
+			<div class="u-u-item1">
+				
+				<!-- jsp 로 파일 업로드 처리 -->
+				<form action="upload.jsp" method="post" enctype="multipart/form-data">
+				<!-- Servlet 으로 파일 업로드 처리 -->
+					<input type="file" name="file" multiple />
+					<input type="submit" value="업로드" />
+				</form>
+			</div>
+			<div class="u-u-item2">
+		<div>
+			<form action="<%=request.getContextPath()%>/users/update_pro.jsp" method="post">
+				<input type="hidden" name="no" value="<%=user.getUno()%>" />
+				<table>
+					<tr>
 				<th>이름</th>
 				<td><input type="text" name="name" value="<%=user.getName()%>" /></td>
 			</tr>
@@ -54,21 +77,24 @@
 				<td><input type="text" name="dno" value="<%=user.getdNo()%>" />
 				</td>
 			</tr>
-		</table>
-		<input type="submit" value="수정" />
-	</form>
-	<%
-	} else {
-	%>
-	<h3>조회된 게시글이 없습니다.</h3>
-	<%
-	}
-	%>
-
-	<div>
-		<a href="<%=request.getContextPath()%>/users/userslist.jsp"> 닫기 </a>
-	</div>
-
+				</table>
+				<div class="container-insertFt">
+					<div>
+						<input class="u-u-btn" type="submit" value="수정" />
+					</div>
+				</div>
+			</form>
+			<%
+		} else {
+		%>
+		<h3>조회된 게시글이 없습니다.</h3>
+		<%
+		}
+		%>
+		</div>
+			</div>
+		</div>
+	</div>	
 </body>
 </html>
 
