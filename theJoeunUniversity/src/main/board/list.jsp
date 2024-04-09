@@ -1,14 +1,15 @@
-<%@page import="admin.DAO.BoardDAO"%>
+<%@page import="board.DAO.BoardDAO"%>
 <%@page import="admin.DTO.Board"%>
 <%@page import="java.util.List"%>
-<%@page import="admin.Service.BoardService"%>
-<%@page import="admin.Service.BoardServiceImpl"%>
+<%@page import="board.Service.BoardService"%>
+<%@page import="board.Service.BoardServiceImpl"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,37 +20,48 @@
 
 <jsp:include page="/layout/link.jsp" />
 </head>
-<body class="Container">
+<body>
 
-	
-	<!-- 헤더 -->
+	<div class="container" style="min-height: 1440px">
+		<!-- 헤더 -->
 	<jsp:include page="/layout/header.jsp" />
-	<header class="Header">
-	더조은 대학교
-	</header>
 		
 	<%
+		String title = request.getParameter("title");
+		title = title == null ? "" : title;
 		BoardService boardService = new BoardServiceImpl();
-		List<Board> boardList = boardService.list();
+		List<Board> boardList = null;
+		
+		// 검색
+		if( title != null && !title.equals("") ) {
+			boardList = boardService.search(title);
+		}
+		// 전체 목록
+		else {
+			boardList = boardService.list();
+		}
+			
+			
+	//	List<Board> searchList = boardService.searchList();
 	%>
 
-	<div class="searck">
+	<div class="search">
 		<div class="row">
-			<form method="post" name="search" action="">
+			<form method="get" name="search" action="list.jsp">
 				<table class="pull-right">
 					<tr>
 						<td><input type="text" class="form-control"
-							placeholder="검색어 입력" name="searchText" maxlength="100"></td>
-						<td><button type="submit" class="btn btn-success">검색</button></td>
+							placeholder="제목 키워드 입력" name="title" maxlength="100" value="<%= title %>">
+							</td>
+						<td><button type="submit" class="searchbtn" >검색</button></td>
 					</tr>
 
 				</table>
 			</form>
 		</div>
 	</div>
-
-	<p class="Notice_text"></p> 
-		<table class="InnerContainer">
+	
+		<table class="Ntable" style="height: 40px">
 			<tr class="InnerHeader">
 				<th>번호</th>
 				<th>제목</th>
@@ -84,11 +96,10 @@
 	
 
 
-<!-- 헤더 
-<jsp:include page="/layout/footer.jsp"/>
--->
+<!-- 푸터 -->
+<jsp:include page="/layout/footer.jsp" />
+	</div>
 
-<div class="Footer"></div>
 
 <!-- 스크립트 -->
 <jsp:include page="/layout/script.jsp"></jsp:include>
