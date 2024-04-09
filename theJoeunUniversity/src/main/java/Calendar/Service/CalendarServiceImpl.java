@@ -61,4 +61,10 @@ public class CalendarServiceImpl implements CalendarService {
 		// 1 --> 데이터 삭제 성공
 		return result;
 	}
+
+	@Override
+	public List<Calendar> listByYearMonth(String year, String month) {
+		List<Calendar> calList = calendarDAO.listByYearMonth(year, month);
+		return calList;
+	}
 }
