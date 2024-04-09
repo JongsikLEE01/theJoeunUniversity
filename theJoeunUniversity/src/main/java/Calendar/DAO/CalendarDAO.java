@@ -169,4 +169,64 @@ public class CalendarDAO extends JDBConnection {
 		}
 		return result;
 	}
+	
+	
+	
+	// 년도와 월로 일정 목록 조회
+	public List<Calendar> listByYearMonth(String year, String month) {
+		
+		// 게시글 목록을 담을 컬렉션 객체 생성
+		List<Calendar> calList = new ArrayList<Calendar>();
+		
+		// SQL 작성
+		String sql = " SELECT * "
+				   + " FROM CALENDAR"
+				   + " WHERE TO_CHAR(strdate, 'YYYY') = ? "
+				   + "   AND TO_CHAR(strdate, 'MM') = ? "
+				   + " ORDER BY STRDATE ASC ";
+		try {
+			// 쿼리(SQL) 실행 객체 생성 - Statement (stmt)
+			psmt = con.prepareStatement(sql);
+			psmt.setString(1, year);
+			psmt.setString(2, month);
+			
+			// 쿼리(SQL) 실행 -> 결과  - ResultSet (rs)
+			rs = psmt.executeQuery();
+			
+			// 조회 결과를 리스트(calList)에 추가
+			while( rs.next() ) {		// next() : 실행 결과의 다음 데이터로 이동
+				Calendar cal = new Calendar();
+				
+				// 결과 데이터 가져오기
+				// rs.getXXX("컬럼명") --> 해당 컬럼의 데이터를 가져온다
+				// * "컬럼명"의 값을 특정 타입으로 변환
+				cal.setNo(rs.getInt("no"));
+				cal.setStrDate( rs.getDate("strDate") );
+				cal.setEndDate( rs.getDate("endDate") );
+				cal.setContent( rs.getString("content") );
+				
+				// 게시글 목록에 추가
+				calList.add(cal);
+			}
+		} catch(SQLException e) {
+			System.err.println("일정 목록 조회 시, 예외 발생");
+			e.printStackTrace();
+		}
+		// 게시글 목록 반환
+		return calList;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
