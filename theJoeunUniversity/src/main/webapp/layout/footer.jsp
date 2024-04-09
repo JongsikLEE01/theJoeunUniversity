@@ -10,7 +10,6 @@ String root = request.getContextPath();
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <!-- swiper 플러그인 -->
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-<script src="js/script.js"></script>
 
 <footer>	
 	<div class="underbar">
