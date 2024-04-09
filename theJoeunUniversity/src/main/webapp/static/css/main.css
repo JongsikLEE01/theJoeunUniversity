@@ -29,9 +29,11 @@ header .top .cog #admin:hover{
 	100%{ transform: rotate(360deg); }
 }
 .headerLogo{	
-	width: 247px;
-	height: 90px;
-	border: 0;
+    width: 247px;
+    height: 300px;
+    border: 0;
+    position: absolute;
+    margin-top: -43%;
 }
 
 
@@ -55,8 +57,9 @@ footer .underbar a{
 	margin: 20px 0 20px;
 }
 footer .underbar a img{
-	width: 120px;
-	height: 40px;
+    width: 150px;
+    height: 100px;
+    margin-top: -15%;
 }
 .swiper{ width: 100%; height: 300px;}
 footer .swiper-wrapper .swiper-slide img{ width: 100%; height: 300px; object-fit: cover;}

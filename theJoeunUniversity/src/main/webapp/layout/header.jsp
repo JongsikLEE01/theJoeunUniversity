@@ -10,7 +10,7 @@ String root = request.getContextPath();
 %>
 <header>
 	<div class="top">
-		<a class="cog" href="<%= root%>/admin.jsp"><i id="admin" class="fa fa-cog"></i></a>
+		<a class="cog" href="<%= root%>/admin.jsp"><i style="color: white;" id="admin" class="fa fa-cog"></i></a>
         <a class="headerLogo" href="<%= root%>/index.jsp"><img class="headerLogo" src="<%=root%>/static/img/헤더로고.png"></a>
         <span></span>
 	</div>
