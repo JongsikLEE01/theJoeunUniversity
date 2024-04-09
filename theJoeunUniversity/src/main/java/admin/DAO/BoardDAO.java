@@ -181,6 +181,4 @@ public class BoardDAO extends JDBConnection {
 		}
 		return result;
 	}
-
-	
 }

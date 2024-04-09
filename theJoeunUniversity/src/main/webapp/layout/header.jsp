@@ -9,12 +9,9 @@
 String root = request.getContextPath();
 %>
 <header>
-	<nav>
-		<ul>
-            <li><a href="<%= root%>/index.jsp">Home</a></li>
-			<li><a href="<%= root%>/about.jsp">학교 소개</a></li>
-			<li><a href="<%= root%>/board/list.jsp">공지 사항</a></li>
-			<li><a href="<%= root%>/gallery/list.jsp">학사 일정</a></li>
-		</ul>
-	</nav>
+	<div class="top">
+		<a class="cog" href="<%= root%>/admin.jsp"><i id="admin" class="fa fa-cog"></i></a>
+        <a class="headerLogo" href="<%= root%>/index.jsp"><img class="headerLogo" src="<%=root%>/static/img/헤더로고.png"></a>
+        <span></span>
+	</div>
 </header>
