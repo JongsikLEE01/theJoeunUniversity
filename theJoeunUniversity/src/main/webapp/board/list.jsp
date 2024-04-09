@@ -48,7 +48,7 @@
 		</div>
 	</div>
 	-->
-	<a href="<%= request.getContextPath() %>/board/insert.jsp">글쓰기</a>
+
 	
 	<table border="1">
 		<tr>

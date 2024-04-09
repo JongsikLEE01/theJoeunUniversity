@@ -29,7 +29,7 @@ public class JDBConnection {
 			// String url ="jdbc:oracle:thin:@localhost:1521:xe"; // 11g
 			// String url ="jdbc:oracle:thin:@localhost:1521:orcl"; // 12c이상
 			String url = "jdbc:oracle:thin:@localhost:1521:orcl";
-			String id = "mini";
+			String id = "MINI";
 			String pw = "123456";
 
 			// 자바 프로그램에서 JDBC 드라이버를 연결시켜주는 클래스

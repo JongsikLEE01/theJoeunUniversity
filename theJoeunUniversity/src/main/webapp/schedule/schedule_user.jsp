@@ -5,6 +5,7 @@
 <%@page import="Calendar.Service.CalendarService"%>
 <%@page import="Calendar.MyCalendar"%>
 <%@page import="java.util.Date"%>
+<%@page import="java.util.Locale"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
@@ -17,11 +18,26 @@
 <meta charset="UTF-8">
 <title>학사 일정</title>
 	<jsp:include page="/layout/link.jsp" />
-	<link href="<%= request.getContextPath()%>/schedule/css/style.css" rel="stylesheet">
+	<jsp:include page="/layout/schedule_link.jsp" />
+	<jsp:include page="/layout/mainLink.jsp" />
+<style>
+/*     .blink { */
+/*         animation: blinker 1s cubic-bezier(.5, 0, 1, 1) infinite alternate; */
+/*     } */
+    
+/*     @keyframes blinker { */
+/*         from { opacity: 1; } */
+/*         to { opacity: 0; } */
+/*     } */
+</style>
 </head>
 <body>
 <!-- 	유저페이지 -->
 	<%
+	
+	String root = request.getContextPath();
+	pageContext.setAttribute("root", root);
+	
 	// 년, 월 받아오기
 	Date date = new Date();
 	int year = date.getYear() + 1900;
@@ -49,18 +65,29 @@
 
 	// 날짜 포맷
 	SimpleDateFormat sdf = new SimpleDateFormat("MM-dd");
+// 	SimpleDateFormat sdfMonth = new SimpleDateFormat("MMM", Locale.ENGLISH);
+		
+// 	int myday = date.getDay();
+// 	String checkMonth = sdfMonth.format(date);
+// 	String myMonth = sdfMonth.format(month);
+
+	// pageContext.setAttribute("calendarList", calendarList);
 	%>
 	<!-- 헤더 -->
 	<jsp:include page="/layout/header.jsp" />
 
 	<!-- 컨텐츠 -->
 	<div class="container">
-		<span id="main">학사 일정</span>
+		<ul class="mainTitle">
+			<li class="Line"></li>
+			<li class="title">학사 일정</li>
+			<li class="Line"></li>
+		</ul>
 		<div class="months">
 			<div class="select">
 				<input type="button" value="&lt;" class="selectbtn"
 					onclick="location.href='?year=<%=year%>&month=<%=month - 1%>'">
-				<span id="year"><%=year%>년 학사일정</span>
+				<span class="year"><%=year%>년 학사일정</span>
 				<input type="button"
 					value="&gt;" class="selectbtn"
 					onclick="location.href='?year=<%=year%>&month=<%=month + 1%>'">
@@ -68,20 +95,19 @@
 		</div>
 		<div class="content">
 			<div class="calendar">
+				<span class="titleMonth"><%=month%>월</span>
+			<%-- <span class="myMonth"><%= checkMonth %></span> --%>
 				<!-- 달력 출력 -->
-				<table width="700" align="center" cellpadding="5" cellspacing="0">
-					<tr>
-						<th id="title" colspan="7"><%=month%>월</th>
-					</tr>
+				<table class="Tcalendar" align="center" cellpadding="5" cellspacing="0">
 					<!-- 요일 표시 -->
-					<tr>
-						<td class="sunday">일</td>
-						<td class="etcday">월</td>
-						<td class="etcday">화</td>
-						<td class="etcday">수</td>
-						<td class="etcday">목</td>
-						<td class="etcday">금</td>
-						<td class="satday">토</td>
+					<tr class="week">
+						<td >S</td>
+						<td >M</td>
+						<td >T</td>
+						<td >W</td>
+						<td >T</td>
+						<td >F</td>
+						<td >S</td>
 					</tr>
 					<tr>
 						<%
@@ -99,24 +125,12 @@
 							}
 						}
 	
+						String strMonth = month < 10 ? "0" + month : month + "";
 						// 1일부터 마지막 날까지 반복해 날짜 출력
 						for (int day = 1; day <= MyCalendar.lastDay(year, month); day++) {
-							// 요일 출력
-							switch (MyCalendar.weekDay(year, month, day)) {
-							case 0:
-								// 일요일
-								out.println("<td class='sunday'>" + day + "</td>");
-								break;
-							case 6:
-								// 토요일
-								out.println("<td class='satday'>" + day + "</td>");
-								break;
-							default:
-								// 평일
-								out.println("<td>" + day + "</td>");
-								break;
-							}
-							// 출력한 날짜가 토요일이면서 마지막 달이면 줄바꿈
+							String strDay = day < 10 ? "0" + day : day + "";
+							out.println("<td><span data='" + (strMonth+"-"+strDay) + "'></span><span>" + day+ "</span><span class='count' onclick='blinkInfoContent()'></span><ul class='date-content'></ul></td>");
+							// 출력한 날짜가 토요일이면서 마지막 날이면 줄바꿈
 							if (MyCalendar.weekDay(year, month, day) == 6 && day != MyCalendar.lastDay(year, month)) {
 								out.println("</tr><tr>");
 							}
@@ -124,16 +138,15 @@
 						%>
 					</tr>
 				</table>
-			</div>
-			<!-- 캘린터 끝 -->
+			</div><!-- 캘린터 끝 -->
 			<div class="info">
-				<span id="infocal">상세 일정</span>
-				<table>
+				<p class="infoTitle">상세 일정</p>
+				<table class="Tinfo">
 					<%
 					if (calendarList == null || calendarList.size() == 0) {
 					%>
 					<tr>
-						<td colspan="5">해당 월의 행사는 아직 정해지지 않았습니다.</td>
+						<td colspan="2">해당 월의 행사는 아직 정해지지 않았습니다.</td>
 					</tr>
 					<%
 					} else {
@@ -157,20 +170,20 @@
 								// 시작월 종료월 확인 후 출력
 								if ( strDay == endDay ) {
 									// 날짜
-									out.print("<td>");
+									out.print("<td class='infoDay'>");
 									out.print(sdf.format(calendar.getStrDate()));
 									out.print("</td>");
 									// 내용
-									out.print("<td>");
+									out.print("<td class='infoContent'>");
 									out.print(calendar.getContent());
 									out.print("</td>");
 								} else {
 									// 날짜
-									out.print("<td>");
+									out.print("<td class='infoDay'>");
 									out.print(sdf.format(calendar.getStrDate()) + " ~ " + sdf.format(calendar.getEndDate() ) );
 									out.print("</td>");
 									// 내용
-									out.print("<td>");
+									out.print("<td class='infoContent'>");
 									out.print(calendar.getContent());
 									out.print("</td>");
 								}							
@@ -192,5 +205,173 @@
 	<jsp:include page="/layout/footer.jsp" />
 
 	<!-- 스크립트 -->
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script>
+		// 자바를 자바스크립트로
+		// let calList = "${calendarList}"
+		
+		const root = "${ root }"
+		const year = "${ param.year }"
+		let realMonth = "${ param.month }"
+		let month = "${ param.month }"
+		month = month < 10 ? "0" + month : month
+		
+		console.log('년도 : ' + year)
+		console.log('월 : ' + month)
+	
+		$(function() {
+			// data 속성값으로 요소 선택
+			// 일정이 있는 날짜들은 .date 클래스 추가
+			$('[data=10]').addClass('date')
+			
+			getDates(year, month)
+		})
+		
+		function getDates(year='', month='') {
+			
+			const url = root + "/calendar"
+			
+			console.log('url : ' + url)
+			
+			const data = {
+				'year' : year,
+				'month' : month,
+			}
+			
+				
+			// jQuery 로 AJAX 요청
+            $.ajax({
+                type            : 'GET',                 // 요청 메소드
+                url             : url,                    // 요청 URL
+                data            : data,   // 요청 데이터
+                contentType     : 'application/json',     // 요청 데이터 타입
+                dataType        : 'html',     // 응답 데이터 타입
+                // 요청 성공 
+                success         : function(response, status) {
+                    // response : 응답 데이터
+                    // status   : 응답 상태
+                    console.log(response)
+                    
+                    // 문자열 --> JSON
+                    let calList = JSON.parse( response ).dates
+                    
+                    console.log("달력 데이터 -------------")
+                    console.log(calList[0].strDate)
+                    
+                    // 달력에 일정 표시
+                    paintDates( calList )  
+                },
+                // 에러
+                error           : function(xhr, status) {
+                    // xhr      : XMLHttpRequest 객체
+                    // status   : 응답 상태
+                    alert('에러 발생')
+                }
+                
+            })
+			
+		}
+		
+		
+		// 달력에 일정 표시
+		function paintDates( calList ) {
+			console.log(calList)
+			
+			let dateList = new Array()
+			for (let i = 0; i < calList.length; i++) {
+				
+				const strDate = calList[i].strDate
+				const endDate = calList[i].endDate
+				
+				const strDay = parseInt( strDate.split("-")[1] ) 
+				const endDay = parseInt( endDate.split("-")[1] )
+				
+				const content = calList[i].content
+				
+				// 끝나는 일정이 다음 달이면, endDay 를 31로 고정
+				const endMonth = endDate.split("-")[0]
+				let nextMonth = realMonth + 1
+				nextMonth = nextMonth < 10 ? "0" + nextMonth : nextMonth
+				if( endMonth == nextMonth ) {
+					endDay = 31
+				}
+				
+// 				console.log('strDay : ' + strDay)
+// 				console.log('endDay : ' + endDay)
+				
+				// strDay : 1
+				// endDAy : 5
+				// j : 1,2,3,4,5
+				for (let j = strDay; j <= endDay; j++) {
+					let day = j < 10 ? "0" + j : j
+					let date = month + "-" + day
+					let obj = {
+							'date' 		: date,
+							'content' 	: content
+					}
+					dateList.push(obj)
+				}
+			}
+			
+			for (var i = 0; i < dateList.length; i++) {
+				let date = dateList[i].date
+				let content = dateList[i].content
+				$("[data=" + date +"]").addClass("date")
+				
+				
+				let count = $("[data=" + date +"] ~ .count").text()
+				console.log(content)
+				console.log(count)
+				
+				if( count == null || count == '' ) {
+					count = 0
+				}
+				let sumCount = parseInt( count ) + 1
+				
+				$("[data=" + date +"] ~ .count").text( sumCount )
+				
+				if(count != 1){
+					let dateli = `<li>${ content }</li>`
+					$("[data=" + date +"] ~ .date-content").append(dateli)					
+				}
+				
+				// 컨텐츠 띄우는 것부터./...
+				
+				
+			}
+		}
+		
+		function blinkInfoContent() {
+		    blinkElement($('.infoContent'), 3);
+		    blinkElement($('.infoDay'), 3);
+		}
+
+		function blinkElement(element, times) {
+		    let count = 0;
+		    const blinkInterval = setInterval(function() {
+		        element.toggleClass('blink');
+		        count++;
+		        if (count === times * 2) {
+		            clearInterval(blinkInterval);
+		            element.removeClass('blink');
+		        }
+		    }, 1000);
+		}
+	</script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
