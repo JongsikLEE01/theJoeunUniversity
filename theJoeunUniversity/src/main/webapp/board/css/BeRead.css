@@ -1,0 +1,102 @@
+@charset "UTF-8";
+
+.Header{
+	background-color:rgba(77.00000301003456, 143.00000667572021, 195.0000035762787, 1);
+	width:1024px;
+	height:90px;
+	position:absolute;
+	left:0px;
+	top:0px;
+	border-radius: 0px 0px 20px 20px;
+	font-size: 50px;
+	text-align:center;
+}
+
+.reg_date{
+    width: 342px;
+    height: 33px;
+    position: absolute;
+    left: 750px;
+    top: 160px;
+}
+
+.upd_date{
+	width: 342px;
+    height: 33px;
+    position: absolute;
+    left: 750px;
+    top: 130px;
+}
+
+.Table{
+	width: 980px;
+    height: 698px;
+    position: absolute;
+    left: 22px;
+    top: 207px;
+/*     border: 5px; */
+}
+.Cotainer{
+	width: 980px;
+	height: 698px;
+	position: absolute;
+	left: 22px;
+	top: 207px;
+}
+
+.Title {
+    text-align:center;
+    font-size:1.5rem;
+}
+
+/* .Title_sub{ */
+/* 	width: 760px; */
+/* 	height: 60px; */
+/*     position: absolute; */
+/*     font-size:30px; */
+/*     left: 210px; */
+/*     top: 3px; */
+/* } */
+
+.Writer{
+	width: 160px;
+    text-align:center;
+    font-size:1.5rem; 
+}
+
+/* .Writer_sub{ */
+/* 	width: 760px; */
+/* 	height: 40px; */
+/*     position: absolute; */
+/*     font-size:30px; */
+/*     left: 210px; */
+/*     top: 63px; */
+/* } */
+
+.Content_sub{
+	height: 585px;
+	background-color: lightgray;
+	
+}
+
+img{
+    ransform: rotate(180deg);
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    left: 510px;
+    top: 1000px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Footer{
+	background-color:rgba(77.00000301003456, 143.00000667572021, 195.0000035762787, 1);
+	width:1024px;
+	height:300px;
+	position:absolute;
+	left:0px;
+	top:1092px;
+	border-radius: 20px 20px 0px 0px;
+}
+
