@@ -32,4 +32,14 @@ public interface CalendarService {
 	int delete(int no);
 
 	// public Board updateView(int no)
+	
+	// 연,월로 일정 목록 조회
+	List<Calendar> listByYearMonth(String year, String month);
 }
+
+
+
+
+
+
+

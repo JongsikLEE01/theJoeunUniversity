@@ -5,6 +5,7 @@ import java.util.Date;
 public class Score {
     private int no;
     private String subjectScore;
+    private String subjectName;
     private Date inputDate;
     private Date updDate;
     private String type;
@@ -82,8 +83,26 @@ public class Score {
     public void setCourseCode(String courseCode) {
         this.courseCode = courseCode;
     }
+    
+    
 
-    // toString 메서드
+    public String getSubjectName() {
+		return subjectName;
+	}
+
+	public void setSubjectName(String subjectName) {
+		this.subjectName = subjectName;
+	}
+
+	public int getuNo() {
+		return uNo;
+	}
+
+	public void setuNo(int uNo) {
+		this.uNo = uNo;
+	}
+
+	// toString 메서드
     @Override
     public String toString() {
         return "Score{" +

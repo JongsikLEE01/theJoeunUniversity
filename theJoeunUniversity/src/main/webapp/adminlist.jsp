@@ -8,15 +8,44 @@
 <head>
 <meta charset="UTF-8">
 <title>더조은 키오스크 관리페이지</title>
+<link rel="stylesheet" href="static/css/adminLogin.css">
 </head>
 <body>
-	<h1>관리자님 환영합니다.</h1>
 	<%
 	String user_id = (String) session.getAttribute("userID");
 	String user_pw = (String) session.getAttribute("userPW");
 	%>
-	<a href="<%=request.getContextPath()%>/board/boardlist.jsp">공지 사항 관리</a>
-	<a href="<%=request.getContextPath()%>/users/userslist.jsp">학생 정보 관리</a>
-	<a href="<%=request.getContextPath()%>/schedule/schedule.jsp">학사 일정 관리</a>
+	<div class="container">
+		<div class="container-head">
+			<div class="item">
+				<img src="static/img/adminLogo.png" alt="로고">
+			</div>
+			<div class="item">
+				<p>
+					THEJOEUN University Kiosk <br> Management System
+				</p>
+			</div>
+		</div>
+		<div class="container-menu">
+			<div class="menu-card">
+				<img src="static/img/admin_menuCard01.png" alt="카드메뉴"> <span><a
+					style="color: #5d8dbf;" style="text-decoration:none;"
+					href="<%=request.getContextPath()%>/board/boardlist.jsp">게시판<br>관리
+				</a></span>
+			</div>
+			<div class="menu-card">
+				<img src="static/img/admin_menuCard02.png" alt="카드메뉴"> <span><a
+					style="color: #d8ad9d;"
+					href="<%=request.getContextPath()%>/users/userslist.jsp">학사정보<br>관리
+				</a></span>
+			</div>
+			<div class="menu-card">
+				<img src="static/img/admin_menuCard03.png" alt="카드메뉴"> <span><a
+					style="color: black;"
+					href="<%=request.getContextPath()%>/calendar/calendarlist.jsp">학사일정<br>관리
+				</a></span>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

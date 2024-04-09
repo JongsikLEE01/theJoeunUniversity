@@ -1,0 +1,106 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.container{
+	background-color: #417ABD;
+	flex-direction: column;
+	justify-content: space-around;
+    align-items: center;
+    box-sizing:border-box;
+	height: 984px;
+	width: 900px;
+	
+}
+
+::placeholder {
+    color: #FFFFFF;
+    text-align: center;
+    letter-spacing: -2.5%;
+}
+
+
+
+
+.textlogin {
+    height: 153px;
+    width: 80%;
+    background-color: #417ABD;
+    border-top: 2px solid #417ABD;
+    border-left: 2px solid #417ABD;
+    border-right: 2px solid #417ABD;
+    border-bottom: 2px solid #FFFFFF;
+    border-radius: 30px;
+    font-size: 30px;
+    margin: 30px;
+    transition: background-color 0.3s ease; /* 배경색 변화에 대한 전환 효과 */
+    text-align: center; 
+    outline: none;
+    
+    /* 클릭 효과 */
+    &:active {
+        background-color: #FFFFFF; /* 클릭시 배경색을 변경합니다. */
+        border: 2px solid #FFFFFF;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* 클릭시 그림자를 추가합니다. */
+        outline: none;
+    }
+}
+
+.textlogin:focus {
+    border-color: #FFFFFF; /* 포커스를 받으면 테두리 색상을 하얀색으로 변경합니다. */
+}
+.textlogin.clicked {
+    background-color: #FFFFFF; /* 클릭된 후 배경색을 하얀색으로 변경합니다. */
+    box-shadow: none; /* 클릭된 후 그림자를 제거합니다. */
+}
+
+.textlogin.clicked::placeholder {
+    color: #E0E0E0;
+}
+
+
+
+.button {
+    height: 153px;
+	width: 80%;
+	border-radius: 30px;
+    font-size: 50px;
+    margin: 30px;
+    color: #FFFFFF;
+    
+    background-color: #417ABD;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    border: 2px solid #FFFFFF;
+}
+
+.button:active {
+    background-color: #FFFFFF; /* 버튼이 눌렸을 때의 배경색을 변경합니다. */
+    color: #417ABD
+    
+}
+
+
+
+.errtext {
+	margin-bottom: 0px;
+	color: white;
+    font-size: 28px; /* 초기에 설정할 폰트 크기 */
+    opacity: 1; /* 초기 투명도 설정 */
+    animation: errorTextAnimation 2s ease-in-out; /* 애니메이션 적용 */
+}
+
+@keyframes errorTextAnimation {
+    0% {
+        opacity: 1; /* 시작 시 투명도 */
+    }
+    50% {
+        opacity: 0.5; /* 중간에 줄어든 투명도 */
+    }
+    100% {
+        opacity: 1; /* 다시 초기로 돌아온 투명도 */
+    }
+}
