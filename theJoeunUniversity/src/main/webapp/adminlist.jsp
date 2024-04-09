@@ -15,8 +15,8 @@
 	String user_id = (String) session.getAttribute("userID");
 	String user_pw = (String) session.getAttribute("userPW");
 	%>
-	<a href="<%=request.getContextPath()%>/board/boardlist.jsp">공지 사항 관리</a>
-	<a href="<%=request.getContextPath()%>/users/userslist.jsp">학생 정보 관리</a>
-	<a href="<%=request.getContextPath()%>/schedule/schedule.jsp">학사 일정 관리</a>
+	<a href="<%=request.getContextPath()%>/board/boardlist.jsp">공지사항</a>
+	<a href="<%=request.getContextPath()%>/users/userslist.jsp">학사정보</a>
+	<a href="<%=request.getContextPath()%>/calendar/calendarlist.jsp">학사일정</a>
 </body>
 </html>

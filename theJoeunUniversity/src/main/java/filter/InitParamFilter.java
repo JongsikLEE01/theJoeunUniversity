@@ -69,7 +69,7 @@ public class InitParamFilter implements Filter {
 
 	@Override
 	public void destroy() {
-//		System.out.println("Fileter02 해제...");
+		System.out.println("Fileter02 해제...");
 		
 	}
 	
