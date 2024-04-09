@@ -1,4 +1,3 @@
-
 <%@page import="admin.DTO.Board"%>
 <%@page import="admin.Service.BoardServiceImpl"%>
 <%@page import="admin.Service.BoardService"%>

@@ -3,7 +3,7 @@ calendar table{
 	background-color: white;
 	border: 0px
 }
-table .sunday{
+table.sunday{
 	color: red;
 }
 table .satday{

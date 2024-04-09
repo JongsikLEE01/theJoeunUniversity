@@ -16,6 +16,7 @@
 <!-- css -->
 <jsp:include page="/layout/link.jsp" />
 <link href="<%= request.getContextPath()%>/Euna/css/style.css" rel="stylesheet">
+<jsp:include page="/layout/mainLink.jsp" />
 
 </head>
 <body>
@@ -30,33 +31,23 @@
 		            <img src="<%= root %>/static/img/대학로고.png" >
 		    </figure>
 		</div>
-		    <div class="flex j-space-between">
-		        <figure class="figure2">
-		        <a href="<%= root %>/Euna/Info.jsp"><img src="<%= root %>/static/img/학교소개.png" ></a>
-		            <figcaption>학교 소개</figcaption>
-		        </figure>
-		        <figure class="figure2">
-		        	<a href="<%= root %>/information/login.jsp">
-			            <img src="<%= root %>/static/img/학생정보.png" >
-		        	</a>
-		            <figcaption>학생 정보</figcaption>
-		        </figure>
-		    </div>
-		    <div class="flex j-space-between">
-		        <figure class="figure3">
-		        	<a href="<%= root %>/board/list.jsp">
-			            <img src="<%= root %>/static/img/공지사항.png" >	        	
-		        	</a>
-		            <figcaption>공지 사항</figcaption>
-		        </figure>
-		        <figure class="figure4">
-		            <a href="<%= root %>/schedule/schedule_user.jsp">
-						<!-- 이미지수정필요~ -->
-		            	<img src="<%=root%>/static/img/커뮤니티.png" >
-		            </a>
-		            <figcaption>학사 일정</figcaption>
-		        </figure>
-		    </div>
+
+		<div class="flex j-space-around">
+		    <figure class="figure2">
+		    	<a class="indexContent" href="<%= root %>/Euna/Info.jsp"><figcaption>학교 소개</figcaption></a>
+		    </figure>
+		    <figure class="figure2">
+		        <a class="indexContent" href="<%= root %>/information/login.jsp"><figcaption>학생 정보</figcaption></a>
+		    </figure>
+		</div>
+		<div class="flex j-space-around">
+		    <figure class="figure3">
+		        <a class="indexContent" href="<%= root %>/board/list.jsp"><figcaption>공지 사항</figcaption></a>
+		    </figure>
+		    <figure class="figure4">
+		        <a class="indexContent" href="<%= root %>/schedule/schedule_user.jsp"><figcaption>학사 일정</figcaption></a>
+		    </figure>
+		</div>
 	</div>
 	
 	<!-- 푸터 -->

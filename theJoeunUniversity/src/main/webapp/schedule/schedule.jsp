@@ -5,6 +5,7 @@
 <%@page import="Calendar.Service.CalendarService"%>
 <%@page import="Calendar.MyCalendar"%>
 <%@page import="java.util.Date"%>
+<%@page import="java.util.Locale"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
@@ -17,11 +18,15 @@
 <meta charset="UTF-8">
 <title>학사 일정</title>
 	<jsp:include page="/layout/link.jsp" />
-	<link href="<%= request.getContextPath()%>/schedule/css/style.css" rel="stylesheet">
+	<jsp:include page="/layout/schedule_link.jsp" />
+<style>
+	header{ background-color: white; }
+	footer .underbar{ background-color: #4D8FC3; }
+</style>
 </head>
 <body>
 <!-- 어드민 페이지 -->
-	<%
+<%
 	// 년, 월 받아오기
 	Date date = new Date();
 	int year = date.getYear() + 1900;
@@ -49,13 +54,20 @@
 
 	// 날짜 포맷
 	SimpleDateFormat sdf = new SimpleDateFormat("MM-dd");
-	%>
+	SimpleDateFormat sdfMonth = new SimpleDateFormat("MMMMM", Locale.ENGLISH);
+	
+	String myMonth = sdfMonth.format(month);
+%>
 	<!-- 헤더 -->
-	<jsp:include page="/layout/header.jsp" />
+<%-- 	<jsp:include page="/layout/header.jsp" /> --%>
 
 	<!-- 컨텐츠 -->
 	<div class="container">
-		<span class="title">학사 일정</span>
+		<ul class="mainTitle">
+			<li class="Line"></li>
+			<li class="title">학사 일정</li>
+			<li class="Line"></li>
+		</ul>
 		<div class="months">
 			<div class="select">
 				<input type="button" value="&lt;" class="selectbtn"
@@ -69,9 +81,12 @@
 		<div class="content">
 			<div class="calendar">
 				<!-- 달력 출력 -->
-				<table width="700" align="center" cellpadding="5" cellspacing="0">
+				<table class="Tcalendar" width="700" align="center" cellpadding="5" cellspacing="0">
 					<tr>
-						<th id="title" colspan="7"><%=month%>월</th>
+						<th class="titleMonth" colspan="7"><%=month%>월</th>
+					</tr>
+					<tr>
+						<th class="myMonth"><%= myMonth %></th>
 					</tr>
 					<!-- 요일 표시 -->
 					<tr>
@@ -127,9 +142,9 @@
 			</div>
 			<!-- 캘린터 끝 -->
 			<div class="info">
-				<span class="infocal">상세 일정</span>
-				<span class="infocal_no">번호를 누르면 해당 일정을 조회합니다.</span>
-				<table>
+				<span class="infoTitle">상세 일정</span>
+				<span class="infoCalNo">번호를 누르면 해당 일정을 조회합니다.</span>
+				<table class="Tinfo">
 					<%
 					if (calendarList == null || calendarList.size() == 0) {
 					%>
@@ -158,30 +173,29 @@
 								// 시작월 종료월 확인 후 출력
 								if ( strDay == endDay ) {
 									
-	// 								if(){} 여기에 관리자 들어갑니다~
 									// 번호
-									out.print("<td>");
+									out.print("<td class='infoNo'>");
 									out.print("<a href=" + request.getContextPath() + "/schedule/schedule_read.jsp?no=" + calendar.getNo() + ">" + calendar.getNo() + "</a>");
 									out.print("</td>");
 									// 날짜
-									out.print("<td>");
+									out.print("<td class='infoDay'>");
 									out.print(sdf.format(calendar.getStrDate()));
 									out.print("</td>");
 									// 내용
-									out.print("<td>");
+									out.print("<td class='infoContent'>");
 									out.print(calendar.getContent());
 									out.print("</td>");
 								} else {
 									// 번호
-									out.print("<td>");
+									out.print("<td class='infoNo'>");
 									out.print("<a href=" + request.getContextPath() + "/schedule/schedule_read.jsp?no=" + calendar.getNo() + ">" + calendar.getNo() + "</a>");
 									out.print("</td>");
 									// 날짜
-									out.print("<td>");
+									out.print("<td class='infoDay'>");
 									out.print(sdf.format(calendar.getStrDate()) + " ~ " + sdf.format(calendar.getEndDate() ) );
 									out.print("</td>");
 									// 내용
-									out.print("<td>");
+									out.print("<td class='infoContent'>");
 									out.print(calendar.getContent());
 									out.print("</td>");
 								}							
@@ -200,7 +214,7 @@
 		<!-- info 끝 -->
 	</div>
 	<!-- 푸터 -->
-	<jsp:include page="/layout/footer.jsp" />
+<%-- 	<jsp:include page="/layout/footer.jsp" /> --%>
 
 	<!-- 스크립트 -->
 </body>
