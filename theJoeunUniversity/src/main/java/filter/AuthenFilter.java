@@ -14,14 +14,14 @@ public class AuthenFilter implements Filter {
 
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
-//		System.out.println("AuthenFilter 초기화 - init()...");
+		System.out.println("AuthenFilter 초기화 - init()...");
 	}
 
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 		// 필터 기능 작성
-//		System.out.println("AuthenFilter 필터 - doFilter()...");
+		System.out.println("AuthenFilter 필터 - doFilter()...");
 		
 		// name 파라미터를 필터링
 		String name = request.getParameter("name");
@@ -42,7 +42,7 @@ public class AuthenFilter implements Filter {
 
 	@Override
 	public void destroy() {
-//		System.out.println("AuthenFilter 해제 - destroy()...");
+		System.out.println("AuthenFilter 해제 - destroy()...");
 	}
 
 }

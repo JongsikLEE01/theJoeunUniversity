@@ -19,9 +19,9 @@ public class UserDAO extends JDBConnection {
 		// 게시글 목록을 담을 컬렉션 객체 생성
 
 		// SQL 작성
-		String sql = " SELECT sc.*, c.Subject_name, u.* " + " FROM Score sc "
-				+ " JOIN Course c ON sc.Coursecode = c.Coursecode " + " JOIN Users u ON sc.uNo = u.uNo "
-				+ " WHERE u.StudentID = ? ";
+		String sql = " SELECT sc.*, c.Subject_name, u.*, d.MajorName " + "FROM Score sc "
+				+ "JOIN Course c ON sc.Coursecode = c.Coursecode " + "JOIN Users u ON sc.uNo = u.uNo "
+				+ "JOIN department d ON u.Dno = d.DNO " + "WHERE u.StudentID = ? ";
 		try {
 			psmt = con.prepareStatement(sql); // PreparedStatement 초기화
 			// psmt.setXXX( 순서번호, 매핑할 값 );
@@ -46,6 +46,7 @@ public class UserDAO extends JDBConnection {
 
 				Score score = new Score();
 				score.setSubjectScore(rs.getString("subjectScore"));
+				score.setSubjectName(rs.getString("subject_name"));
 				score.setInputDate(rs.getDate("input_date"));
 				score.setUpdDate(rs.getDate("upd_date"));
 				score.setType(rs.getString("type"));
@@ -56,6 +57,14 @@ public class UserDAO extends JDBConnection {
 				course.setCourseCode(rs.getString("courseCode"));
 				course.setSubjectName(rs.getString("subject_name"));
 				user.setCourse(course);
+
+				
+				  Department department = new Department();
+				  department.setMajorName(rs.getString("Majorname"));
+				  user.setDepartment(department);
+				  
+					/* System.out.println("부서 정보: " + user.getDepartment().getMajorName()); */
+				 
 
 				scoreList.add(score);
 				courseList.add(course);
@@ -74,11 +83,9 @@ public class UserDAO extends JDBConnection {
 	public Users Certificate(Users user) {
 
 		// SQL 작성
-		String sql = " SELECT u.*, d.Majorname, c.Subject_name " 
-					+ " FROM Users u "
-					+ " JOIN Department d ON u.dNo = d.dNo "
-					+ " JOIN Course c ON u.dNo = c.dNo "
-					+ " WHERE u.StudentID = ?";
+		String sql = " SELECT u.*, d.Majorname, c.Subject_name " + " FROM Users u "
+				+ " JOIN Department d ON u.dNo = d.dNo " + " JOIN Course c ON u.dNo = c.dNo "
+				+ " WHERE u.StudentID = ?";
 		try {
 			// 쿼리(SQL) 실행 객체 생성 - Statement (stmt)
 			psmt = con.prepareStatement(sql);
@@ -103,21 +110,18 @@ public class UserDAO extends JDBConnection {
 				user.setAcademicStatus(rs.getString("AcademicStatus"));
 				user.setdNo(rs.getInt("dNo"));
 
-				
-			    
 				// 사용자 객체에 부서 정보 설정
-	            Department department = new Department();
-	            department.setMajorName(rs.getString("Majorname"));
-	            user.setDepartment(department);
+				Department department = new Department();
+				department.setMajorName(rs.getString("Majorname"));
+				user.setDepartment(department);
 
-	            // 사용자 객체에 강의 정보 설정
-	            Course course = new Course();
-	            course.setSubjectName(rs.getString("Subject_name"));
-	            user.setCourse(course);
-				
-	            
-	            System.out.println("부서 정보: " + user.getDepartment().getMajorName());
-	            System.out.println("강의 정보: " + user.getCourse().getSubjectName());
+				// 사용자 객체에 강의 정보 설정
+				Course course = new Course();
+				course.setSubjectName(rs.getString("Subject_name"));
+				user.setCourse(course);
+
+				System.out.println("부서 정보: " + user.getDepartment().getMajorName());
+				System.out.println("강의 정보: " + user.getCourse().getSubjectName());
 			}
 		} catch (SQLException e) {
 			System.err.println("게시글 목록 조회 시, 예외 발생");

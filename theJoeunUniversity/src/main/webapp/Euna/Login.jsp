@@ -12,7 +12,6 @@
 <jsp:include page="/layout/loginlink.jsp" />
 <link  href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 <jsp:include page="/layout/link.jsp" />
-<jsp:include page="/layout/mainLink.jsp" />
 </head>
 <body>
 	<!-- 헤더 -->

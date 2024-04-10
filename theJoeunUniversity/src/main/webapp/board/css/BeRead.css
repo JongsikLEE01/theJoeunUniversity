@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.Container {
+	overflow: hidden;
+}
+
+.Container {
+	width: 1024px;
+	height: 1440px;
+	margin: auto;
+}
+
+@font-face {
+	font-family: 'KIMM';
+	src: url('../font/KIMM.ttf') format('truetype');
+}
+
+body {
+	font-family: 'KIMM', sans-serif;
+}
+
+footer {
+	display: fix;
+	bottom: 0;
+}
+
+.time{
+	color: lightgray;
+}
+
+.anc {
+	width: 980px;
+	height: 698px;
+	margin: auto;
+}
+
+.Cotainer {
+	width: 100%;
+	height: 698px;
+	position: absolute;
+	left: 22px;
+	top: 207px;
+}
+
+.ancTitle {
+	text-align: center;
+    float: left;
+    font-size: 2rem;
+    padding: 10px;
+}
+
+
+.ancWriter {
+	text-align: center;
+    float: left;
+    font-size: 2rem;
+    padding: 10px;
+	
+}
+
+.ContentSub {
+	height: 585px;
+	background-color: #f7fbff;
+}

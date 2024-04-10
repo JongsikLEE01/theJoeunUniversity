@@ -10,12 +10,13 @@ String root = request.getContextPath();
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <!-- swiper 플러그인 -->
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script src="js/script.js"></script>
 
 <footer>	
 	<div class="underbar">
-		<a id="previous" ><i class="fa fa-arrow-left"></i></a>
+		<a id="previous" ><i id ="bakcForword" class="fa-solid fa-arrow-left"></i></a>
 		<a href="<%= root%>/index.jsp"><img class="footerLogo" src="<%=root%>/static/img/푸터로고.png"></a>
-		<a id="next"><i class="fa fa-arrow-right"></i></a>
+		<a id="next"><i id ="bakcForword" class="fa-solid fa-arrow-right"></i></a>
 	</div>
 	<div class="swiper">
 		<div class="swiper-wrapper">

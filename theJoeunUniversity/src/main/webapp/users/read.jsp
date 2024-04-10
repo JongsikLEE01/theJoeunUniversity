@@ -1,9 +1,6 @@
 <%@page import="admin.DTO.Users"%>
 <%@page import="admin.Service.UserServiceImpl"%>
 <%@page import="admin.Service.UserService"%>
-<%@page import="admin.DTO.Board"%>
-<%@page import="admin.Service.BoardService"%>
-<%@page import="admin.Service.BoardServiceImpl"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
@@ -13,7 +10,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>학생정보 조회</title>
+<title>학사정보 조회</title>
+<link rel="stylesheet" href="../static/css/adminLogin.css">
 </head>
 <body>
 	<%
@@ -23,12 +21,32 @@
 	int no = Integer.parseInt(request.getParameter("no"));
 	Users user = userService.select(no);
 	%>
-	<h1>학생정보 조회</h1>
-	<%
-	if (user != null) {
-	%>
-	<table border="1">
-		<tr>
+
+	<div class="container">
+		<div class="container-head">
+			<div class="item">
+				<img src="../static/img/adminLogo.png" alt="로고">
+			</div>
+			<div class="item">
+				<p>
+					THEJOEUN University Kiosk <br> Management System
+				</p>
+			</div>
+		</div>
+		<div class="container-insertForm">
+			<%
+			if (user != null) {
+			%>
+			<div class="u-r-item">
+				<div class="sub-item">
+					<img src="img/user1.png" alt="그림">
+					<div class="sub-item-txt">학과 코드</div>
+					<div class="sub-item-txt">1 : 컴퓨터 공학</div>
+					<div class="sub-item-txt">2 : 전기 공학</div>
+					<div class="sub-item-txt">3 : 화학 공학</div>
+				</div>
+			<table>
+				<tr>
 			<th>학번</th>
 			<td><%=user.getStudentId()%></td>
 		</tr>
@@ -52,26 +70,45 @@
 			<th>학과번호</th>
 			<td><%=user.getdNo()%></td>
 		</tr>
-	</table>
-	<%
-	} else {
-	%>
-	<h3>조회된 게시글이 없습니다.</h3>
-	<%
-	}
-	%>
-
-	<div>
-		<a href="<%=request.getContextPath()%>/users/userslist.jsp"> 닫기
-		</a> <a
-			href="<%=request.getContextPath()%>/users/update.jsp?no=<%=user.getUno()%>">
-			수정 </a>
-		<form action="<%=request.getContextPath()%>/users/delete_pro.jsp"
-			method="post">
-			<input type="hidden" name="no" value="<%=user.getUno()%>" /> <input
-				type="submit" value="삭제" />
-		</form>
-
+			</table>
+			</div>
+			<div class="container-insertFt">
+				<div class="insertBtn">
+					<table>
+						<tr>
+							<td>
+								<form action="<%=request.getContextPath()%>/users/userslist.jsp"
+									method="GET">
+									<input type="submit" value="닫기" />
+								</form>
+							</td>
+							<td>
+								<form action="<%=request.getContextPath()%>/users/update.jsp?"
+									method="post">
+									<input type="hidden" name="no" value="<%=user.getUno()%>" /><input
+										type="submit" value="수정" />
+								</form>
+							</td>
+							<td>
+								<form
+									action="<%=request.getContextPath()%>/users/delete_pro.jsp"
+									method="post">
+									<input type="hidden" name="no" value="<%=user.getUno()%>" /> <input
+										type="submit" value="삭제" />
+								</form>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<%
+			} else {
+			%>
+			<h3>조회된 정보가 없습니다.</h3>
+			<%
+			}
+			%>
+		</div>
 	</div>
 </body>
 </html>

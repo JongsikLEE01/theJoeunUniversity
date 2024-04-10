@@ -11,60 +11,83 @@
 <head>
 <meta charset="UTF-8">
 <title>게시글 조회</title>
+<link rel="stylesheet" href="../static/css/adminLogin.css">
 </head>
 <body>
 	<%
 	String user_id = (String) session.getAttribute("userID");
 	String user_pw = (String) session.getAttribute("userPW");
-
-	out.println("설정된 세션 속성 값 [1] - user_id : " + user_id + "<br>");
-	out.println("설정된 세션 속성 값 [2] - user_pw : " + user_pw + "<br>");
-	%>
-
-
-
-	<%
 	BoardService boardService = new BoardServiceImpl();
 	int no = Integer.parseInt(request.getParameter("no"));
 	Board board = boardService.select(no);
 	%>
-	<h1>게시글 조회</h1>
-	<%
-	if (board != null) {
-	%>
-	<table border="1">
-		<tr>
-			<th>제목</th>
-			<td><%=board.getTitle()%></td>
-		</tr>
-		<tr>
-			<th>작성자</th>
-			<td><%=board.getWriter()%></td>
-		</tr>
-		<tr>
-			<th>내용</th>
-			<td><%=board.getContent()%></td>
-		</tr>
-	</table>
-	<%
-	} else {
-	%>
-	<h3>조회된 게시글이 없습니다.</h3>
-	<%
-	}
-	%>
 
-	<div>
-		<a href="<%=request.getContextPath()%>/board/boardlist.jsp"> 닫기
-		</a> <a
-			href="<%=request.getContextPath()%>/board/update.jsp?no=<%=board.getNo()%>">
-			수정 </a>
-		<form action="<%=request.getContextPath()%>/board/delete_pro.jsp"
-			method="post">
-			<input type="hidden" name="no" value="<%=board.getNo()%>" /> <input
-				type="submit" value="삭제" />
-		</form>
-
+	<div class="container">
+		<div class="container-head">
+			<div class="item">
+				<img src="../static/img/adminLogo.png" alt="로고">
+			</div>
+			<div class="item">
+				<p>
+					THEJOEUN University Kiosk <br> Management System
+				</p>
+			</div>
+		</div>
+		<div class="container-insertForm">
+			<%
+			if (board != null) {
+			%>
+			<table>
+				<tr>
+					<th>제목</th>
+					<td><%=board.getTitle()%></td>
+				</tr>
+				<tr>
+					<th>작성자</th>
+					<td><%=board.getWriter()%></td>
+				</tr>
+				<tr>
+					<th>내용</th>
+					<td><%=board.getContent()%></td>
+				</tr>
+			</table>
+			<div class="container-insertFt">
+				<div class="insertBtn">
+					<table>
+						<tr>
+							<td>
+								<form action="<%=request.getContextPath()%>/board/boardlist.jsp"
+									method="GET">
+									<input type="submit" value="닫기" />
+								</form>
+							</td>
+							<td>
+								<form action="<%=request.getContextPath()%>/board/update.jsp?"
+									method="post">
+									<input type="hidden" name="no" value="<%=board.getNo()%>" /><input
+										type="submit" value="수정" />
+								</form>
+							</td>
+							<td>
+								<form
+									action="<%=request.getContextPath()%>/board/delete_pro.jsp"
+									method="post">
+									<input type="hidden" name="no" value="<%=board.getNo()%>" /> <input
+										type="submit" value="삭제" />
+								</form>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<%
+			} else {
+			%>
+			<h3>조회된 게시글이 없습니다.</h3>
+			<%
+			}
+			%>
+		</div>
 	</div>
 </body>
 </html>

@@ -14,34 +14,26 @@
 <jsp:include page="/layout/mainLink.jsp" />
 </head>
 <body>
-	<!-- 헤더 -->
-	<jsp:include page="/layout/header.jsp" />
-	
-	
-	<h1 class="title">서울 캠퍼스</h1>
-	<br><br><br>
-	<div class="flex j-center">
+	<header>
+		<!-- 헤더 -->
+		<jsp:include page="/layout/header.jsp" />
+	</header>
+
+	<div class="container">
+		<p class="title m">서울 캠퍼스</p>
+
+		<div class="flex j-center">
 
 
-		<img style="width: 50%; height: 50%;" alt="학교 약도입니다."
-			src="<%=request.getContextPath()%>/static/img/약도.jpg">
+			<img class="map" alt="학교 약도입니다."
+				src="<%=request.getContextPath()%>/static/img/약도.jpg">
 
 
+		</div>
 	</div>
-
-	<!-- 푸터 -->
-	<jsp:include page="/layout/footer.jsp" />
-
-
+	<footer>
+		<!-- 푸터 -->
+		<jsp:include page="/layout/footer.jsp" />
+	</footer>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-

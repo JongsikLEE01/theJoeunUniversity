@@ -13,13 +13,14 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <jsp:include page="/layout/link.jsp" />
-<jsp:include page="/layout/mainLink.jsp" />
 </head>
 <body>
-	<!-- 헤더 -->
-	<jsp:include page="/layout/header.jsp" />
+	<header>
+		<!-- 헤더 -->
+		<jsp:include page="/layout/header.jsp" />
+	</header>
 	
-	<div class="container txt-center">
+	<div class="container">
 		<h1 class="title">더조은 대학교</h1>
 		<h2 class="title">커뮤니티</h2>
 		<br><br><br>
@@ -36,7 +37,9 @@
 		</div>
 	</div>
 
-	<!-- 푸터 -->
-	<jsp:include page="/layout/footer.jsp" />
+	<footer>
+		<!-- 푸터 -->
+		<jsp:include page="/layout/footer.jsp" />
+	</footer>
 </body>
 </html>
