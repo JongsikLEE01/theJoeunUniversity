@@ -1,19 +1,25 @@
 @charset "UTF-8";
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: '한국기계연구원_bold';
+}
+
+body{
+	background-color: #4D8FC3;
 }
 
 .container{
-	background-color: #417ABD;
+	background-color: #4D8FC3;
 	flex-direction: column;
 	justify-content: space-around;
     align-items: center;
     box-sizing:border-box;
-	height: 984px;
-	width: 900px;
+	height: 900px;
+	width: 984px;
 	
 }
 
@@ -29,17 +35,18 @@
 .textlogin {
     height: 153px;
     width: 80%;
-    background-color: #417ABD;
-    border-top: 2px solid #417ABD;
-    border-left: 2px solid #417ABD;
-    border-right: 2px solid #417ABD;
+    background-color: #4D8FC3;
+    border-top: 2px solid #4D8FC3;
+    border-left: 2px solid #4D8FC3;
+    border-right: 2px solid #4D8FC3;
     border-bottom: 2px solid #FFFFFF;
     border-radius: 30px;
     font-size: 30px;
-    margin: 30px;
+    margin: 20px;
     transition: background-color 0.3s ease; /* 배경색 변화에 대한 전환 효과 */
     text-align: center; 
     outline: none;
+    font-family: "Poppins", sans-serif;
     
     /* 클릭 효과 */
     &:active {
@@ -69,17 +76,17 @@
 	width: 80%;
 	border-radius: 30px;
     font-size: 50px;
-    margin: 30px;
+    margin-bottom: 20px;
     color: #FFFFFF;
     
-    background-color: #417ABD;
+    background-color: #4D8FC3;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     border: 2px solid #FFFFFF;
 }
 
 .button:active {
     background-color: #FFFFFF; /* 버튼이 눌렸을 때의 배경색을 변경합니다. */
-    color: #417ABD
+    color: #4D8FC3
     
 }
 

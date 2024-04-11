@@ -15,7 +15,7 @@ String root = request.getContextPath();
 <footer>	
 	<div class="underbar">
 		<a id="previous" ><i id ="bakcForword" class="fa-solid fa-arrow-left"></i></a>
-		<a href="<%= root%>/index.jsp"><img class="footerLogo" src="<%=root%>/static/img/푸터로고.png"></a>
+		<a href="<%= root%>/main.jsp"><img class="footerLogo" src="<%=root%>/static/img/푸터로고.png"></a>
 		<a id="next"><i id ="bakcForword" class="fa-solid fa-arrow-right"></i></a>
 	</div>
 	<div class="swiper">

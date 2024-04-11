@@ -82,7 +82,7 @@
 		</div>
 		
 		<div>
-			<img
+			<img height="220px"
 				src="<%=request.getContextPath()%>/information/img/squarelogo.png"
 				alt="로고사진">
 		</div>

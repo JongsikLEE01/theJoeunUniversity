@@ -94,3 +94,14 @@
 body {padding:0;}
 
 }
+
+.button {
+	background-color: #FFFFFF;
+	
+}
+.button:active {
+    background-color: gray; /* 버튼이 눌렸을 때의 배경색을 변경합니다. */
+    color: #ffffff
+    
+}
+

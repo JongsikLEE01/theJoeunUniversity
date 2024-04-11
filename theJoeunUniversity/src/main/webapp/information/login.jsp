@@ -15,7 +15,10 @@
 <jsp:include page="/layout/link.jsp" />
 <jsp:include page="/layout/mainLink.jsp" />
 <jsp:include page="/layout/informationLayout/loginlink.jsp" />
-
+<style type="text/css">
+/* 	header{ border-bottom: 1px solid white;} */
+/* 	footer{ border-top: 1px solid white; } */
+</style>
 </head>
 <body>
 	<!-- 헤더 -->
@@ -36,9 +39,9 @@
 				</div>
 
 				<div>
-					<img
+					<img id="loginlogo"
 						src="<%=request.getContextPath()%>/information/img/squarelogo.png"
-						alt="로고사진">
+						alt="로고사진" style="height:220px;">
 				</div>
 
 				<div>

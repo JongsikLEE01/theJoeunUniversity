@@ -22,9 +22,9 @@
 </head>
 <body>
 
-	<div class="container" >
-		<!-- 헤더 -->
+	<!-- 헤더 -->
 	<jsp:include page="/layout/header.jsp" />
+	<div class="container" >
 		
 	<%
 		String title = request.getParameter("title");
@@ -61,7 +61,8 @@
 		</div>
 	</div>
 	
-		<table class="Ntable" style="height: 40px">
+
+		<table class="Ntable" >
 			<tr class="InnerHeader">
 				<th>번호</th>
 				<th>제목</th>
@@ -93,13 +94,11 @@
 		%>
 		
 		</table> 
-	
 
+</div>
 
 <!-- 푸터 -->
 <jsp:include page="/layout/footer.jsp" />
-</div>
-
 <!-- 배너 -->
 <jsp:include page="/layout/mainLink.jsp" />
 

@@ -15,7 +15,7 @@
 <head>
 <meta charset="UTF-8">
 <title>재학 증명서</title>
-<jsp:include page="/layout/link.jsp" />
+<%-- <jsp:include page="/layout/link.jsp" /> --%>
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/static/css/informationCss/재 학 증 명 서 _style.css">
 		<style>
@@ -46,8 +46,8 @@
 		</style>
 
 </head>
-<body onresize="parent.resizeTo(830,950)"
-	onload="parent.resizeTo(830,950)">
+<body onresize="parent.resizeTo(650,950)"
+	onload="parent.resizeTo(650,950)">
 
 	<%
 	UserService userService = new UserServiceImpl();

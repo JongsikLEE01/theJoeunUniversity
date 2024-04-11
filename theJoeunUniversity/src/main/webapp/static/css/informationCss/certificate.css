@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: '한국기계연구원_bold';
 }
 
 .toptext{
@@ -18,9 +18,9 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center; /* 가운데로 정렬합니다. */
-    height: 984px;
-	width: 900px;
-    background-color: #417ABD;
+    height: 900px;
+	width: 984px;
+    background-color: #4D8FC3;
 }
 
 .button {
@@ -30,13 +30,13 @@
     font-size: 50px;
     margin: 30px;
     color: #FFFFFF;
-    background-color: #417ABD;
+    background-color: #4D8FC3;
     border: 2px solid #FFFFFF;
 }
 
 .button:active {
     background-color: #FFFFFF; /* 버튼이 눌렸을 때의 배경색을 변경합니다. */
-    color: #417ABD
+    color: #4D8FC3
     
 }
 

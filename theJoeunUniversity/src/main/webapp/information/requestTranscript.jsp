@@ -16,7 +16,7 @@
 <head>
 <meta charset="UTF-8">
 <title>성적 증명서</title>
-<jsp:include page="/layout/informationLayout/Transcript.jsp" />
+<%-- <jsp:include page="/layout/informationLayout/Transcript.jsp" /> --%>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta http_quiv="content-type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css"
@@ -50,8 +50,8 @@
 
 </head>
 
-<body onresize="parent.resizeTo(830,950)"
-	onload="parent.resizeTo(830,950)">
+<body onresize="parent.resizeTo(650,950)"
+	onload="parent.resizeTo(650,950)">
 	<%
 	double scoreHeight = 8.11;
 	pageContext.setAttribute("scoreHeight", scoreHeight);
@@ -828,7 +828,6 @@
 
 
 
-	<jsp:include page="/layout/script.jsp" />
 
 	<script>
 		function winPrint() {
@@ -849,6 +848,10 @@
 
 		var formattedDate = year + '년 ' + month + '월 ' + day + '일';
 		document.getElementById("dateOutput").innerText = formattedDate;
+		
+		function closeCurrentWindow() {
+		    window.close();
+		}
 	</script>
 </body>
 

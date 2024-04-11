@@ -13,11 +13,19 @@
 <jsp:include page="/layout/link.jsp" />
 <jsp:include page="/layout/mainLink.jsp" />
 </head>
+<style>
+.container{
+/* 	padding: 140px 20px 0px;  */
+    overflow-y: auto;
+    height: calc(100vh - 100px);
+}
+/* footer { bottom: -300px; } */
+/* header{style="position: fixed"} */
+
+</style>
 <body>
-	<header>
 		<!-- 헤더 -->
 		<jsp:include page="/layout/header.jsp" />
-	</header>
 	<div>
 		<div class="container">
 			<p class="title">학교 현황</p>
@@ -454,10 +462,7 @@
 		</div>
 	</div>
 
-	<footer style="position: fixed">
 		<!-- 푸터 -->
 		<jsp:include page="/layout/footer.jsp" />
-	</footer>
-
 </body>
 </html>

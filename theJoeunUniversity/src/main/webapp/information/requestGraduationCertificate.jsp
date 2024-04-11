@@ -15,7 +15,7 @@
 <head>
 <meta charset="UTF-8">
 <title>졸업 증명서</title>
-<jsp:include page="/layout/link.jsp" />
+<%-- <jsp:include page="/layout/link.jsp" /> --%>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta http_quiv="content-type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css"
@@ -48,8 +48,8 @@
 		</style>
 </head>
 
-<body onresize="parent.resizeTo(830,950)"
-	onload="parent.resizeTo(830,950)">
+<body onresize="parent.resizeTo(650,950)"
+	onload="parent.resizeTo(650,950)">
 	<%
 	UserService userService = new UserServiceImpl();
 	Users users = new Users();
