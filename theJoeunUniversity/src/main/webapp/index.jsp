@@ -25,6 +25,7 @@
 <!-- css -->
 <jsp:include page="/layout/link.jsp" />
 <link rel="icon" href="<%=root%>/static/img/icon.png">
+
 </head>
 <body>
 	<!-- Slider main container -->

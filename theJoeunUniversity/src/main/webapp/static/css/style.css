@@ -10,7 +10,13 @@
 	font-family: '한국기계연구원_bold';
 }
 /*  */
-
+body{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	margin: 0;
+	align-items: center;
+}
 /* 슬라이드 스타일 */
 .container {
 	width: 984px;
@@ -252,15 +258,6 @@ footer p {
 i {
 	color: #4D8FC3;
 }
-
-/* .container { */
-/* 	width: 984px; */
-/* 	height: 900px; */
-/* 	margin: 50px auto; */
-/* 	padding: 50px 0; */
-/* 	border: 1px solid black; */
-/* 	background-color: white; */
-/* } */
 /* UI 스타일 */
 
 /* main 레이아웃 */

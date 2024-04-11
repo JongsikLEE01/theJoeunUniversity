@@ -12,6 +12,11 @@
 <jsp:include page="/layout/link.jsp" />
 <jsp:include page="/layout/mainLink.jsp" />
 <jsp:include page="/layout/informationLayout/certificatelink.jsp" />
+<style>
+header{ border-bottom: 1px solid white;}
+footer{ border-top: 1px solid white;}
+body{ background-color: #4D8FC3; }
+</style>
 </head>
 <body>
 	<script>

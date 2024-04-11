@@ -16,8 +16,8 @@
 <jsp:include page="/layout/mainLink.jsp" />
 <jsp:include page="/layout/informationLayout/loginlink.jsp" />
 <style type="text/css">
-/* 	header{ border-bottom: 1px solid white;} */
-/* 	footer{ border-top: 1px solid white; } */
+header{ border-bottom: 1px solid white;}
+footer{ border-top: 1px solid white;}
 </style>
 </head>
 <body>

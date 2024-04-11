@@ -70,5 +70,12 @@ footer .underbar a img{
     width: 85px;
     height: 70px;
 }
-.swiper{ width: 100%; height: 300px;}
-footer .swiper-wrapper .swiper-slide img{ width: 100%; height: 300px; object-fit: cover;}
+.swiper{
+	width: 100%;
+	height: 300px;
+}
+footer .swiper-wrapper .swiper-slide img{
+	width: 100%; 
+	height: 300px;
+	object-fit: cover;
+}
