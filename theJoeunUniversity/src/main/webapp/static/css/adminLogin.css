@@ -202,6 +202,7 @@ a:link{text-decoration: none;}
 }
 
 .container-insertForm .u-r-item .sub-item img {
+	width: 70%;
 	padding: 50px;
 }
 .container-insertForm .item .sub-item li {
@@ -249,6 +250,15 @@ input#file-upload-button {
 	width: 30px;
 	height: 40px;
 }
+
+/* 업로드성공페이지 */
+.u-s-msg {
+	display: flex;
+	align-items: center;
+    flex-direction: column;
+	padding: 250px 0px;
+}
+
 /* 유저영역 */
 .u-u-body {
 	display:flex;
@@ -265,9 +275,11 @@ input#file-upload-button {
 	padding: 100px;
 }
 
+
 .u-u-body .u-u-item1 form {
+	width: 50%;
 	text-align: center;
-	border: 1px solid black;
+
 }
 
 
@@ -301,6 +313,13 @@ input#file-upload-button {
 	border-radius: 15px;
 	background-color: white;
 }
+
+/* 학생정보조회 */
+/* .u-r-item img{ */
+/* 	width: 269px; */
+/* 	height: 279px; */
+/* } */
+
 /* 공지사항 읽기 */
 .container-readForm table {
 	margin: 30px 0px;

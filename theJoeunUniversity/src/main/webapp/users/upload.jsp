@@ -1,3 +1,6 @@
+<%@page import="admin.Service.UserimgServiceImpl"%>
+<%@page import="admin.Service.UserimgService"%>
+<%@page import="admin.DTO.Userimg"%>
 <%@page import="org.apache.commons.fileupload.DiskFileUpload"%>
 <%@page import="org.apache.commons.fileupload.FileItem"%>
 <%@page import="java.util.UUID"%>
@@ -17,6 +20,7 @@
 <link rel="stylesheet" href="../static/css/adminLogin.css">
 </head>
 <body>
+
 	<%
 	String fileUploadPath = "C:/joeun/jsp/thejoeununiversity/src/main/webapp/users/img";
 
@@ -26,7 +30,12 @@
 	// parseRequest(request) 
 	// : request 객체를 분석하여, multipart/form-data 유형의 파라미터만 읽어드려서 List로 반환
 	List<FileItem> items = upload.parseRequest(request);	// FileItem 타입의 파라미터 목록
-	
+	int usernum = 0;
+	// usernum 받기
+	if(request.getParameter("usernum") != null){
+		out.print("넘어왔어요");
+	}
+	// 	int no = Integer.parseInt(request.getParameter("usernum"));
 	// for( int i = 0 ; i < items.size() ; i++ ) {
 	//	 FileItem item = (FileItem) items.get(i);
 	// }
@@ -42,6 +51,11 @@
 			String name = item.getFieldName();
 			String value = item.getString("utf-8");
 			out.println(name + " : " + value + "<br>");
+			usernum = Integer.parseInt(value);
+			out.print(usernum);
+			
+			
+			
 		}
 		// 파일 데이터
 		else{
@@ -63,6 +77,19 @@
 // 			out.print("파일 컨텐츠 이름 : " + contentType + "<br>");
 // 			out.print("파일 크기: " + fileSize + "<br>");
 			
+			Userimg userimg = new Userimg(fileName,usernum);
+			
+			UserimgService userimgService = new UserimgServiceImpl();
+			int result = userimgService.insert(userimg);
+			
+			String root = request.getContextPath();
+			if(result>0) {
+				// 등록성공
+				response.sendRedirect(root + "/users/upsuccess.jsp");
+			} else {
+				// 등록실패
+				response.sendRedirect(root + "/users/update.jsp?msg=0");
+			}
 			
 			%>
 			<div class="container">
@@ -85,9 +112,10 @@
 			<% 
 			
 		}
-				
+		
 	}
 	out.print("<h1>파일 업로드 성공!</h1>");
+	
 %>
 
 <div class="container-insertFt">

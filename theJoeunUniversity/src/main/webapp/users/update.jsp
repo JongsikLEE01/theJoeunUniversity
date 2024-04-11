@@ -1,4 +1,7 @@
 
+<%@page import="admin.DTO.Userimg"%>
+<%@page import="admin.Service.UserimgServiceImpl"%>
+<%@page import="admin.Service.UserimgService"%>
 <%@page import="admin.DTO.Users"%>
 <%@page import="admin.Service.UserServiceImpl"%>
 <%@page import="admin.Service.UserService"%>
@@ -17,8 +20,10 @@
 <body>
 	<%
 	UserService userService = new UserServiceImpl();
+	UserimgService userimgService = new UserimgServiceImpl();
 	int no = Integer.parseInt(request.getParameter("no"));
 	Users user = userService.select(no);
+	Userimg userimg = userimgService.select(no);
 	%>
 	<div class="container">
 		<div class="container-head">
@@ -36,13 +41,27 @@
 		%>
 		<div class="u-u-body">
 			<div class="u-u-item1">
-				
+				<%
+				if(userimg.getFilename() != null) {
+				%>
+				<img src="img/<%= userimg.getFilename() %>" alt="사진">
+				<form action="<%=request.getContextPath()%>/users/imgdelete_pro.jsp" method="post">
+					<input type="hidden" name="usernum" value="<%= userimg.getUsernum() %>" /> 
+					<input type="submit" value="사진삭제" />
+				</form>
+				<%
+				} else {
+				%>
 				<!-- jsp 로 파일 업로드 처리 -->
 				<form action="upload.jsp" method="post" enctype="multipart/form-data">
 				<!-- Servlet 으로 파일 업로드 처리 -->
+					<input type="hidden" name="usernum" value="<%=user.getUno()%>"/>
 					<input type="file" name="file" multiple />
 					<input type="submit" value="업로드" />
 				</form>
+				<%
+				}
+				%>					
 			</div>
 			<div class="u-u-item2">
 		<div>

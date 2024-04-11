@@ -1,3 +1,6 @@
+<%@page import="admin.Service.UserimgServiceImpl"%>
+<%@page import="admin.Service.UserimgService"%>
+<%@page import="admin.DTO.Userimg"%>
 <%@page import="admin.DTO.Users"%>
 <%@page import="admin.Service.UserServiceImpl"%>
 <%@page import="admin.Service.UserService"%>
@@ -18,8 +21,10 @@
 	String user_id = (String) session.getAttribute("userID");
 	String user_pw = (String) session.getAttribute("userPW");
 	UserService userService = new UserServiceImpl();
+	UserimgService userimgService = new UserimgServiceImpl();
 	int no = Integer.parseInt(request.getParameter("no"));
 	Users user = userService.select(no);
+	Userimg userimg = userimgService.select(no);
 	%>
 
 	<div class="container">
@@ -39,7 +44,17 @@
 			%>
 			<div class="u-r-item">
 				<div class="sub-item">
-					<img src="img/user1.png" alt="그림">
+					<%
+					if(userimg.getFilename() != null){
+					%>
+					<img src="img/<%= userimg.getFilename() %>" alt="그림">
+					<%
+					} else {
+					%>
+					<img src="img/noimage.png" alt="그림">
+					<%
+					}
+					%>
 					<div class="sub-item-txt">학과 코드</div>
 					<div class="sub-item-txt">1 : 컴퓨터 공학</div>
 					<div class="sub-item-txt">2 : 전기 공학</div>
