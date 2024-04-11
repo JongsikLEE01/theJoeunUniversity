@@ -50,7 +50,7 @@ body{
 
 .InnerContainer {
 	color: black;
-	border= 2px;
+	border: 2px;
 	background-color:rgba(255, 255, 255, 1);
 	width:984px;
 	height:840px;
@@ -74,7 +74,5 @@ td{
 	text-align: center;
 	height: 80px;
 }
-
-
 
 
