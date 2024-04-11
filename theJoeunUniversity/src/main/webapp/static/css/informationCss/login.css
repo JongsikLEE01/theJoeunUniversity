@@ -104,3 +104,8 @@
         opacity: 1; /* 다시 초기로 돌아온 투명도 */
     }
 }
+
+#loginlogo {
+	width: 200px;
+	
+}

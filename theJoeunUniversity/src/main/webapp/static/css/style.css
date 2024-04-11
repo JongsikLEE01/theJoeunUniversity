@@ -13,8 +13,11 @@
 
 /* 슬라이드 스타일 */
 .container {
-	width: 1024px;
+	width: 984px;
+	height: 900px;
 	margin: 0 auto;
+	padding: 50px 20px;
+	border: 0px;
 }
 
 .swiper {
@@ -338,20 +341,12 @@ a:hover {font-weight: bold; }
 /* 	box-sizing: border-box; */
 /* } */
 
-.container { 
-	width: 984px;
-	height: 900px;
-	margin: 0 auto; 
-	padding: 50px 20px;
-	border: 1px solid black;
-}
-
 .title {
     font-size: 1.5rem;
     text-align: center;
 }
 
-body {
-	height: auto;
-}
+/* body { */
+/* 	height: auto; */
+/* } */
 /* 공통 레이아웃 */

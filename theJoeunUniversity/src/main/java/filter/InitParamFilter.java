@@ -45,12 +45,12 @@ public class InitParamFilter implements Filter {
 		
 		if( id.equals(param1) && passwd.equals(param2) ) {
 			
-			message = "로그인 성공했습니다.";
+			//message = "로그인 성공했습니다.";
 			session.setAttribute("userID", id);
 			session.setAttribute("userPW", passwd);
 		}
 		else {
-			message = "로그인 실패했습니다.";
+			//message = "로그인 실패했습니다.";
 			// 관리자 계정 admin/1234 가 일치하지 않으면 메인화면으로 이동
 			
 			// 포워드
@@ -62,7 +62,7 @@ public class InitParamFilter implements Filter {
 			 ((HttpServletResponse) response).sendRedirect(root);
 		}
 		
-		writer.println(message);
+		//writer.println(message);
 	
 		chain.doFilter(request, response);
 	}

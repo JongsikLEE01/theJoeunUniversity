@@ -10,12 +10,13 @@ String root = request.getContextPath();
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <!-- swiper 플러그인 -->
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script src="js/script.js"></script>
 
 <footer>	
 	<div class="underbar">
-		<a id="previous" ><i class="fa fa-arrow-left"></i></a>
+		<a id="previous" ><i id ="bakcForword" class="fa-solid fa-arrow-left"></i></a>
 		<a href="<%= root%>/index.jsp"><img class="footerLogo" src="<%=root%>/static/img/푸터로고.png"></a>
-		<a id="next"><i class="fa fa-arrow-right"></i></a>
+		<a id="next"><i id ="bakcForword" class="fa-solid fa-arrow-right"></i></a>
 	</div>
 	<div class="swiper">
 		<div class="swiper-wrapper">
@@ -28,29 +29,31 @@ String root = request.getContextPath();
 			<div class="swiper-slide"><img src="<%=root %>/static/img/테스트1.PNG" alt=""></div>
 		</div>
 	</div>
-    <style>
-        footer .underbar{ background-color: #4D8FC3;}
-        footer .underbar a{ color: w }
-        
-        </style>
-        
-        <footer>	
-            <div class="underbar">
-                <a id="previous" ><i class="fa fa-arrow-left"></i></a>
-                <a href="<%= root%>/index.jsp"><img class="footerLogo" src="<%=root%>/static/img/푸터로고.png"></a>
-                <a id="next"><i class="fa fa-arrow-right"></i></a>
-            </div>
-            <div class="banner">
-                <p>배너 이미지</p>	
-            </div>
 </footer>
 
-<script type="text/javascript">
-	function Back() {
-		window.histoty.back()
-	}
-	
-	function forward() {
-		window.histoty.forward()
-	}
+ <script>
+    document.getElementById("previous").addEventListener("click", function(event) {
+        event.preventDefault();
+        history.back();		// 이전 페이지
+    });
+
+    document.getElementById("next").addEventListener("click", function(event) {
+        event.preventDefault();
+        history.forward();	// 다음 페이지
+    });
+    
+    $(function() {
+        const swiper = new Swiper('.swiper', {
+            direction: 'horizontal',            /* 슬라이드 방향 : 'vertical' , 'horizontal' */
+            loop: true,                         // 반복여부
+            autoplay: {                         // 자동재생
+                delay: 3000,                    // 슬라이드 당 지연시간 (ms)
+                pauseOnMouseEnter: false,        // 마우스 올리면, 자동재생 멈춤
+                disableOnInteraction: false,     // 인터렉션(화살표,드래그,...) 중 자동재생 비활성화        
+            },
+            speed: 1000,                        // 슬라이드가 넘어가는 시간 (ms)
+            slidesPerView: 1,                   // 보여지는 슬라이드 개수
+            spaceBetween: 0,                    // 슬라이드 간 여백
+          });
+    })
 </script>
