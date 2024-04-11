@@ -105,3 +105,13 @@ VALUES
  '2024-08-01','2024-08-01 ');
  
  commit;
+ 
+ CREATE TABLE userimg
+(
+  no       NUMBER        NOT NULL,
+  filename VARCHAR2(255),
+  usernum  NUMBER        NOT NULL,
+  CONSTRAINT PK_userimg PRIMARY KEY (no)
+);
+
+COMMENT ON TABLE userimg IS '학생사진';

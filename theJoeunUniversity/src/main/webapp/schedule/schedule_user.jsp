@@ -20,16 +20,8 @@
 	<jsp:include page="/layout/link.jsp" />
 	<jsp:include page="/layout/schedule_link.jsp" />
 	<jsp:include page="/layout/mainLink.jsp" />
-<style>
-/*     .blink { */
-/*         animation: blinker 1s cubic-bezier(.5, 0, 1, 1) infinite alternate; */
-/*     } */
-    
-/*     @keyframes blinker { */
-/*         from { opacity: 1; } */
-/*         to { opacity: 0; } */
-/*     } */
-</style>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	
 </head>
 <body>
 <!-- 	유저페이지 -->
@@ -65,13 +57,6 @@
 
 	// 날짜 포맷
 	SimpleDateFormat sdf = new SimpleDateFormat("MM-dd");
-// 	SimpleDateFormat sdfMonth = new SimpleDateFormat("MMM", Locale.ENGLISH);
-		
-// 	int myday = date.getDay();
-// 	String checkMonth = sdfMonth.format(date);
-// 	String myMonth = sdfMonth.format(month);
-
-	// pageContext.setAttribute("calendarList", calendarList);
 	%>
 	<!-- 헤더 -->
 	<jsp:include page="/layout/header.jsp" />
@@ -205,20 +190,18 @@
 	<jsp:include page="/layout/footer.jsp" />
 
 	<!-- 스크립트 -->
-	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 	<script>
 		// 자바를 자바스크립트로
 		// let calList = "${calendarList}"
-		
 		const root = "${ root }"
-		const year = "${ param.year }"
+		let year = "${ param.year }"
 		let realMonth = "${ param.month }"
 		let month = "${ param.month }"
 		month = month < 10 ? "0" + month : month
 		
 		console.log('년도 : ' + year)
 		console.log('월 : ' + month)
-	
+		
 		$(function() {
 			// data 속성값으로 요소 선택
 			// 일정이 있는 날짜들은 .date 클래스 추가
@@ -335,9 +318,6 @@
 					$("[data=" + date +"] ~ .date-content").append(dateli)					
 				}
 				
-				// 컨텐츠 띄우는 것부터./...
-				
-				
 			}
 		}
 		
@@ -355,23 +335,8 @@
 		            clearInterval(blinkInterval);
 		            element.removeClass('blink');
 		        }
-		    }, 1000);
+		    }, 700);
 		}
 	</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

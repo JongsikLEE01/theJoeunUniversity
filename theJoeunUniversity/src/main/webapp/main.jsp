@@ -1,3 +1,5 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
@@ -6,6 +8,12 @@
 	pageEncoding="UTF-8"%>
 <%
 	String root = request.getContextPath();
+
+	Date date = new Date();
+	int year = date.getYear() + 1900;
+	int month = date.getMonth() + 1;
+	
+	String url = root + "/schedule/schedule_user.jsp?year=" + year + "&month=" + month;
 %>
 <!DOCTYPE html>
 <html>
@@ -58,7 +66,7 @@
 				<figcaption>공지 사항</figcaption>
 			</figure>
 			<figure class="figure4">
-				<a href="<%=root%>/schedule/schedule_user.jsp">
+				<a href="<%= url %>">
 					<button class="btn">
 						<i id="fa4" class="fa fa-calendar" aria-hidden="true"> </i>
 					</button>

@@ -166,9 +166,12 @@
 	height: 40px;
 	border: 1px solid #4D8FC3;
 	color: #4D8FC3;
-	border-radius: 20px;
+	border-radius: 50px;
 	text-align: center;
 	padding: 5px;
+	display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .container .content .info .Tinfo{
