@@ -93,14 +93,15 @@ footer{ border-top: 1px solid white;}
 
 		<div class="bottomtext">
 			<c:choose>
-				<c:when test="${sessionScope.academicStatus eq 'Enrollment'}">
+				<c:when test="${sessionScope.academicStatus eq '재학'}">
 					<p class="guide">현재 재학 중입니다.</p>
 				</c:when>
-				<c:when test="${sessionScope.academicStatus eq 'Enrollment'}">
+				<c:when test="${sessionScope.academicStatus eq '졸업'}">
 					<p class="guide">졸업을 축하합니다!</p>
 				</c:when>
 			</c:choose>
 		</div>
+		
 	</div>
 
 	<!-- 푸터 -->
