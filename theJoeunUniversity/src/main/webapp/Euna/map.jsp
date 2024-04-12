@@ -12,6 +12,10 @@
 
 <jsp:include page="/layout/link.jsp" />
 <jsp:include page="/layout/mainLink.jsp" />
+<style type="text/css">
+/* 상위 영역 */
+.container .mainTitle{ margin-top: 2.5%; }
+</style>
 </head>
 <body>
 	<header>
@@ -20,7 +24,11 @@
 	</header>
 
 	<div class="container">
-		<p class="title m">서울 캠퍼스</p>
+		<ul class="mainTitle">
+			<li class="Line"></li>
+			<li class="title">서울 캠퍼스</li>
+			<li class="Line"></li>
+		</ul>
 
 		<div class="flex j-center">
 
