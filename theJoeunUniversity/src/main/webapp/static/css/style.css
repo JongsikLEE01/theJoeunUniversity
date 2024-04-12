@@ -63,6 +63,19 @@ body{
 	align-items: center;
 }
 
+.time{
+	position: absolute;
+    z-index: 5;
+    top: 15%;
+    left: 50%;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.25);
+	text-shadow: 2px 2px black;
+	transform: translate(-50%, -50%);
+	color: snow;
+	font-size: 3.5rem;
+}
+
 .swiper-slide {
 	width: 1024px; 
 	height: 1440px;

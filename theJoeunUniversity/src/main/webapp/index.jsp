@@ -1,3 +1,5 @@
+<%@page import="java.time.format.DateTimeFormatter"%>
+<%@page import="java.time.LocalTime"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
@@ -6,6 +8,10 @@
 	pageEncoding="UTF-8"%>
 <%
 	String root = request.getContextPath();
+
+	LocalTime now = LocalTime.now();
+	DateTimeFormatter timeDtf = DateTimeFormatter.ofPattern("HH시 mm분 ss초");
+	String fomatTime = now.format(timeDtf);
 %>
 <!DOCTYPE html>
 <html>
@@ -30,6 +36,9 @@
 <body>
 	<!-- Slider main container -->
 	<div class="first">
+		<div id="time">
+			<h2 class="time"><%=fomatTime %></h2>
+		</div>
 
 		<div class="swiper">
 			<h1 class="click">화면을 터치해주세요!</h1>
@@ -65,5 +74,12 @@
 
 	</div>
 
+	<script>
+		function timeReload(){
+			$("#time").load(window.location.href + " #time");
+		}
+
+		setInterval(timeReload, 1000);
+	</script>
 </body>
 </html>
