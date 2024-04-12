@@ -337,3 +337,7 @@ a:hover {font-weight: bold; }
     text-align: center;
     margin-bottom: 20px;
 }
+
+.container #time h1{ font-size: 2rem; margin-bottom: 10px; }
+.container #time h2{ font-size: 3rem; }
+.container #time{ margin-top: 20px; }

@@ -1,3 +1,5 @@
+<%@page import="java.time.format.DateTimeFormatter"%>
+<%@page import="java.time.LocalTime"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -12,8 +14,11 @@
 	Date date = new Date();
 	int year = date.getYear() + 1900;
 	int month = date.getMonth() + 1;
-	
 	String url = root + "/schedule/schedule_user.jsp?year=" + year + "&month=" + month;
+	
+	LocalTime now = LocalTime.now();
+	DateTimeFormatter timeDtf = DateTimeFormatter.ofPattern("HH시 mm분 ss초");
+	String fomatTime = now.format(timeDtf);
 %>
 <!DOCTYPE html>
 <html>
@@ -37,6 +42,10 @@
 	</header>
 	<!-- 컨텐츠 -->
 	<div class="container txt-center">
+		<div id="time">
+			<h1>현재 시간</h1>
+			<h2><%=fomatTime %></h2>
+		</div>
 		<div class="con1 flex j-space-around">
 			<figure class="figure2">
 				<a href="<%=root%>/Euna/Info.jsp">
@@ -79,5 +88,13 @@
 		<!-- 푸터 -->
 		<jsp:include page="/layout/footer.jsp" />
 	</footer>
+	
+	<script>
+		function timeReload(){
+			$("#time").load(window.location.href + " #time");
+		}
+
+		setInterval(timeReload, 1000);
+	</script>
 </body>
 </html>

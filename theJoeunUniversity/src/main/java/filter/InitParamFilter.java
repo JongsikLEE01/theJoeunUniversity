@@ -20,14 +20,14 @@ public class InitParamFilter implements Filter {
 	
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
-		System.out.println("Filter02 초기화");
+//		System.out.println("Filter02 초기화");
 		this.filterConfig = filterConfig;
 	}
 	
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
-		System.out.println("InitParamFilter 수행...");
+//		System.out.println("InitParamFilter 수행...");
 		String id = request.getParameter("id");
 		String passwd = request.getParameter("passwd");
 		
@@ -69,7 +69,7 @@ public class InitParamFilter implements Filter {
 
 	@Override
 	public void destroy() {
-		System.out.println("Fileter02 해제...");
+//		System.out.println("Fileter02 해제...");
 		
 	}
 	
