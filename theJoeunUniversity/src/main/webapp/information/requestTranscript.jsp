@@ -821,7 +821,7 @@
 		</div>
 		
 		<div>
-		<input class="button" type=button style="font-size: 40px; border-radius: 20px;" onclick="closeCurrentWindow()" value="돌아가기">
+		<input class="button1" type=button style="font-size: 40px; border-radius: 20px;" onclick="closeCurrentWindow()" value="돌아가기">
 		</div>
 			
 	</div>
@@ -830,9 +830,27 @@
 
 
 	<script>
-		function winPrint() {
-			window.print();
+	function winPrint() {
+		let initBody = document.body;
+	
+		let hiddenBtn = document.querySelector('.button'); 
+		let hiddenBtn1 = document.querySelector('.button1'); 
+	
+		window.onbeforeprint = function () {
+		    hiddenBtn.style.display = "none";
+		    hiddenBtn1.style.display = "none";
+	
+		    document.body = document.querySelector('#container');
 		}
+	
+		window.onafterprint = function () {
+		    hiddenBtn.style.display = "inline-flex";
+		    hiddenBtn1.style.display = "inline-flex";
+	
+		    document.body = initBody;
+		}
+		window.print();
+	}
 
 		var now = new Date();
 		var year = now.getFullYear();

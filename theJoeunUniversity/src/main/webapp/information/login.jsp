@@ -12,6 +12,7 @@
 <meta charset="UTF-8">
 <title>로그인</title>
 <script src="https://unpkg.com/hangul-js" type="text/javascript"></script>
+<script src="<%=request.getContextPath()%>/static/Hangul/hangul.js" type="text/javascript"></script>
 <jsp:include page="/layout/link.jsp" />
 <jsp:include page="/layout/mainLink.jsp" />
 <jsp:include page="/layout/informationLayout/loginlink.jsp" />
