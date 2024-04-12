@@ -29,11 +29,11 @@
 	<%
 	if (board != null) {
 	%>
-<div class="Container" style="min-height: 1440px">
+	<jsp:include page="/layout/header.jsp" />
+	<!-- 헤더 -->
+<div class="Container" style="min-height: 900px">
 	<div >
 	
-	<!-- 헤더 -->
-	<jsp:include page="/layout/header.jsp" />
 	
 	<div class="time">
 		<p >등록시간: <%= board.getReg_date() %></p>
@@ -63,12 +63,12 @@
 	
 	</div>
 
-			<!-- 푸터&배너 -->
-			<jsp:include page="/layout/footer.jsp" />
 
 
 </div>
 		
+			<!-- 푸터&배너 -->
+			<jsp:include page="/layout/footer.jsp" />
 		
 		<!-- 공유양식 -->
   <jsp:include page="/layout/mainLink.jsp" /> 

@@ -24,7 +24,6 @@
 <!-- css -->
 <jsp:include page="/layout/link.jsp" />
 <jsp:include page="/layout/mainLink.jsp" />
-<%-- <link href="<%= request.getContextPath()%>/Euna/css/style.css" rel="stylesheet"> --%>
 <link rel="icon" href="<%=root%>/static/img/icon.png">
 
 <!-- Fontawesome 아이콘 라이브러리 -->
