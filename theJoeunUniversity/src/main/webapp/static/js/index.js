@@ -1,5 +1,4 @@
 $(function() {
-
     const swiper = new Swiper('.swiper', {
         // Optional parameters
         direction: 'horizontal',            /* 슬라이드 방향 : 'vertical' , 'horizontal' */
@@ -24,10 +23,5 @@ $(function() {
                                         // 'progressbar'    : 진행률(게이지)
             clickable: true,
         },
-
-
-
-      });
-
-
+    });
 })

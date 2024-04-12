@@ -9,9 +9,9 @@
 <%
 	String root = request.getContextPath();
 
-	LocalTime now = LocalTime.now();
-	DateTimeFormatter timeDtf = DateTimeFormatter.ofPattern("HH시 mm분 ss초");
-	String fomatTime = now.format(timeDtf);
+ 	LocalTime now = LocalTime.now();
+ 	DateTimeFormatter timeDtf = DateTimeFormatter.ofPattern("HH시 mm분 ss초");
+ 	String fomatTime = now.format(timeDtf);
 %>
 <!DOCTYPE html>
 <html>
@@ -19,7 +19,8 @@
 <meta charset="UTF-8">
 <title>더조은대학교</title>
 <!-- swiper 플러그인 -->
-<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <link rel="stylesheet" href="<%=root%>/static/css/style.css">
 
 <!-- jQuery -->
@@ -35,9 +36,9 @@
 <body>
 	<!-- Slider main container -->
 	<div class="first">
-		<div id="myTime">
-			<h2 class="myTime"><%=fomatTime %></h2>
-		</div>
+	 		<div id="myTime">
+	 			<h2 class="myTime"><%=fomatTime %></h2>
+	 		</div>
 
 		<div class="swiper">
 			<h1 class="click">화면을 터치해주세요!</h1>
@@ -74,11 +75,10 @@
 	</div>
 
 	<script>
-		function timeReload(){
-			$("#myTime").load(window.location.href + " #myTime");
-		}
-
-		setInterval(timeReload, 1000);
+ 		function timeReload(){
+ 			$("#myTime").load(window.location.href + " #myTime");
+ 		}
+ 		setInterval(timeReload, 1000);
 	</script>
 </body>
 </html>

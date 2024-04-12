@@ -206,7 +206,7 @@
 									<div class="hcI" style="top: 4.53mm;">
 										<div class="hls ps0"
 											style="line-height: 3.27mm; white-space: nowrap; left: 1.76mm; top: -0.20mm; height: 4.06mm; width: 24.95mm;">
-											<span class="hrt cs9">학과</span>
+											<span class="hrt cs9">이름</span>
 										</div>
 									</div>
 								</div>
@@ -217,7 +217,7 @@
 									<div class="hcI" style="top: 4.53mm;">
 										<div class="hls ps1"
 											style="padding-left: 1mm; line-height: 3.27mm; white-space: nowrap; left: 0mm; top: -0.20mm; height: 4.06mm; width: 49.05mm;">
-											<span class="hrt cs9"><%=user.getDepartment().getMajorName()%></span>
+											<span class="hrt cs9"><%=user.getName()%></span>
 										</div>
 									</div>
 								</div>
@@ -268,7 +268,7 @@
 									<div class="hcI" style="top: 4.53mm;">
 										<div class="hls ps0"
 											style="line-height: 3.27mm; white-space: nowrap; left: 1.76mm; top: -0.20mm; height: 4.06mm; width: 25.48mm;">
-											<span class="hrt cs9">메일</span>
+											<span class="hrt cs9">학과</span>
 										</div>
 									</div>
 								</div>
@@ -278,7 +278,7 @@
 								<div class="hcD" style="left: 0.49mm; top: 0.49mm;">
 									<div class="hcI" style="top: 4.53mm;">
 										<div class="hls ps0"
-											style="line-height: 3.27mm; white-space: nowrap; left: 1.76mm; top: -0.20mm; height: 4.06mm; width: 45mm;"><%=user.getMail()%></div>
+											style="line-height: 3.27mm; white-space: nowrap; left: 1.76mm; top: -0.20mm; height: 4.06mm; width: 45mm;"><%=user.getDepartment().getMajorName()%></div>
 									</div>
 								</div>
 							</div>
