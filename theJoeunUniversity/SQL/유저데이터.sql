@@ -22,7 +22,7 @@ INSERT ALL
     INTO Users (uNo, StudentID, Name, Birth, Mail, AcademicStatus, dNo) VALUES (5, '20220005', 'Emily Davis', '19930618', 'emily@example.com', '졸업', 1)
 SELECT * FROM dual;
 
-DELETE FROM users;
+DELETE FROM Users;
 
 CREATE TABLE Users (
 	uNo number NOT NULL,
@@ -56,6 +56,18 @@ CREATE TABLE Department (
 	dNo number NOT NULL,
 	Majorname varchar2(100) NOT NULL
 );
+
+-- 시퀀스
+CREATE SEQUENCE SEQ_UIMG
+INCREMENT BY 1
+START WITH 1
+MINVALUE 1
+MAXVALUE 9999;
+CREATE SEQUENCE SEQ_USERS
+INCREMENT BY 1
+START WITH 1
+MINVALUE 1
+MAXVALUE 9999;
 
 CREATE TABLE Score (
 	No number NOT NULL,

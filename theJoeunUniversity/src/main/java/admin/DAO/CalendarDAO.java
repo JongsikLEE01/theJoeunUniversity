@@ -19,7 +19,8 @@ public class CalendarDAO extends JDBConnection {
 			
 			// SQL 작성
 			String sql = " SELECT * "
-					   + " FROM calendar ";
+					   + " FROM calendar "
+					   + " ORDER BY STRDATE ASC ";
 			try {
 				// 쿼리(SQL) 실행 객체 생성 - Statement (stmt)
 				stmt = con.createStatement();

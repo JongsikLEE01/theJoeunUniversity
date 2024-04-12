@@ -47,9 +47,7 @@
 					</tr>
 					<tr>
 						<th>내용</th>
-						<td><textarea rows="5" cols="40" name="content">
-						<%=board.getContent()%>
-						</textarea></td>
+						<td><textarea rows="5" cols="40" name="content"><%=board.getContent()%></textarea></td>
 					</tr>
 				</table>
 				<div class="container-insertFt">

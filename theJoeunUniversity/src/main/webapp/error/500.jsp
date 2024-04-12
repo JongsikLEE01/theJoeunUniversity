@@ -28,9 +28,6 @@
 			    <h3>Internal Server Error :(</h3>
 			</div>
 		    <img class="bono" src="<%=root%>/static/img/보노.png">
-		    <div class="tear no1"></div>
-		    <div class="tear no2"></div>
-		    <div class="tear no3"></div>
 	
 		    <a class="errorBack" href="<%= root %>/main.jsp">돌아가기</a>
 		</div>

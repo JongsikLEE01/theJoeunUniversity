@@ -22,7 +22,8 @@
 <body>
 
 	<%
-	String fileUploadPath = "C:/joeun/jsp/thejoeununiversity/src/main/webapp/users/img";
+	// 프로퍼티즈 -> 경로 복사 후 자기 경로로 변경
+	String fileUploadPath = "C:/JSLEE/mini/MSA5_MiniProject/theJoeunUniversity/src/main/webapp/users/img";
 
 	// commons-fileupload 에서 파일 업로드 기능을 가진 객체 DiskFileUpload 생성
 	DiskFileUpload upload = new DiskFileUpload();
