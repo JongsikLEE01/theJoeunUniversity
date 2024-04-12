@@ -63,7 +63,7 @@ body{
 	align-items: center;
 }
 
-.time{
+.myTime{
 	position: absolute;
     z-index: 5;
     top: 15%;

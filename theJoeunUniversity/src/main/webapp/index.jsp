@@ -19,8 +19,7 @@
 <meta charset="UTF-8">
 <title>더조은대학교</title>
 <!-- swiper 플러그인 -->
-<link rel="stylesheet"
-	href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 <link rel="stylesheet" href="<%=root%>/static/css/style.css">
 
 <!-- jQuery -->
@@ -36,8 +35,8 @@
 <body>
 	<!-- Slider main container -->
 	<div class="first">
-		<div id="time">
-			<h2 class="time"><%=fomatTime %></h2>
+		<div id="myTime">
+			<h2 class="myTime"><%=fomatTime %></h2>
 		</div>
 
 		<div class="swiper">
@@ -76,7 +75,7 @@
 
 	<script>
 		function timeReload(){
-			$("#time").load(window.location.href + " #time");
+			$("#myTime").load(window.location.href + " #myTime");
 		}
 
 		setInterval(timeReload, 1000);

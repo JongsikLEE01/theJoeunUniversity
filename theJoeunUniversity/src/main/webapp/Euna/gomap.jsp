@@ -27,8 +27,10 @@
 
 .con {
 	width: 1000px;
-	margin: 100px auto;
+	margin-top: 30px;
+	margin-left: 20px;
 }
+
 </style>
 </head>
 <body>
@@ -36,18 +38,24 @@
 		<!-- 헤더 -->
 		<jsp:include page="/layout/header.jsp" />
 	</header>
-	<div class="container">
+	<div class="container" id="container2">
 
-		<p class="title">지도</p>
-
+		<ul class="mainTitle">
+			<li class="Line"></li>
+			<li class="title">편의 시설</li>
+			<li class="Line"></li>
+		</ul>
+		
+		<div class="euna123">
+		
 		<div class="con">
-			<div id="map" style="width: 950px; height: 700px; margin: 0 auto;"></div>
+			<div id="map" style="width: 950px; height: 730px;"></div>
 			<p id="position"></p>
 		</div>
 
 		<div class="map_wrap">
 			<div id="map"
-				style="width: 100%; height: 100%; position: relative; overflow: hidden;"></div>
+				style="  overflow: hidden;"></div>
 			<ul id="category">
 				<li id="BK9" data-order="0"><img
 					src="<%=request.getContextPath()%>/static/img/bank.png"><br>
@@ -69,7 +77,7 @@
 					편의점</li>
 			</ul>
 		</div>
-
+	</div>	
 
 
 
@@ -79,26 +87,50 @@
 			
 		</script>
 
-		<script>
-			// 마커를 클릭했을 때 해당 장소의 상세정보를 보여줄 커스텀오버레이입니다
-			var placeOverlay = new kakao.maps.CustomOverlay({
-				zIndex : 1
-			}), contentNode = document.createElement('div'), // 커스텀 오버레이의 컨텐츠 엘리먼트 입니다 
-			markers = [], // 마커를 담을 배열입니다
-			currCategory = ''; // 현재 선택된 카테고리를 가지고 있을 변수입니다
+		      <script>
+         // 위도 : 37.49100953576117, 경도 : 126.72047625631083
+         let lat = 37.49100953576117 // 위도
+         let lon = 126.72047625631083 // 경도
+         
+         
+         
+         // 마커를 클릭했을 때 해당 장소의 상세정보를 보여줄 커스텀오버레이입니다
+         var placeOverlay = new kakao.maps.CustomOverlay({
+            zIndex : 1
+         }), contentNode = document.createElement('div'), // 커스텀 오버레이의 컨텐츠 엘리먼트 입니다 
+         markers = [], // 마커를 담을 배열입니다
+         currCategory = ''; // 현재 선택된 카테고리를 가지고 있을 변수입니다
 
-			var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-			mapOption = {
-				center : new kakao.maps.LatLng(37.49108, 126.7206), // 지도의 중심좌표
-				level : 1
-			// 지도의 확대 레벨
-			};
+         var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+         mapOption = {
+            center : new kakao.maps.LatLng(37.49108, 126.7206), // 지도의 중심좌표
+            level : 1
+         // 지도의 확대 레벨
+         };
 
-			// 지도를 생성합니다    
-			var map = new kakao.maps.Map(mapContainer, mapOption);
+         // 지도를 생성합니다    
+         var map = new kakao.maps.Map(mapContainer, mapOption);
+         
+         
+         // 지도에 마커를 생성하고 표시한다
+         var marker = new kakao.maps.Marker({
+             position: new kakao.maps.LatLng(lat, lon), // 마커의 좌표
+             map: map                                    // 마커를 표시할 지도 객체
+         });
+         
 
-			// 장소 검색 객체를 생성합니다
-			var ps = new kakao.maps.services.Places(map);
+         // 커스텀 오버레이를 생성하고 지도에 표시한다
+         var customOverlay = new kakao.maps.CustomOverlay({
+            map : map,
+            content : '<div class="my-place">더조은 대학교</div>',
+            position : new kakao.maps.LatLng(lat, lon), // 커스텀 오버레이를 표시할 좌표
+            xAnchor : 0.5, // 컨텐츠의 x 위치
+            yAnchor : 0
+         // 컨텐츠의 y 위치
+         });
+
+         // 장소 검색 객체를 생성합니다
+         var ps = new kakao.maps.services.Places(map);
 
 			// 지도에 idle 이벤트를 등록합니다
 			kakao.maps.event.addListener(map, 'idle', searchPlaces);

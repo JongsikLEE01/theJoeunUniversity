@@ -1,5 +1,27 @@
 @charset "UTF-8";
 
+
+/* .euna123 {  */
+/* 	margin-bottom: 200px; */
+/* } */
+
+
+.container .mainTitle{
+    list-style-type: none;
+	display: flex;
+}
+.container .mainTitle .Line {
+	height : 0.5px;
+	width: 30%;
+    background-color : lightgray;
+    margin-top: 3%;
+}
+.container .mainTitle .title {
+    font-size: 3rem;
+    font-weight: bold;
+    width: 40%;
+}
+
 .map_wrap, .map_wrap * {
 	margin: 0;
 	padding: 0;
@@ -9,13 +31,13 @@
 .map_wrap {
 	position: relative;
 	width: 100%;
-	height: 350px;
+	
 }
 
 #category {
 	position: absolute;
     margin-left: 2.5%;
-    top: -780px;
+    top: -700px;
     left: 35px;
     /* background: transparent; */
     background-color: rgba(255, 255, 255, 0.75);

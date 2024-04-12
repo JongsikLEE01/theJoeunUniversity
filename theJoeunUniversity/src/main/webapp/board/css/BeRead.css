@@ -66,4 +66,8 @@ footer {
 .ContentSub {
 	height: 585px;
 	background-color: #f7fbff;
+	font-size: 2rem;
+	height: 700px;
+	min-height: 700px;
+	max-height: 700px;
 }

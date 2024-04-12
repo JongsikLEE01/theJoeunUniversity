@@ -12,8 +12,8 @@
 <meta charset="UTF-8">
 <title>게시글 조회</title>
 
+<jsp:include page="/layout/link.jsp" />
 <link rel="stylesheet" href="css/BeRead.css">
-
 </head>
 <body>
 	
@@ -29,11 +29,12 @@
 	<%
 	if (board != null) {
 	%>
-<div class="Container" style="min-height: 1440px">
-	<div >
-	
 	<!-- 헤더 -->
 	<jsp:include page="/layout/header.jsp" />
+	
+<div class="container">
+	<div >
+	
 	
 	<div class="time">
 		<p >등록시간: <%= board.getReg_date() %></p>
@@ -63,11 +64,11 @@
 	
 	</div>
 
-			<!-- 푸터&배너 -->
-			<jsp:include page="/layout/footer.jsp" />
 
 
 </div>
+			<!-- 푸터&배너 -->
+			<jsp:include page="/layout/footer.jsp" />
 		
 		
 		<!-- 공유양식 -->
