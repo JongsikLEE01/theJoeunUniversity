@@ -13,13 +13,17 @@
 	
 }
 
+body{
+	background-color: #4D8FC3;
+}
+
 .container {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center; /* 가운데로 정렬합니다. */
-    height: 900px;
-	width: 984px;
+    height: 1001px;
+    width: 1025px;
     background-color: #4D8FC3;
 }
 

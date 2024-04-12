@@ -13,9 +13,8 @@
 <jsp:include page="/layout/mainLink.jsp" />
 <jsp:include page="/layout/informationLayout/certificatelink.jsp" />
 <style>
-header{ border-bottom: 1px solid white;}
+header{ border-bottom: 1px solid white; width: 100%;}
 footer{ border-top: 1px solid white;}
-body{ background-color: #4D8FC3; }
 </style>
 </head>
 <body>
@@ -62,7 +61,7 @@ body{ background-color: #4D8FC3; }
 				</button>
 
 			<c:choose>
-				<c:when test="${sessionScope.academicStatus eq 'Enrollment'}">
+				<c:when test="${sessionScope.academicStatus eq '재학'}">
 						<button type="button" class="score" onclick="openEnrollment()">
 							<img
 								src="<%=request.getContextPath()%>/information/img/enrollment.png"
@@ -70,7 +69,7 @@ body{ background-color: #4D8FC3; }
 						<div class="scoretext">재학 증명서 발행</div>
 						</button>
 				</c:when>
-				<c:when test="${sessionScope.academicStatus eq 'Graduation'}">
+				<c:when test="${sessionScope.academicStatus eq '졸업'}">
 					<form onsubmit="openGraduationment()" method="post">
 						<button type="submit" class="score">
 							<img

@@ -22,7 +22,7 @@ body{
 	margin: auto;
 	position: relative;
 	height: 80px;
-	
+	top: -30px;
 }
 
 .form-control{
@@ -66,13 +66,49 @@ body{
 	width: 984px;
 	display: table;
 	position: absolute;
-	top: 230px;
+	top: 15%;
 }
 
 
 td{
 	text-align: center;
 	height: 80px;
+}
+
+
+#keyboardzone {
+    width: 800px;
+    height: 400px;
+    position: fixed;
+    display: block;
+    background: #bfbfbf;
+   	left: 50%;
+   	transform: translateX(-50%);
+    bottom: -400px;
+    border-radius: 15px;
+    transition: bottom 0.5s;
+    z-index: 9999;
+}
+
+#keyboardzone * {
+    transition: all 0ms;
+    
+    
+}
+#keyboardzone table th {
+    border: 1px solid #2f2f2f3d;
+    display: table-cell;
+    vertical-align: middle;
+    background-color: #eeeeeec4;
+    transition: background-color 500ms;
+    box-shadow: 0 0 7px 0px #00000033;
+    border-radius: 5px;
+    
+    
+}
+#keyboardzone table th:active {
+    background-color: #ffffff;
+    transition: background-color 0ms;
 }
 
 

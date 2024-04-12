@@ -1,28 +1,72 @@
 
 
+let keyboardzoneCheck = false
+
 $(function() {
 	
 	// 학번, 생일 입력 클릭, 
-	$('.textlogin').on('foucs, click',function() {
+	$('.textlogin').on('click',function() {
+		
 //		$(this).css({
 //			'background-color' : 'red'
 //		})
 
 		$(this).addClass('clicked')
+		
+		if( !keyboardzoneCheck ) {
+        	$('#keyboardzone').css({bottom: 0 + "px"});
+        	keyboardzoneCheck = true
+        }
+        
+        $('#outer').show()
 	})
 	
 	
 	// 학번, 생일 입력 변경,
-	$('.textlogin').on('change, blur',function() {
+	$('.textlogin').on('change',function() {
 		
 		let value = $(this).val()
 		
 		// 값이 없으면
 		if( value == null || value == '' ) {
 			$(this).removeClass('clicked')
+        
+		}
+		
+		if( keyboardzoneCheck ) {
+	        $('#keyboardzone').css({
+	            bottom: -400 + "px"
+	        });
+	        keyboardzoneCheck = false
+		}
+	})
+	
+	$('#outer').on('click',function() {
+		
+		$('#outer').hide()
+		
+		if( keyboardzoneCheck ) {
+	        $('#keyboardzone').css({
+	            bottom: -400 + "px"
+	        });
+	        keyboardzoneCheck = false
 		}
 		
 	})
+	
+
+	
+
+	
+	
+//	$("*:not(.textlogin, #keyboardzone)").on('click',function() {
+//		if( keyboardzoneCheck ) {
+//	        $('#keyboardzone').css({
+//	            bottom: -400 + "px"
+//	        });
+//	        keyboardzoneCheck = false
+//		}
+//	})
 
 	
 	

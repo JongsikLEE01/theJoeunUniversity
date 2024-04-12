@@ -15,11 +15,11 @@ INSERT ALL
 SELECT * FROM dual;
 
 INSERT ALL
-    INTO Users (uNo, StudentID, Name, Birth, Mail, AcademicStatus, dNo) VALUES (1, '20220001', 'John Doe', '19900515', 'john@example.com', 'Enrollment', 1)
-    INTO Users (uNo, StudentID, Name, Birth, Mail, AcademicStatus, dNo) VALUES (2, '20220002', 'Jane Smith', '19920820', 'jane@example.com', 'Enrollment', 2)
-    INTO Users (uNo, StudentID, Name, Birth, Mail, AcademicStatus, dNo) VALUES (3, '20220003', 'Alice Johnson', '19881210', 'alice@example.com', 'Enrollment', 1)
-    INTO Users (uNo, StudentID, Name, Birth, Mail, AcademicStatus, dNo) VALUES (4, '20220004', 'Bob Brown', '19910325', 'bob@example.com', 'Enrollment', 2)
-    INTO Users (uNo, StudentID, Name, Birth, Mail, AcademicStatus, dNo) VALUES (5, '20220005', 'Emily Davis', '19930618', 'emily@example.com', 'Enrollment', 1)
+    INTO Users (uNo, StudentID, Name, Birth, Mail, AcademicStatus, dNo) VALUES (1, '20220001', 'John Doe', '19900515', 'john@example.com', '재학', 1)
+    INTO Users (uNo, StudentID, Name, Birth, Mail, AcademicStatus, dNo) VALUES (2, '20220002', 'Jane Smith', '19920820', 'jane@example.com', '재학', 2)
+    INTO Users (uNo, StudentID, Name, Birth, Mail, AcademicStatus, dNo) VALUES (3, '20220003', 'Alice Johnson', '19881210', 'alice@example.com', '재학', 1)
+    INTO Users (uNo, StudentID, Name, Birth, Mail, AcademicStatus, dNo) VALUES (4, '20220004', 'Bob Brown', '19910325', 'bob@example.com', '재학', 2)
+    INTO Users (uNo, StudentID, Name, Birth, Mail, AcademicStatus, dNo) VALUES (5, '20220005', 'Emily Davis', '19930618', 'emily@example.com', '졸업', 1)
 SELECT * FROM dual;
 
 DELETE FROM users;

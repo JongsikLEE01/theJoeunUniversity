@@ -29,8 +29,6 @@
 <link rel="icon" href="<%=root%>/static/img/icon.png">
 
 <!-- Fontawesome 아이콘 라이브러리 -->
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
 <body>
 	<header>

@@ -46,8 +46,8 @@
 		</style>
 
 </head>
-<body onresize="parent.resizeTo(650,950)"
-	onload="parent.resizeTo(650,950)">
+<body onresize="parent.resizeTo(700,950)"
+	onload="parent.resizeTo(700,950)">
 
 	<%
 	UserService userService = new UserServiceImpl();
@@ -295,7 +295,7 @@
 	
 	<hr style="margin-top: 60px;" >
 	
-	<div class="page" style="display: flex; justify-content: center; gap: 100px; margin-top: 60px;
+	<div class="page" style="display: flex; justify-content: center; gap: 100px; margin-top: 10px;
 	margin-bottom: 60px;">
 	
 		<div>
