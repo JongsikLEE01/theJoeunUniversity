@@ -62,7 +62,8 @@ body{
 
 .InnerHeader{
 	background-color: lightblue;
-	
+	height: 40px;
+	top: 15%;
 }
 
 
