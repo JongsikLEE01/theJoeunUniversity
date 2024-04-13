@@ -70,6 +70,8 @@
 	display: flex;
 	justify-content: space-around;
 	padding: 0 25px 0 25px;
+	max-width: 932px;
+    max-height: 532px;
 }
 
 /* 달력 */
@@ -82,6 +84,8 @@
 	border-radius: 10px;
 	position: relative;
 	left: -51px;
+	width: 400px;
+    height: 500px;
 }
 .container .content .calendar .titleMonth{
 	font-size: 2rem;

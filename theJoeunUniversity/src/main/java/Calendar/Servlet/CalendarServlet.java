@@ -88,15 +88,3 @@ public class CalendarServlet extends HttpServlet {
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
