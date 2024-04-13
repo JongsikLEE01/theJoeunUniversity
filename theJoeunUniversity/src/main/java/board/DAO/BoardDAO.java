@@ -22,6 +22,7 @@ public class BoardDAO extends JDBConnection {
 		// SQL 작성
 		String sql = " SELECT * "
 				   + " FROM board ";
+		
 		try {
 			// 쿼리(SQL) 실행 객체 생성 - Statement (stmt)
 			stmt = con.createStatement();
@@ -104,8 +105,10 @@ public class BoardDAO extends JDBConnection {
 			List<Board> boardList = new ArrayList<Board>();
 			
 			// SQL 작성
-			String sql = " SELECT * "
-					   + " FROM board WHERE title LIKE '%' || ? || '%'";		// %검색어%
+	         String sql = " SELECT * "
+	                  + " FROM board WHERE title LIKE '%' || ? || '%'"
+	                  + " ORDER BY NO DESC";   
+	         
 			try {
 				// 쿼리(SQL) 실행 객체 생성 - Statement (stmt)
 				psmt = con.prepareStatement(sql);
