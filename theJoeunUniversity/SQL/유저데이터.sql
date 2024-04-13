@@ -1,3 +1,69 @@
+DELETE FROM Users;
+
+ SELECT sc.*, c.Subject_name, u.* 
+				    FROM Score sc 
+				   JOIN Course c ON sc.Coursecode = c.Coursecode 
+				   JOIN Users u ON sc.uNo = u.uNo 
+				   WHERE u.StudentID = '20220001';
+
+-- 학생 관련DB 생성
+CREATE TABLE Users (
+	uNo number NOT NULL,
+	StudentID varchar2(30) NOT NULL,
+	Name varchar2(20) NULL,
+	Birth varchar2(100) NULL,
+	Mail varchar2(100) NULL,
+	AcademicStatus varchar2(100) NULL,
+	dNo number NOT NULL
+);
+CREATE TABLE Course (
+	Coursecode varchar2(100) NOT NULL,
+	Subject_name varchar2(100) NULL,
+	dNo number NOT NULL
+);
+CREATE TABLE Score (
+	No number NOT NULL,
+	Subjectscore varchar2(50) NOT NULL,
+	Input_date date DEFAULT SYSDATE,
+	Upd_date date DEFAULT SYSDATE,
+	Type varchar2(50) NULL,
+	uNo number NOT NULL,
+	Coursecode varchar2(30) NOT NULL
+);
+CREATE TABLE Department (
+	dNo number NOT NULL,
+	Majorname varchar2(100) NOT NULL
+);
+ CREATE TABLE userimg
+(
+  no       NUMBER        NOT NULL,
+  filename VARCHAR2(255),
+  usernum  NUMBER        NOT NULL,
+  CONSTRAINT PK_userimg PRIMARY KEY (no)
+);
+
+ALTER TABLE Users ADD CONSTRAINT PK_USERS PRIMARY KEY (uNo);
+ALTER TABLE Course ADD CONSTRAINT PK_COURSE PRIMARY KEY (Coursecode);
+ALTER TABLE Department ADD CONSTRAINT PK_DEPARTMENT PRIMARY KEY (dNo);
+ALTER TABLE Score ADD CONSTRAINT PK_SCORE PRIMARY KEY (No);
+
+COMMENT ON TABLE userimg IS '학생사진';
+
+
+-- 시퀀스
+CREATE SEQUENCE SEQ_UIMG
+INCREMENT BY 1
+START WITH 1
+MINVALUE 1
+MAXVALUE 9999;
+CREATE SEQUENCE SEQ_USERS
+INCREMENT BY 1
+START WITH 1
+MINVALUE 1
+MAXVALUE 9999;
+
+
+-- 학생 관련 데이터
 INSERT ALL
     INTO Score (No, Subjectscore, Type, uNo, Coursecode) VALUES (1, 'A', 'Midterm', 1, 'CSCI101')
     INTO Score (No, Subjectscore, Type, uNo, Coursecode) VALUES (2, 'B+', 'Final', 2, 'ENG101')
@@ -22,77 +88,6 @@ INSERT ALL
     INTO Users (uNo, StudentID, Name, Birth, Mail, AcademicStatus, dNo) VALUES (5, '20220005', 'Emily Davis', '19930618', 'emily@example.com', '졸업', 1)
 SELECT * FROM dual;
 
-DELETE FROM Users;
-
-CREATE TABLE Users (
-	uNo number NOT NULL,
-	StudentID varchar2(30) NOT NULL,
-	Name varchar2(20) NULL,
-	Birth varchar2(100) NULL,
-	Mail varchar2(100) NULL,
-	AcademicStatus varchar2(100) NULL,
-	dNo number NOT NULL
-);
-
-CREATE TABLE Board (
-	No number NOT NULL,
-	Title varchar2(50) NULL,
-	Writer varchar2(50) NULL,
-	Content varchar2(2000) NULL,
-	Reg_date date DEFAULT SYSDATE,
-	Upd_date date DEFAULT SYSDATE,
-	Views number NULL,
-	Like_cnt number NULL,
-	CheckStaus number NULL
-);
-
-CREATE TABLE Course (
-	Coursecode varchar2(100) NOT NULL,
-	Subject_name varchar2(100) NULL,
-	dNo number NOT NULL
-);
-
-CREATE TABLE Department (
-	dNo number NOT NULL,
-	Majorname varchar2(100) NOT NULL
-);
-
--- 시퀀스
-CREATE SEQUENCE SEQ_UIMG
-INCREMENT BY 1
-START WITH 1
-MINVALUE 1
-MAXVALUE 9999;
-CREATE SEQUENCE SEQ_USERS
-INCREMENT BY 1
-START WITH 1
-MINVALUE 1
-MAXVALUE 9999;
-
-CREATE TABLE Score (
-	No number NOT NULL,
-	Subjectscore varchar2(50) NOT NULL,
-	Input_date date DEFAULT SYSDATE,
-	Upd_date date DEFAULT SYSDATE,
-	Type varchar2(50) NULL,
-	uNo number NOT NULL,
-	Coursecode varchar2(30) NOT NULL
-);
-
-ALTER TABLE Users ADD CONSTRAINT PK_USERS PRIMARY KEY (uNo);
-ALTER TABLE Board ADD CONSTRAINT PK_BOARD PRIMARY KEY (No);
-ALTER TABLE Course ADD CONSTRAINT PK_COURSE PRIMARY KEY (Coursecode);
-ALTER TABLE Department ADD CONSTRAINT PK_DEPARTMENT PRIMARY KEY (dNo);
-ALTER TABLE Score ADD CONSTRAINT PK_SCORE PRIMARY KEY (No);
-ALTER TABLE calendar ADD CONSTRAINT PK_CALENDAR PRIMARY KEY (NO);
-
- SELECT sc.*, c.Subject_name, u.* 
-				    FROM Score sc 
-				   JOIN Course c ON sc.Coursecode = c.Coursecode 
-				   JOIN Users u ON sc.uNo = u.uNo 
-				   WHERE u.StudentID = '20220001';
-                   
-                   
 INSERT INTO department (Dno, majorname)
 VALUES	(1, '컴퓨터 공학');
 INSERT INTO department (Dno, majorname)

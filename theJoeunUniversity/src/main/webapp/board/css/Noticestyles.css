@@ -62,11 +62,7 @@ body{
 
 .InnerHeader{
 	background-color: lightblue;
-	height: 40px;
-	width: 984px;
-	display: table;
-	position: absolute;
-	top: 15%;
+	
 }
 
 

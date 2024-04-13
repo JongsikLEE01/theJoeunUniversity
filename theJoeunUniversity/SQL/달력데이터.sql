@@ -1,4 +1,4 @@
--- 캘린더 SQL
+-- 캘린더DB 생성
 CREATE TABLE calendar(
     NO       NUMBER,
     strDATE DATE          NOT NULL,

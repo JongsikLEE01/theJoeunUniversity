@@ -1,5 +1,30 @@
 delete from board;
 
+ commit;
+
+-- 게시판DB 생성
+CREATE TABLE Board (
+	No number NOT NULL,
+	Title varchar2(50) NULL,
+	Writer varchar2(50) NULL,
+	Content varchar2(2000) NULL,
+	Reg_date date DEFAULT SYSDATE,
+	Upd_date date DEFAULT SYSDATE,
+	Views number NULL,
+	Like_cnt number NULL,
+	CheckStaus number NULL
+);
+
+ALTER TABLE Board ADD CONSTRAINT PK_BOARD PRIMARY KEY (No);
+
+-- 시퀀스
+CREATE SEQUENCE SEQ_BOARD
+INCREMENT BY 1
+START WITH 1
+MINVALUE 1
+MAXVALUE 9999;
+
+-- 게시판 데이터
 INSERT into board (NO, title, WRITER, CONTENT, REG_DATE, upd_date) 
 VALUES 
 ('1', '[학생지원]국제학생증 발급비 지원', '김교수', 
@@ -103,22 +128,3 @@ VALUES
 
 다. 우선 수강신청 결과 확인의「결과」가 「N」으로 표시된 과목은 수강을 희망하는 경우 수강신청 기간에「수강신청」프로그램에서 반드시 선착순 수강신청을 하여야 함. ',
  '2024-08-01','2024-08-01 ');
- 
- commit;
- 
- CREATE TABLE userimg
-(
-  no       NUMBER        NOT NULL,
-  filename VARCHAR2(255),
-  usernum  NUMBER        NOT NULL,
-  CONSTRAINT PK_userimg PRIMARY KEY (no)
-);
-
-COMMENT ON TABLE userimg IS '학생사진';
-
--- 시퀀스
-CREATE SEQUENCE SEQ_BOARD
-INCREMENT BY 1
-START WITH 1
-MINVALUE 1
-MAXVALUE 9999;

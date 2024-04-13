@@ -50,7 +50,7 @@
 			<td ><%=board.getWriter()%></td>
 		</tr>
 		<tr>
-			<td class="ContentSub" colspan="2" valign="top"><%=board.getContent()%></td>
+			<td class="ContentSub" colspan="2" valign="top"><pre>${itemDetail.itemcontent }<%=board.getContent()%></pre></td>
 		</tr>
 	</table>
 	
@@ -63,7 +63,6 @@
 	%>
 	
 	</div>
-
 
 
 </div>

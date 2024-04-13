@@ -50,7 +50,7 @@ footer {
 .ancTitle {
 	text-align: center;
     float: left;
-    font-size: 2rem;
+    font-size: 1rem;
     padding: 10px;
 }
 
@@ -58,7 +58,7 @@ footer {
 .ancWriter {
 	text-align: center;
     float: left;
-    font-size: 2rem;
+    font-size: 1rem;
     padding: 10px;
 	
 }
@@ -70,4 +70,11 @@ footer {
 	height: 700px;
 	min-height: 700px;
 	max-height: 700px;
+}
+
+pre{
+	width: 1000px;
+	height: 750px;
+	overflow: auto;
+	font-size: 1rem;
 }
