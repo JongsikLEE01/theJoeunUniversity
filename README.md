@@ -3,7 +3,7 @@
 <br>
 더 조은 대학교 증명서 키오스크 시스템
 <br>
-(http://msa5t3.cafe24.com/)
+http://msa5t3.cafe24.com/
 
 
 ## 팀원
