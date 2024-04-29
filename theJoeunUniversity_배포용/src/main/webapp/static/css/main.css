@@ -1,0 +1,81 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+/* 헤더 */
+header{
+	width: 100%;
+	height: 90px;
+	background-color: #4D8FC3;
+}
+header .top{
+	display: flex;
+	justify-content: space-around;
+	height: 90px;
+}
+header .top a{
+	font-size: 3rem;
+	color: white;
+	margin: 0;
+/* 	width: 45px; */
+}
+header .top .cog{
+	left: 54px;
+}
+#admin{
+	margin-top: 23px;
+	/* margin-right: 550px; */
+	position: absolute;
+	left: 150px;
+}
+header .top .cog #admin:hover{
+	animation: cogRotation 5s linear infinite;
+}
+@keyframes cogRotation{
+	0% { transform: rotate(0deg); }
+	100%{ transform: rotate(360deg); }
+}
+.headerLogo{	
+    width: 247px;
+    height: 67px;
+    border: 0;
+    position: absolute;
+    margin-top: 13px;
+}
+
+
+/* 푸터 */
+footer{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 400px;
+}
+footer .underbar{
+	display: flex;
+	justify-content: space-around;
+	height: 100px;
+	background-color: #4D8FC3;
+}
+footer .underbar a{
+	text-align: center;
+	margin: 20px 0 10px;
+}
+footer .underbar a #bakcForword{
+	color: white;
+	font-size: 3rem;
+	margin-top: 10px;
+}
+footer .underbar a img{
+    width: 85px;
+    height: 70px;
+}
+.swiper{
+	width: 100%;
+	height: 300px;
+}
+footer .swiper-wrapper .swiper-slide img{
+	width: 100%; 
+	height: 300px;
+	object-fit: cover;
+}
