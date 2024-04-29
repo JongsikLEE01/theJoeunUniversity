@@ -1,0 +1,379 @@
+@charset "UTF-8";
+
+/*  */
+@font-face {
+	font-family: '한국기계연구원_bold';
+	src: url('../font/한국기계연구원_bold.woff') format('woff');
+}
+
+* {
+	font-family: '한국기계연구원_bold';
+	
+}
+
+.container .mainTitle{
+    list-style-type: none;
+	display: flex;
+}
+.container .mainTitle .Line {
+	height : 0.5px;
+	width: 30%;
+    background-color : lightgray;
+    margin-top: 3%;
+}
+.container .mainTitle .title {
+    font-size: 3rem;
+    font-weight: bold;
+    width: 40%;
+}
+
+/*  */
+body{
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	margin: 0;
+	align-items: center;
+}
+/* 슬라이드 스타일 */
+.container {
+	width: 984px;
+	height: 900px;
+	margin: 0;
+	padding: 50px 20px;
+	border: 0px;
+}
+
+.swiper {
+	width: 1024px;
+	height: 1440px;
+}
+
+.swiper-pagination {
+	color: #4D8FC3;
+}
+
+.show {
+	position: absolute;
+	font-size: 100px;
+	color: #4D8FC3;
+}
+
+.txt-center {
+	text-align: center;
+}
+
+.first {
+	display: flex;
+}
+
+.click {
+	font-size: 2rem;
+	color: snow;
+	background-color: rgba(0, 0, 0, 0.25);
+	text-shadow: 2px 2px black;
+	text-align: center;
+	position: absolute;
+	left: 50%;
+	top: 85%;
+	transform: translate(-50%, -50%);
+	z-index: 5;
+	align-items: center;
+}
+
+.myTime{
+	position: absolute;
+    z-index: 5;
+    top: 15%;
+    left: 50%;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.25);
+	text-shadow: 2px 2px black;
+	transform: translate(-50%, -50%);
+	color: snow;
+	font-size: 3.5rem;
+}
+
+.swiper-slide {
+	width: 1024px; 
+	height: 1440px;
+}
+/* 슬라이드 스타일 */
+
+/* UI 스타일 */
+figcaption {
+	font-size: x-large;
+	font-weight: 900;
+	text-align: center;
+	margin-top: 7%;
+}
+
+.box {
+	border: 1px solid lightgray;
+	border-radius: 7px;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	width: 200px;
+	height: 200px;
+}
+
+#all {
+	margin-top: 3%;
+}
+
+.block {
+    margin-top: 25px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.blockM {
+	margin-top: 5%;
+	text-align: center;
+}
+
+.box1 {
+	border: 1px solid lightgray;
+	border-radius: 7px;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	display: inline-block;
+	width: 220px;
+	height: 220px;
+	margin-right: 60px;
+}
+
+.box2 {
+	border: 1px solid lightgray;
+	border-radius: 7px;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	display: inline-block;
+	width: 600px;
+	height: 220px;
+}
+
+.title_ {
+	text-align: center;
+	margin-bottom: -40px;
+}
+/* UI 스타일 */
+
+/* 학교 현황 스타일 */
+.list_cb {
+	/* 	text-align: center; */
+	margin-top: 15%;
+	color: #4D8FC3;
+	margin-left: 18%;
+}
+
+.table {
+	width: 65%;
+	border: 1px solid lightgray;
+	border-radius: 3px;
+	border-collapse: collapse;
+	border-top: 1px solid rgba(211, 211, 211, 0.9);
+	border-left: none;
+	border-right: none;
+}
+
+th, td {
+	border-bottom: 1px solid rgba(211, 211, 211, 0.9);
+	border-left: none;
+	padding: 12px;
+}
+
+th:first-child, td:first-child {
+	border-left: none;
+}
+
+thead tr th {
+	background-color: rgba(211, 211, 211, 0.267);
+}
+
+.total.ty1 {
+	background-color: rgba(211, 211, 211, 0.267);
+}
+
+.total.ty1, .total.ty2 {
+	/* color: #071592; */
+	/* font-weight: 550; */
+	text-align: center;
+}
+
+.his {
+	display: flex;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.bb {
+	border-bottom: hidden;
+}
+
+.last {
+    padding-bottom: 50px;
+}
+/* 학교 현황 스타일 */
+
+/* map 스타일 */
+.map {
+    width: 95%;
+    height: 95%;
+    border-radius: 5px;
+    margin-top: 10%;
+}
+
+.m {
+	
+}
+/* map 스타일 */
+
+/* 학교 이념 스타일 */
+.all {
+	width: 70%;
+	display: flex;
+	/* 	flex-direction: column; */
+	justify-content: center;
+	font-size: 18px;
+}
+
+.ht {
+	margin-bottom: 2%;
+}
+
+.text {
+	margin-top: 7%;
+}
+/* 학교 이념 스타일 */
+
+/* UI 스타일 */
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	font-weight: bold;
+}
+
+header {
+	height: 40px;
+}
+
+header nav ul {
+	list-style-type: none;
+	display: flex;
+	column-gap: 20px;
+	height: 80px;
+}
+
+header nav ul li {
+	height: 100%;
+}
+
+header nav ul li a {
+	height: 100%;
+}
+
+footer {
+	width: 100%;
+	height: auto;
+	background-color: black;
+}
+
+footer p {
+	padding: 30px;
+	margin: 0;
+	color: white;
+	text-align: center;
+}
+
+i {
+	color: #4D8FC3;
+}
+/* UI 스타일 */
+
+/* main 레이아웃 */
+.con1 {
+	margin-top: 13%;
+}
+
+.con2 {
+	margin-top: 20%;
+}
+
+/* main 레이아웃 */
+
+
+
+
+
+/* 공통 레이아웃 */
+.flex {
+	display: flex
+}
+
+.flex.j-start {
+	justify-content: flex-start
+}
+
+.flex.j-end {
+	justify-content: flex-end
+}
+
+.flex.j-center {
+	justify-content: center
+}
+
+.flex.j-space-between {
+	justify-content: space-between
+}
+
+.flex.j-space-around {
+	justify-content: space-around
+}
+
+.flex.a-center {
+	align-items: center
+}
+
+.flex.column-reverse {
+	flex-direction: column-reverse
+}
+
+.btn {
+	border: none;
+	background-color: white;
+/* 	background-color: #4D8FC3; */
+	cursor: pointer;
+	color: black;
+}
+
+#fa1, #fa2, #fa3, #fa4, #fa_1, #fa_2, #fa_3, #fa_4, #fa_5 {
+	font-size: 10rem;
+}
+#fa1:hover, #fa2:hover, #fa3:hover, #fa4:hover, #fa_1:hover, #fa_2:hover, #fa_3:hover, #fa_4:hover, #fa_5:hover {
+   transform: scale(1.05);
+   opacity: 0.7;
+   
+}
+
+.txt-center {
+	text-align: center;
+}
+
+.img {
+	width: 200px;
+	height: 200px;
+}
+
+a {text-decoration: none; color: black;}
+a:hover {font-weight: bold; }
+
+.title {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container #time h1{ font-size: 2rem; margin-bottom: 10px; }
+.container #time h2{ font-size: 3rem; }
+.container #time{ margin-top: 20px; }
