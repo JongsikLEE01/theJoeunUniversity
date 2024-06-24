@@ -1,5 +1,4 @@
 # **프로젝트 : theJoeunUniversity** kiosk
-
 <br><br>
 
 ## 목차
@@ -68,10 +67,11 @@
 ### 2-3. 메뉴구조도
 <details>
     <summary>메뉴 구조도</summary>
+    
 ![프로젝트구조](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/7c6a0649-18c5-4f6d-a197-fe7530aaa7c5)
 ![프로젝트구조2](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/1fa93c95-bec7-4082-8ae9-ecbf8d91aa73)
 ![프로젝트구조3](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/ded13d44-d2f3-4f20-86b3-c47f81475d3d)
-</details>
+</details><br><br>
     
 
 ## 3. 프로젝트 팀 구성 및 역할
@@ -96,6 +96,7 @@
 ### 4-1. 수행 절차
 <details>
     <summary>수행 절차</summary>
+    
 ![수행절차](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/1e058f50-41f5-4c21-b6e2-af168d70101e)
 </details>
 
@@ -110,6 +111,7 @@
 ### 5-1. 요구사항 정의서
 <details>
     <summary>요구사항 정의서</summary>
+    
 ![요구사항정의서](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/186c6214-eedf-46f0-85b5-30745d77234e)
 </details>
     
@@ -117,6 +119,7 @@
 ### 5-2. 기능 정의서
 <details>
     <summary>기능 정의서</summary>
+    
 ![기능정의서](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/d2c8945d-5874-4298-a494-51993ce51edf)
 ![기능정의서2](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/a19b75fe-c68f-44fb-a19a-b360f557599f)
 </details>
@@ -124,6 +127,7 @@
 ### 5-3. ERD
 <details>
     <summary>ERD</summary>
+    
 ![ERD](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/e3a2580b-cdc3-4465-84ab-849af60c862a)
 </details>
 
@@ -132,6 +136,7 @@
 ### 5-4. 테이블 정의서
 <details>
     <summary>테이블 정의서</summary>
+    
 ![테이블정의서1](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/acdb9969-0ad0-4c47-9ec4-cb3ce8e2f9c8)
 ![테이블정의서2](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/87e0a2ce-6d6c-4f17-b874-f72f65cc5890)
 ![테이블정의서3](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/c71ce708-9f23-4f9e-9ede-e3928f83f46c)
@@ -145,6 +150,7 @@
 ### 5-5. 프로젝트 실제 화면 UI
 <details>
     <summary>메인 화면</summary>
+    
 ![구현화면1](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/c186ce7b-84ac-457a-a610-3909197fce0c)
 ![구현화면2](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/eb3e8ea8-afd6-4255-9215-984cb2a556c4)
 </details>
@@ -152,6 +158,7 @@
 
 <details>
     <summary>학교 소개</summary>
+    
 ![구현화면3](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/7daaaa34-602d-4b31-81b3-6d1e62a3516e)
 ![구현화면4](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/da053769-3e07-4ee7-b3e3-110a93ed3ecb)
 ![구현화면5](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/c0b27cc0-2ff9-485e-b383-02a46309ffa6)
@@ -163,71 +170,54 @@
 
 <details>
     <summary>학생 정보</summary>
-![구현화면3](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/7daaaa34-602d-4b31-81b3-6d1e62a3516e)
-![구현화면4](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/da053769-3e07-4ee7-b3e3-110a93ed3ecb)
-![구현화면5](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/c0b27cc0-2ff9-485e-b383-02a46309ffa6)
-![구현화면6](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/c6551a0c-2391-41e3-a9f6-dac66005275c)
-![구현화면7](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/aec2a10c-17f1-4072-9262-d613af46239b)
-![구현화면8](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/58f496c4-e8aa-4014-8cf1-4f52e242966b)
+    
+![구현화면10](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/965939cc-63f2-4e00-9cbf-7e318b61e546)
+![구현화면11](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/903d8df3-bcb6-4c9f-9fd1-ff5c82ef8059)
+![구현화면12](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/f2329c7b-90c4-4529-8eb1-bb93c9d652ba)
+</details>
+<br>
+
+<details>
+    <summary>공지 사항</summary>
+    
+![구현화면13](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/16db7a27-7ef3-44bf-b14f-d05c19464127)
+![구현화면14](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/c8b28b35-c8d3-4d48-9ca4-81ad82e41ddb)
+</details>
+<br>
+
+<details>
+    <summary>학사 일정</summary>
+    
+![구현화면9](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/6a52bb3e-0e2d-4069-92e7-cb07b755706f)
 </details>
 <br>
     
-- 학생 정보
+<details>
+    <summary>관리자 페이지</summary>
     
-    ![구현화면10.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/9d36c3a8-f77e-4ea4-b4ff-1d8826d25d73/%EA%B5%AC%ED%98%84%ED%99%94%EB%A9%B410.png)
-    
-    ![구현화면11.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/5fef25a3-dea3-4979-9c61-103a57a0086a/%EA%B5%AC%ED%98%84%ED%99%94%EB%A9%B411.png)
-    
-    ![구현화면12.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/8fa3911d-e241-4cb7-9b5a-a62da742538f/%EA%B5%AC%ED%98%84%ED%99%94%EB%A9%B412.png)
-    
-- 공지 사항
-    
-    ![구현화면13.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/b2b06e52-610e-4c04-9744-7f87022f6a6b/%EA%B5%AC%ED%98%84%ED%99%94%EB%A9%B413.png)
-    
-    ![구현화면14.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/5fbc4c16-b459-4e00-9380-aa40a589e3fe/%EA%B5%AC%ED%98%84%ED%99%94%EB%A9%B414.png)
-    
-- 학사 일정
-    
-    ![구현화면9.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/57ddb06e-2b12-4c79-a1ef-bbc091d48713/%EA%B5%AC%ED%98%84%ED%99%94%EB%A9%B49.png)
-    
-- 관리자 페이지
-    
-    ![구현화면15.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/f9e332fd-af65-48a7-a06a-803902170b86/%EA%B5%AC%ED%98%84%ED%99%94%EB%A9%B415.png)
-    
-    ![구현화면16.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/4d6f9689-34e7-4000-8c3b-1941d9d01d5a/%EA%B5%AC%ED%98%84%ED%99%94%EB%A9%B416.png)
-    
-    ![구현화면17.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/809854c7-7b3f-4805-b196-8e40b2b76766/%EA%B5%AC%ED%98%84%ED%99%94%EB%A9%B417.png)
-    
-    ![구현화면18.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/86b1d9d8-3dd5-41d6-8c77-4f84b77ee4ef/%EA%B5%AC%ED%98%84%ED%99%94%EB%A9%B418.png)
-    
-    ![구현화면19.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/4a5f4fe1-7b10-4d56-85f3-f91bed68ddb7/%EA%B5%AC%ED%98%84%ED%99%94%EB%A9%B419.png)
-    
-    ![구현화면20.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/a3b3e0fc-383c-4d55-a37a-05b1c7a42776/%EA%B5%AC%ED%98%84%ED%99%94%EB%A9%B420.png)
-    
-    ![구현화면21.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/03a4de9a-4c05-4c53-9518-fe8c0006641a/%EA%B5%AC%ED%98%84%ED%99%94%EB%A9%B421.png)
-    
-    ![구현화면22.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/cd55f145-e50a-46b8-8cd6-e0363caa1544/%EA%B5%AC%ED%98%84%ED%99%94%EB%A9%B422.png)
-    
+![구현화면15](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/f8ea43fe-c1f2-49b4-bb33-5792c5674ab1)
+![구현화면16](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/30ebe235-a159-4e87-94da-f1f65a54a244)
+![구현화면17](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/2deaee11-eb45-4615-a685-0ab56ad8d78f)
+![구현화면18](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/453fe54d-a137-4958-9a67-71b09a38fa6a)
+![구현화면19](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/5d52cb40-87d3-449d-8708-1bf98b46d0e5)
+![구현화면20](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/af353013-8cdd-4c60-8f86-71f010c7cc31)
+![구현화면21](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/8cf471ed-6827-4671-949f-a20fa6895757)
+![구현화면22](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/66d669cc-d0e0-4c46-bd53-955dfbc19420)
+</details>
+<br>
 
-## 핵심 기능 코드 리뷰
+## 6. 핵심 기능 코드 리뷰
 
----
-
-### 기능 목표
-
----
-
+### 6-1. 기능 목표
 학사 일정을 비동기 형태로 데이터를 가져와 출력된 해당 월에 대한 달력에 표시를 해서 사용자가 해당 월에 어떤 행사가 있는지 확인할 수 있어야함
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/3a4273c2-0b7f-4b86-bcf3-2bac2cd7a6ab/67ebbb04-d791-409c-a28b-3f62d8dcb5c9.png)
+![구현화면9](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/6a52bb3e-0e2d-4069-92e7-cb07b755706f)
+<br>
 
-### 처리 과정
+### 6-2. 처리 과정
+<details>
+    <summary>캘린더 데이터 JSON 형식으로 반환</summary>
 
----
-
-- 캘린더 데이터 JSON 형식으로 반환
-    
-    ```java
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     		
     		String year = request.getParameter("year");
@@ -274,18 +264,19 @@
     		response.setContentType("application/json");
     		writer.print(json);
     }
-    ```
-    
+</details>
+<br>
 
-- AJAX 데이터 요청
-    
-    ```jsx
-     $.ajax({
-    	 type            : 'GET',                 // 요청 메소드
+
+<details>
+    <summary>AJAX 데이터 비동기 요청</summary>
+
+    $.ajax({
+    	 type            : 'GET',                // 요청 메소드
        url             : url,                    // 요청 URL
-       data            : data,   // 요청 데이터
+       data            : data,                   // 요청 데이터
        contentType     : 'application/json',     // 요청 데이터 타입
-       dataType        : 'html',     // 응답 데이터 타입
+       dataType        : 'html',                 // 응답 데이터 타입
        // 요청 성공 
        success         : function(response, status) {
        // response : 응답 데이터
@@ -308,12 +299,12 @@
        alert('에러 발생')
        }
     })
-    ```
-    
+</details>
+<br>
 
-- 달력에 일정 표시하기
-    
-    ```jsx
+<details>
+    <summary>달력에 일정 표시하기</summary>
+
     function paintDates( calList ) {
     			console.log(calList)
     			
@@ -373,23 +364,15 @@
     				}
     			}
     }
-    ```
+</details>
+<br>
     
 
-### 개선할 점
-
----
-
+### 6-3. 개선할 점
 - 상세 일정을 출력하고 추후 툴팁을 사용해 해당 일정에 대해서 마우스를 클릭하면 툴팁에서 해당 일정이 뜰 수 있도록 하여 실제 대학교에서 사용 가능한 키오스크 시스템 처럼 구현하고자함
 
-## 자체 평가 의견
-
----
-
-### 개별 평가
-
----
-
+## 7. 자체 평가 의견
+### 7-1. 개별 평가
 - 이종식
     - 팀과의 협업을 하며 프로젝트를 수행하고 맡은 업무를 모두 수행했습니다
     시간 부족으로 인해 더 많은 기능적 요소를 추가하지 못한 아쉬움이 있습니다
@@ -411,10 +394,7 @@
     팀원들과의 협업은 유익했습니다.  ORACLE, JAVA,  JSP에 대해 더 이해할 수 있는 계기라고 생각합니다.
     
 
-### 종합 평가
-
----
-
+### 7-2. 종합 평가
 - 한계점
     - 증명서 발급, 학사 일정, 게시판과 같은 필수 기능들은 거의 구현이 되었으나, 디자인적으로 아쉬운 부분이 많이 있다.
 - 개선점
