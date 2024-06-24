@@ -1,13 +1,6 @@
 # **프로젝트 : theJoeunUniversity** kiosk
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/cae9accf-e75e-4e6d-a475-ec92e8526b40/Untitled.png)
-
-## ⬇ 프로젝트 깃허브 링크
-
-<aside>
-<img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/98377b2e-ccbd-41c9-986e-8df9b2c4ecc7/github.png" alt="https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/98377b2e-ccbd-41c9-986e-8df9b2c4ecc7/github.png" width="40px" /> https://github.com/JongsikLEE01/theJoeunUniversity
-
-</aside>
+![image](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/1597f479-a768-4956-a128-6823bad836f9)
+<br><br>
 
 ## 목차
 
@@ -20,8 +13,8 @@
 - 자체 평가 의견
 
 ## 프로젝트 개요
-
 ---
+
 
 ### 프로젝트 주제
 
