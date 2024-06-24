@@ -1,4 +1,5 @@
 # **프로젝트 : theJoeunUniversity** kiosk
+![images](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/4a739f76-94af-43c0-8948-cc041804c333)
 <br><br>
 
 ## 목차
