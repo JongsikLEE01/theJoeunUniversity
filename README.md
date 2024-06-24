@@ -1,9 +1,8 @@
 # **프로젝트 : theJoeunUniversity** kiosk
-![image](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/1597f479-a768-4956-a128-6823bad836f9)
+
 <br><br>
 
 ## 목차
-
 - 프로젝트 개요
 - 프로젝트 구조
 - 프로젝트 팀 구성 및 역할
@@ -12,64 +11,38 @@
 - 핵심기능 코드 리뷰
 - 자체 평가 의견
 
-## 프로젝트 개요
----
+## 1. 프로젝트 개요
 
-
-### 프로젝트 주제
-
----
-
+### 1-1. 프로젝트 주제
 - 누구나 쉽게 이용 가능한 더조은 대학 키오스크 시스템
 
-### 주제 선정 배경
-
----
-
+### 1-2. 주제 선정 배경
 - 성장하는 IOT 시장을 노려서 개발
 - 누구나 제한 없이 사용하기 위한 키오스크는 어떻게 개발되어야 할까?
 - 어려운 증명서 발급을 어떻게 손쉽게 할 수 있을까?
 
-### 기획 의도
-
----
-
+### 1-3. 기획 의도
 - 누구나 쉽게 이용 가능한 키오스크
 - 누구나 공평하게 이용 가능한 키오스크
 - 교내의 정보를 한 눈에 알 수 있고, 어려운 절차 없이 이용 가능한 키오스크
 
-### 활용방안
-
----
-
+### 1-4. 활용방안
 - 학생들은 키오스크를 통해 학사 정보를 손쉽게 조회하고 각종 증명서를 발급받을 수 있습니다. 이를 통해 번거로운 절차와 대기 시간을 줄이고, 정보의 접근성을 향상시킬 수 있습니다.
 - 키오스크를 활용하여 학교의 다양한 시설과 프로그램에 대한 정보를 제공할 수 있습니다. 새로운 학생들은 학교의 역사, 학과 소개, 공지 사항 등을 쉽게 알아갈 수 있습니다.
 - 학생들은 키오스크를 통해 시험 일정이나 학기 중요 일정을 확인할 수 있습니다. 이를 통해 학생들은 학업 계획을 세우고 시간을 효율적으로 활용할 수 있습니다.
 
-### 기대효과
-
----
-
+### 1-5. 기대효과
 - 학생들은 언제든지 필요한 정보를 키오스크를 통해 손쉽게 얻을 수 있습니다. 이는 학생들의 학교 생활을 보다 편리하게 만들어줄 것입니다.
 - 키오스크를 통해 정보를 얻는 과정이 간편해지고, 번거로운 절차와 대기 시간을 줄일 수 있습니다. 이는 학생들의 시간을 절약할 수 있습니다
 - 키오스크를 통해 학교 관련 정보를 쉽게 얻을 수 있으므로, 학교와 학생들 간의 정보 공유가 원활해집니다. 이는 학생들의 학교 생활에 대한 이해도를 높이고 투명성을 제고할 것입니다.
 
-## 프로젝트 구조
-
----
-
-### 주요기능
-
----
-
+## 2. 프로젝트 구조
+### 2-1. 주요기능
 - 로그인한 학생이 각 종 증명서를 발급
 - 로그인 없이 일정, 공지사항, 학교 소개들을 모두 볼 수 있음
 - 각 종 정보를 다루는 관리자
 
-### 기타 기능
-
----
-
+### 2-2. 기타 기능
 - 유저
     - 학교 소개
         - 학교 이념
@@ -92,23 +65,16 @@
     - 학생 관리
         - 학생 등록, 수정, 삭제, 조회
 
-### 메뉴구조도
-
----
-
-- 구조도
-    
-    ![프로젝트구조.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/37105633-5c6d-48cd-95b5-a4721ff9cfb9/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B5%AC%EC%A1%B0.png)
-    
-    ![프로젝트구조2.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/f25b7e85-f183-4cff-abcc-6a77605ee5ae/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B5%AC%EC%A1%B02.png)
-    
-    ![프로젝트구조3.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/5403ea2a-2cc8-4cb3-8ce3-bb7a033453b8/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B5%AC%EC%A1%B03.png)
+### 2-3. 메뉴구조도
+<details>
+    <summary>메뉴 구조도</summary>
+![프로젝트구조](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/7c6a0649-18c5-4f6d-a197-fe7530aaa7c5)
+![프로젝트구조2](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/1fa93c95-bec7-4082-8ae9-ecbf8d91aa73)
+![프로젝트구조3](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/ded13d44-d2f3-4f20-86b3-c47f81475d3d)
+</details>
     
 
-## 프로젝트 팀 구성 및 역할
-
----
-
+## 3. 프로젝트 팀 구성 및 역할
 - 인원 : 5명
 - 이종식 (팀장)
     - 학사 일정 기능 구현 및 디자인
@@ -126,103 +92,85 @@
     - 공지사항 기능 구현 및 디자인
     - 게시판 DB 설계
 
-## 프로젝트 수행 절차 및 방법
+## 4. 프로젝트 수행 절차 및 방법
+### 4-1. 수행 절차
+<details>
+    <summary>수행 절차</summary>
+![수행절차](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/1e058f50-41f5-4c21-b6e2-af168d70101e)
+</details>
 
----
-
-### 수행 절차
-
----
-
-![수행절차.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/6d6e8641-0c46-4b1d-b11b-075f25d72b29/%EC%88%98%ED%96%89%EC%A0%88%EC%B0%A8.png)
-
-### 수행 방법
-
----
-
+### 4-2. 수행 방법
 - 사용 언어 : Java, Oracle, HTML5, CSS, JavaScript, jQuery, JSP/Servlet, JSON
 - IDE : elipse, VSCode
 - 서버 환경 : TOMCAT 8.5
 - CI/CD : Git, GitHub
 - 라이브러리 : Kakaomap, Jquery-simple, hangul
 
-## 프로젝트 수행 경과
-
----
-
-### 요구사항 정의서
-
----
-
-- 요구사항 정의서
-    
-    ![요구사항정의서.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/a50e890a-41cd-4033-91df-7d03f5a6bbb4/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%EC%A0%95%EC%9D%98%EC%84%9C.png)
+## 5. 프로젝트 수행 경과
+### 5-1. 요구사항 정의서
+<details>
+    <summary>요구사항 정의서</summary>
+![요구사항정의서](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/186c6214-eedf-46f0-85b5-30745d77234e)
+</details>
     
 
-### 기능 정의서
+### 5-2. 기능 정의서
+<details>
+    <summary>기능 정의서</summary>
+![기능정의서](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/d2c8945d-5874-4298-a494-51993ce51edf)
+![기능정의서2](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/a19b75fe-c68f-44fb-a19a-b360f557599f)
+</details>
 
----
+### 5-3. ERD
+<details>
+    <summary>ERD</summary>
+![ERD](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/e3a2580b-cdc3-4465-84ab-849af60c862a)
+</details>
 
-- 기능정의서
-    
-    ![기능정의서.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/0d7dc33f-216a-4026-8ca3-ac8cf2ce0119/%EA%B8%B0%EB%8A%A5%EC%A0%95%EC%9D%98%EC%84%9C.png)
-    
-    ![기능정의서2.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/ff525b0e-986f-4cc3-99be-fed724fa003f/%EA%B8%B0%EB%8A%A5%EC%A0%95%EC%9D%98%EC%84%9C2.png)
-    
-
-### ERD
-
----
-
-- ERD
-    
-    ![ERD.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/4696d6c3-13ce-4aa6-b6fb-ca0c2c89ba05/ERD.png)
     
 
-### 테이블 정의서
-
----
-
-- 테이블 정의서
-    
-    ![테이블정의서1.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/c20bc0e3-6701-4507-b7d5-2ba3d5f4825f/%ED%85%8C%EC%9D%B4%EB%B8%94%EC%A0%95%EC%9D%98%EC%84%9C1.png)
-    
-    ![테이블정의서2.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/796309dc-31a5-473c-8f3a-933a15a1661f/%ED%85%8C%EC%9D%B4%EB%B8%94%EC%A0%95%EC%9D%98%EC%84%9C2.png)
-    
-    ![테이블정의서3.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/71d44866-9f7e-43a5-89de-d07b16c14107/%ED%85%8C%EC%9D%B4%EB%B8%94%EC%A0%95%EC%9D%98%EC%84%9C3.png)
-    
-    ![테이블정의서4.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/c1b38c54-a218-40fa-8208-61dee10c46de/%ED%85%8C%EC%9D%B4%EB%B8%94%EC%A0%95%EC%9D%98%EC%84%9C4.png)
-    
-    ![테이블정의서5.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/98858435-e228-4248-85bc-ea299f14f97a/%ED%85%8C%EC%9D%B4%EB%B8%94%EC%A0%95%EC%9D%98%EC%84%9C5.png)
-    
-    ![테이블정의서6.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/f8bba9ee-2522-44b2-bc28-dcac077af9c7/%ED%85%8C%EC%9D%B4%EB%B8%94%EC%A0%95%EC%9D%98%EC%84%9C6.png)
-    
-    ![테이블정의서7.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/42715168-92cb-4df3-ac3b-f2e94ac55fcf/%ED%85%8C%EC%9D%B4%EB%B8%94%EC%A0%95%EC%9D%98%EC%84%9C7.png)
+### 5-4. 테이블 정의서
+<details>
+    <summary>테이블 정의서</summary>
+![테이블정의서1](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/acdb9969-0ad0-4c47-9ec4-cb3ce8e2f9c8)
+![테이블정의서2](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/87e0a2ce-6d6c-4f17-b874-f72f65cc5890)
+![테이블정의서3](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/c71ce708-9f23-4f9e-9ede-e3928f83f46c)
+![테이블정의서4](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/9327e408-f130-4e3c-b860-9ab739692fb4)
+![테이블정의서5](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/a41830a4-9973-496b-bdf3-eec9bcabe842)
+![테이블정의서6](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/e6b0aa3c-bd40-4606-ae13-14bfd604971c)
+![테이블정의서7](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/1f518d17-b0d4-4172-bca2-c5684ca35869)
+</details>
     
 
-### 프로젝트 실제 화면 UI
+### 5-5. 프로젝트 실제 화면 UI
+<details>
+    <summary>메인 화면</summary>
+![구현화면1](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/c186ce7b-84ac-457a-a610-3909197fce0c)
+![구현화면2](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/eb3e8ea8-afd6-4255-9215-984cb2a556c4)
+</details>
+<br>
 
----
+<details>
+    <summary>학교 소개</summary>
+![구현화면3](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/7daaaa34-602d-4b31-81b3-6d1e62a3516e)
+![구현화면4](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/da053769-3e07-4ee7-b3e3-110a93ed3ecb)
+![구현화면5](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/c0b27cc0-2ff9-485e-b383-02a46309ffa6)
+![구현화면6](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/c6551a0c-2391-41e3-a9f6-dac66005275c)
+![구현화면7](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/aec2a10c-17f1-4072-9262-d613af46239b)
+![구현화면8](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/58f496c4-e8aa-4014-8cf1-4f52e242966b)
+</details>
+<br>
 
-- 메인화면
-    
-    ![구현화면1.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/f2789b66-7384-4f13-9f7a-1062889b0db7/%EA%B5%AC%ED%98%84%ED%99%94%EB%A9%B41.png)
-    
-    ![구현화면2.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/88e6c48c-1b21-4f4b-bba2-f9446c32d578/%EA%B5%AC%ED%98%84%ED%99%94%EB%A9%B42.png)
-    
-- 학교 소개
-    
-    ![구현화면3.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/a32ffb2d-2648-4254-be20-739b49e929d9/%EA%B5%AC%ED%98%84%ED%99%94%EB%A9%B43.png)
-    
-    ![구현화면4.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/9b52f221-a065-4352-91d7-083bdaa061c5/%EA%B5%AC%ED%98%84%ED%99%94%EB%A9%B44.png)
-    
-    ![구현화면5.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/d62d1b49-3e45-4d14-84fb-b4189f6be2b6/%EA%B5%AC%ED%98%84%ED%99%94%EB%A9%B45.png)
-    
-    ![구현화면6.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/d1d82bd2-174d-4cd2-8c12-be342b9f159f/%EA%B5%AC%ED%98%84%ED%99%94%EB%A9%B46.png)
-    
-    ![구현화면7.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/350ec5e7-0bf7-4903-be71-64a9fdfc6b91/%EA%B5%AC%ED%98%84%ED%99%94%EB%A9%B47.png)
-    
-    ![구현화면8.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/78dc0e61-0667-415d-93d6-66223b91cf67/3c4d34ba-0192-4c27-a580-e18a815acccc/%EA%B5%AC%ED%98%84%ED%99%94%EB%A9%B48.png)
+<details>
+    <summary>학생 정보</summary>
+![구현화면3](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/7daaaa34-602d-4b31-81b3-6d1e62a3516e)
+![구현화면4](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/da053769-3e07-4ee7-b3e3-110a93ed3ecb)
+![구현화면5](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/c0b27cc0-2ff9-485e-b383-02a46309ffa6)
+![구현화면6](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/c6551a0c-2391-41e3-a9f6-dac66005275c)
+![구현화면7](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/aec2a10c-17f1-4072-9262-d613af46239b)
+![구현화면8](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/58f496c4-e8aa-4014-8cf1-4f52e242966b)
+</details>
+<br>
     
 - 학생 정보
     
