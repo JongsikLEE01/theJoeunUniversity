@@ -125,6 +125,7 @@
 ![기능정의서2](https://github.com/JongsikLEE01/theJoeunUniversity/assets/137877490/a19b75fe-c68f-44fb-a19a-b360f557599f)
 </details>
 
+
 ### 5-3. ERD
 <details>
     <summary>ERD</summary>
